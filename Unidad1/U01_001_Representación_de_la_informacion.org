@@ -1,0 +1,166 @@
+#+TITLE: Sistemas de numeración y Representación de la información
+#+AUTHOR: José Gaspar Sánchez García
+#+DATE:  \today
+#+LIENCE: CC BY-NC-SA 4.0
+#+KEYWORDS: numeración, binario, decimal, octal, hexadecimal
+#+LANG: es
+#+LATEX_CLASS: beamer
+#+BEAMER_THEME: Madrid
+
+* Índice
+  - Concepto general
+  - Sistemas de numeración principales
+  - Notación posicional vs no posicional
+  - Conversión entre bases
+  - Representación de caracteres
+  - Representación de la información
+  - Tipos de datos y corrección de errores
+  - Aplicaciones pedagógicas
+  - Notas rápidas
+  - Ejemplos
+
+* Concepto general
+Un sistema de numeración es un conjunto de símbolos y reglas para generar y validar números. Se suele representar como N = (S, R) donde S es el alfabeto de símbolos y R son las reglas de escritura y validación.
+
+* Sistemas de numeración principales
+** Decimal (base 10)
+- Dígitos: 0–9
+- Valor posicional: cada cifra vale su dígito por 10^pos
+
+** Binario (base 2)
+- Dígitos: 0, 1
+- Cada posición k vale d_k × 2^k
+
+** Octal (base 8)
+- Dígitos: 0–7
+- Agrupación de bits en 3
+
+** Hexadecimal (base 16)
+- Dígitos: 0–9, A–F
+- Agrupación de bits en 4
+
+* Notación posicional vs no posicional
+** Posicional
+- El valor de una cifra depende de la posición. Ejemplo: 593_10 = 5×10^2 + 9×10^1 + 3×10^0
+** No posicional
+- El valor no depende de la posición (p. ej., números romanos)
+
+* Conversión entre bases
+** Decimal ↔ Binario
+- Decimal a binario: dividir entre 2 y tomar restos; lectura de abajo a arriba
+- Binario a decimal: sumar potencias de 2 donde hay 1
+
+** Binario ↔ Hexadecimal
+- Agrupar bits en 4 para cada dígito hex
+
+** Binario ↔ Octal
+- Agrupar bits en 3 para cada dígito octal
+
+* Representación de caracteres
+- Codificación de caracteres en bits (ASCII, UTF-8, etc.). Un byte = 8 bits.
+
+* Representación de la información
+- La información analógica se digitaliza a valores discretos; los números binarios permiten almacenar, procesar y transmitir datos.
+
+* Tipos de datos y corrección de errores
+- Códigos binarios y esquemas como BCD, Gray, ECC/BCH facilitan detección y corrección de errores.
+
+* Aplicaciones pedagógicas
+- Actividades de conversión entre bases
+- Practicar suma binaria
+- Complemento a dos para enteros con signo
+- Codificación ASCII/UTF-8
+
+* Notas rápidas
+- La base determina dígitos y potencias.
+- Reglas de conversión dependen de la base.
+- Organización estructurada facilita exportación y revisión.
+
+* Ejemplos
+** 1011_2 a decimal
+  1×2^3 + 0×2^2 + 1×2^1 + 1×2^0 = 11
+
+** Decimal 13 a binario
+  13 / 2 = 6 resto 1
+  6 / 2 = 3 resto 0
+  3 / 2 = 1 resto 1
+  1 / 2 = 0 resto 1
+  Lectura: 1101_2
+
+
+* Concepto general
+Un sistema de numeración es un conjunto de símbolos y reglas para generar y validar números. Se suele representar como N = (S, R) donde S es el alfabeto de símbolos y R son las reglas de escritura y validación.
+
+* Sistemas de numeración principales
+** Decimal (base 10)
+- Dígitos: 0–9
+- Valor posicional: cada cifra vale su dígito por 10^posición
+
+** Binario (base 2)
+- Dígitos: 0, 1
+- Cada posición k vale d_k × 2^k
+
+** Octal (base 8)
+- Dígitos: 0–7
+- Agrupación de bits en 3
+
+** Hexadecimal (base 16)
+- Dígitos: 0–9, A–F
+- Agrupación de bits en 4
+
+* Notación posicional vs no posicional
+** Posicional
+- Valor depende de la posición (ej. decimal 593 = 5×10^2 + 9×10^1 + 3×10^0)
+** No posicional
+- El valor no depende de la posición (p. ej., romano)
+
+* Conversión entre bases
+** Decimal ↔ Binario
+- Decimal a binario: dividir entre 2 y tomar restos; lectura de restos de abajo hacia arriba
+- Binario a decimal: sumar potencias de 2 donde hay 1
+
+** Binario ↔ Hexadecimal
+- Agrupar bits en 4 para cada dígito hex
+** Binario ↔ Octal
+- Agrupar bits en 3 para cada dígito octal
+
+* Representación de caracteres
+- Codificación de caracteres en bits (ASCII, UTF-8, etc.)
+- 8 bits por byte; distintos esquemas asignan valores numéricos a caracteres
+
+* Representación de la información en sistemas digitales
+- Digitalización de analógico a valores discretos
+- Números binarios permiten almacenar, procesar y transmitir datos
+
+* Tipos de datos y corrección de errores
+- Códigos binarios y esquemas como BCD, Gray
+- Detección y corrección de errores
+
+* Aplicaciones pedagógicas
+- Actividades de conversión entre bases
+- Ejercicios de suma y resta binaria
+- Complemento a dos para enteros con signo
+- Codificación de caracteres ASCII/UTF-8
+
+* Conceptos relacionados
+- Bits y bytes; aritmética binaria; codificación de caracteres; complemento a dos; BCD; ECC/BCH
+
+* Consejos de enseñanza
+- Usar tablas de potencias de 2
+- Herramientas de simulación para ver transformaciones en vivo
+- Actividades con retroalimentación inmediata y autoevaluaciones
+
+* Ejemplos prácticos
+** Ejemplo 1: 1011₂ a decimal
+- 1×2^3 + 0×2^2 + 1×2^1 + 1×2^0 = 11
+
+** Ejemplo 2: decimal 13 a binario
+- 13 ÷ 2 = 6 resto 1
+- 6 ÷ 2 = 3 resto 0
+- 3 ÷ 2 = 1 resto 1
+- 1 ÷ 2 = 0 resto 1
+- Lectura de restos: 1101₂
+
+* Notas de repaso
+- La base determina dígitos y potencias
+- Las reglas de conversión y validación dependen de la base

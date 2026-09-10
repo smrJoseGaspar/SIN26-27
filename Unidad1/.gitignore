@@ -1,0 +1,3 @@
+# No icluir pdf y fichero LaTeX
+*.pdf
+*.tex
