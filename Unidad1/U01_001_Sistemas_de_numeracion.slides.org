@@ -1,0 +1,590 @@
+#+title: Representación de la información
+#+subtitle: Sistemas de numeración
+#+author: José Gaspar Sánchez García
+#+date: \today
+
+#+license: CC BY-NC-SA 4.0
+#+KEYWORDS: numeración, binario, decimal, octal, hexadecimal
+#+LANG: es
+
+#+startup: beamer
+#+options: H:2 toc:nil num:t
+
+#+latex_class: beamer
+#+latex_class_options: [aspectratio=169]
+
+#+beamer_theme: Madrid
+#+beamer_color_theme: seagull
+#+beamer_font_theme: professionalfonts
+#+beamer_header: \setbeamertemplate{navigation symbols}{}
+#+beamer_header: \setbeamertemplate{footline}[frame number]
+
+# SPDX-License-Identifier: CC BY-NC-SA 4.0
+# Copyright (c) 2026 José Gaspar Sánchez García
+
+
+* Licencia
+** Licencia
+Este documento se distribuye bajo la licencia
+[[https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es][Creative Commons 
+Atribución 4.0 Internacional (CC BY-NC-SA 4.0)]].
+
+
+#+DOWNLOADED: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Cc-by-nc-sa_icon.svg/1920px-Cc-by-nc-sa_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail @ 2026-09-11 01:01:43
+[[file:images/20260911-010143_1920px-Cc-by-nc-sa_icon.svg.png]]
+
+
+
+* Introducción
+
+** ¿Qué es un sistema de numeración?
+*** Sistema de numeración
+Es un conjunto de símbolos y reglas que se utilizan para expresar cantidades numericas.
+*** Representación
+Se suele representar como N = {S, R} donde:
+- S es el alfabeto de símbolos.
+- R son las reglas de representación.
+- Una base (B)
+- Un valor asociado a cada posición.
+
+** Principales sistemas de numeración
+
+| Sistema     | Base | Símbolos   | Uso principal              |
+|-------------+------+------------+----------------------------|
+| Binario     |    2 | 0, 1       | Computadores               |
+| Octal       |    8 | 0--7       | Representación de permisos |
+| Decimal     |   10 | 0--9       | Uso cotidiano              |
+| Hexadecimal |   16 | 0--9, A--F | Memoria y programación     |
+
+* Sistemas numeración posicionales
+
+** Teorema Funadmental de la Numeración (TFN)
+
+En un sistema posicional, el valor de un dígito (/d/) depende de:
+
+- El símbolo utilizado.
+- La posición que ocupa (/i/).
+- La base del sistema (/b/).
+
+\[
+N_b =
+(d_n \ldots d_1d_0)_b =
+\sum_{i=0}^{n} d_i b^i
+\]
+
+** Ejemplo decimal
+
+#+begin_example
+(352)₁₀
+
+= 3 × 10² + 5 × 10¹ + 2 × 10⁰
+= 300 + 50 + 2
+= 352
+#+end_example
+
+* Sistema decimal
+
+** Características
+
+El sistema decimal:
+
+- Tiene base 10.
+- Utiliza los símbolos del 0 al 9.
+- Es el sistema utilizado habitualmente.
+- Utiliza potencias de 10.
+
+** Posiciones decimales
+
+#+begin_example
+7  2  4
+│  │  └── 4 × 10⁰ = 4
+│  └───── 2 × 10¹ = 20
+└──────── 7 × 10² = 700
+#+end_example
+
+#+begin_example
+724 = 700 + 20 + 4
+#+end_example
+
+* Sistema binario
+
+** Características
+
+El sistema binario:
+
+- Tiene base 2.
+- Solo utiliza los símbolos 0 y 1.
+- Es fundamental en los computadores.
+- Representa dos estados electrónicos:
+  - 0: apagado.
+  - 1: encendido.
+
+** Potencias de dos
+
+#+begin_example
+Posición:  5   4  3  2  1  0
+Potencia: 32  16  8  4  2  1
+#+end_example
+
+** Binario a decimal
+
+#+begin_example
+(101101)₂
+
+= 1×2⁵ + 0×2⁴ + 1×2³
+  + 1×2² + 0×2¹ + 1×2⁰
+
+= 32 + 8 + 4 + 1
+= 45
+#+end_example
+
+\[
+(101101)_2 = (45)_{10}
+\]
+
+** Decimal a binario
+
+Se realizan divisiones sucesivas entre 2:
+
+#+begin_example
+45 ÷ 2 = 22, resto 1
+22 ÷ 2 = 11, resto 0
+11 ÷ 2 =  5, resto 1
+ 5 ÷ 2 =  2, resto 1
+ 2 ÷ 2 =  1, resto 0
+ 1 ÷ 2 =  0, resto 1
+#+end_example
+
+Los restos se leen de abajo hacia arriba:
+
+\[
+(45)_{10} = (101101)_2
+\]
+
+* Sistema octal
+
+** Características
+
+El sistema octal:
+
+- Tiene base 8.
+- Utiliza los símbolos del 0 al 7.
+- Cada dígito octal equivale a tres bits.
+
+| Octal | Binario |
+|-------+---------|
+| 0     | 000     |
+| 1     | 001     |
+| 2     | 010     |
+| 3     | 011     |
+| 4     | 100     |
+| 5     | 101     |
+| 6     | 110     |
+| 7     | 111     |
+
+** Octal a decimal
+
+#+begin_example
+(725)₈
+
+= 7 × 8² + 2 × 8¹ + 5 × 8⁰
+= 448 + 16 + 5
+= 469
+#+end_example
+
+\[
+(725)_8 = (469)_{10}
+\]
+
+** Binario a octal
+
+Se agrupan los bits de tres en tres:
+
+#+begin_example
+101 110 101
+ 5   6   5
+#+end_example
+
+\[
+(101110101)_2 = (565)_8
+\]
+
+* Sistema hexadecimal
+
+** Características
+
+El sistema hexadecimal:
+
+- Tiene base 16.
+- Utiliza los dígitos del 0 al 9.
+- Utiliza las letras A, B, C, D, E y F.
+- Cada dígito equivale a cuatro bits.
+
+| Hexadecimal | Decimal | Binario |
+|-------------+---------+---------|
+| A           |      10 |    1010 |
+| B           |      11 |    1011 |
+| C           |      12 |    1100 |
+| D           |      13 |    1101 |
+| E           |      14 |    1110 |
+| F           |      15 |    1111 |
+
+** Hexadecimal a decimal
+
+#+begin_example
+(2F3)₁₆
+
+= 2 × 16² + 15 × 16¹ + 3 × 16⁰
+= 512 + 240 + 3
+= 755
+#+end_example
+
+\[
+(2F3)_{16} = (755)_{10}
+\]
+
+** Binario a hexadecimal
+
+Se agrupan los bits de cuatro en cuatro:
+
+#+begin_example
+1010 1111 0011
+  A    F    3
+#+end_example
+
+\[
+(101011110011)_2 = (AF3)_{16}
+\]
+
+* Conversiones entre bases
+
+** Esquema general
+
+#+begin_example
+Base A ───────► Decimal ───────► Base B
+#+end_example
+
+También es posible convertir directamente cuando las bases están relacionadas:
+
+- Binario y octal: grupos de 3 bits.
+- Binario y hexadecimal: grupos de 4 bits.
+
+** Conversión de cualquier base a decimal
+
+Usamos el **Teorema Fundamental de la Numeración**. Se multiplica cada dígito por la potencia correspondiente:
+\[
+132_4 =1 \cdot 4²+ 3 \cdot 4^1 + 2 \cdot 4^0 =
+1 \cdot 16+3 \cdot 4+2 \cdot 1=
+16 + 12 + 2=30_{10}
+\]
+
+** Conversión de decimal a otra base
+
+Se realizan divisiones sucesivas entre la nueva base.
+
+Ejemplo: convertir 156 a hexadecimal:
+
+#+begin_example
+156 ÷ 16 = 9, resto 12 = C
+  9 ÷ 16 = 0, resto 9
+
+(156)₁₀ = (9C)₁₆
+#+end_example
+
+* Números fraccionarios
+
+** Parte fraccionaria
+
+A la derecha de la coma se utilizan potencias negativas:
+
+#+begin_example
+(0,101)₂
+
+= 1 × 2⁻¹ + 0 × 2⁻² + 1 × 2⁻³
+= 1/2 + 0 + 1/8
+= 0,625
+#+end_example
+
+\[
+(0,101)_2 = (0,625)_{10}
+\]
+
+** Decimal fraccionario a binario
+
+Se multiplica la fracción por 2:
+
+#+begin_example
+0,625 × 2 = 1,250 → 1
+0,250 × 2 = 0,500 → 0
+0,500 × 2 = 1,000 → 1
+#+end_example
+
+Por tanto:
+
+\[
+(0,625)_{10} = (0,101)_2
+\]
+
+* Operaciones binarias
+
+** Suma binaria
+
+Reglas básicas:
+
+| Operación | Resultado |
+|-----------+-----------|
+| 0 + 0     | 0         |
+| 0 + 1     | 1         |
+| 1 + 0     | 1         |
+| 1 + 1     | 10        |
+
+Ejemplo:
+
+#+begin_example
+   1011
+ + 1101
+ -------
+  11000
+#+end_example
+
+** Resta binaria
+
+Reglas principales:
+
+| Operación | Resultado       |
+|-----------+-----------------|
+| 0 - 0     | 0               |
+| 1 - 0     | 1               |
+| 1 - 1     | 0               |
+| 0 - 1     | 1 con préstamo  |
+
+Ejemplo:
+
+#+begin_example
+   1101
+ - 0101
+ -------
+   1000
+#+end_example
+
+** Desplazamientos
+
+Multiplicar por 2 equivale a desplazar un bit a la izquierda:
+
+#+begin_example
+1011₂ × 2 = 10110₂
+#+end_example
+
+Dividir entre 2 equivale a desplazar un bit a la derecha:
+
+#+begin_example
+10110₂ ÷ 2 = 1011₂
+#+end_example
+
+* Representación de números negativos
+
+** Números negativos
+
+Los métodos más utilizados son:
+
+- Signo y magnitud.
+- Complemento a uno.
+- Complemento a dos.
+
+** Signo y magnitud
+
+El bit más significativo representa el signo:
+
+- 0: número positivo.
+- 1: número negativo.
+
+#+begin_example
+00000101 = +5
+10000101 = -5
+#+end_example
+
+Problema: existen dos representaciones del cero.
+
+#+begin_example
+00000000 = +0
+10000000 = -0
+#+end_example
+
+** Complemento a dos
+
+Para obtener el negativo de un número:
+
+1. Se invierten todos los bits.
+2. Se suma 1.
+
+#+begin_example
+ +5                 = 00000101
+ Invertir los bits  = 11111010
+ Sumar 1            = 11111011
+
+ -5                 = 11111011
+#+end_example
+
+El complemento a dos es el método más utilizado en los computadores.
+
+* Bits y bytes
+
+** Conceptos básicos
+
+- Un bit (/Binary digIT/) puede valer 0 o 1.
+- Un /byte/ (octeto) contiene 8 bits.
+- Con \(n\) bits se pueden representar \(2^n\) valores.
+
+#+begin_example
+1 byte = 8 bits
+#+end_example
+
+** Rangos sin signo
+
+| Bits | Valores posibles | Rango       |
+|------+------------------+-------------|
+| 1    | 2                | 0 a 1       |
+| 2    | 4                | 0 a 3       |
+| 4    | 16               | 0 a 15      |
+| 8    | 256              | 0 a 255     |
+| 16   | 65536            | 0 a 65535   |
+
+\[
+0 \leq x \leq 2^n - 1
+\]
+
+** Rangos con signo
+
+En complemento a dos:
+
+\[
+-2^{n-1} \leq x \leq 2^{n-1}-1
+\]
+
+Con 8 bits:
+
+#+begin_example
+-128 a 127
+#+end_example
+
+* Sistema BCD
+
+** Binary-Coded Decimal
+
+BCD representa cada dígito decimal utilizando cuatro bits.
+
+| Decimal | BCD  |
+|---------+------|
+| 0       | 0000 |
+| 1       | 0001 |
+| 2       | 0010 |
+| 3       | 0011 |
+| 4       | 0100 |
+| 5       | 0101 |
+| 6       | 0110 |
+| 7       | 0111 |
+| 8       | 1000 |
+| 9       | 1001 |
+
+** Ejemplo BCD
+
+#+begin_example
+59 decimal
+
+5 = 0101
+9 = 1001
+
+59 en BCD = 0101 1001
+#+end_example
+
+Importante:
+
+#+begin_example
+59₁₀ en binario = 111011₂
+59₁₀ en BCD     = 0101 1001
+#+end_example
+
+* Colores hexadecimales
+
+** Representación RGB
+
+En HTML y CSS se utiliza el formato:
+
+#+begin_example
+#RRGGBB
+#+end_example
+
+- RR: intensidad de rojo.
+- GG: intensidad de verde.
+- BB: intensidad de azul.
+
+Cada componente tiene valores entre 00 y FF.
+
+** Ejemplos
+
+| Código  | Color  |
+|---------+--------|
+| #000000 | Negro  |
+| #FFFFFF | Blanco |
+| #FF0000 | Rojo   |
+| #00FF00 | Verde  |
+| #0000FF | Azul   |
+
+* Errores frecuentes
+
+** Errores al trabajar con bases
+
+- Confundir la base del número.
+- Usar símbolos no permitidos.
+- Leer mal los restos de las divisiones.
+- Confundir A con 10 en hexadecimal.
+- Confundir BCD con una conversión binaria.
+- No tener en cuenta el número de bits disponible.
+- Confundir complemento a uno con complemento a dos.
+
+* Ejercicios
+
+** Conversiones
+
+Convierte:
+
+1. \(1010_2\) a decimal.
+2. \(11001_2\) a decimal.
+3. \(18_{10}\) a binario.
+4. \(37_{10}\) a binario.
+5. \(2B_{16}\) a decimal.
+6. \(11010110_2\) a hexadecimal.
+
+** Operaciones
+
+Resuelve:
+
+#+begin_example
+  1011
++ 0110
+------
+
+  1101
+- 0100
+------
+#+end_example
+
+* Resumen
+
+** Ideas principales
+
+- La base determina los símbolos y las posiciones.
+- El sistema binario es esencial en informática.
+- El octal agrupa los bits de tres en tres.
+- El hexadecimal agrupa los bits de cuatro en cuatro.
+- Para convertir a decimal se utilizan potencias de la base.
+- Para convertir desde decimal se realizan divisiones sucesivas.
+- Un byte contiene 8 bits.
+- El complemento a dos representa números negativos.
+- BCD representa cada dígito decimal con cuatro bits.
+
+** Preguntas
+
+#+begin_center
+\Large ¿Preguntas?
+#+end_center
