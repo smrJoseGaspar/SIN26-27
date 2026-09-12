@@ -1,0 +1,669 @@
+#+TITLE: Unidades de medida de la información
+#+SUBTITLE: Magnitudes y unidades en ciencia y tecnología de la información
+#+AUTHOR:José Gaspar Sánchez García
+#+email: jg.sanchezgarcia@edu.es
+#+DATE: \today
+
+#+license: CC BY-NC-SA 4.0
+#+KEYWORDS: unidades, medida, información, bit, Byte, kilobyte, Megabyte, Gigabyte, kibibyte
+
+#+LANGUAGE: es
+#+OPTIONS: H:2 toc:nil num:t
+#+STARTUP: beamer
+
+#+LATEX_CLASS: beamer
+#+BEAMER_THEME: Madrid
+#+BEAMER_COLOR_THEME: default
+#+BEAMER_FRAME_LEVEL: 2
+
+#+LATEX_HEADER: \usepackage[spanish,es-nodecimaldot]{babel}
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \usepackage{array}
+
+
+# SPDX-License-Identifier: CC BY-NC-SA 4.0
+# Copyright (c) 2026 José Gaspar Sánchez García
+
+
+* Licencia
+** Licencia
+Este documento se distribuye bajo la licencia
+[[https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es][Creative Commons 
+Atribución 4.0 Internacional (CC BY-NC-SA 4.0)]].
+
+
+#+DOWNLOADED: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Cc-by-nc-sa_icon.svg/1920px-Cc-by-nc-sa_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail @ 2026-09-11 01:01:43
+[[file:images/20260911-010143_1920px-Cc-by-nc-sa_icon.svg.png]]
+
+
+* Concepto de información
+
+** ¿Qué es la información?
+
+La información es aquello que modifica o reduce la incertidumbre sobre un hecho, objeto o situación.
+** En informática:
+La información es la representación de datos que pueden:
+
+- almacenarse;
+- procesarse;
+- transmitirse.
+
+** Ejemplo intuitivo
+
+Antes de lanzar una moneda existen dos posibilidades:
+
+- cara;
+- cruz.
+
+Cuando se comunica que ha salido cara, se elimina parte de la incertidumbre.
+
+#+begin_export latex
+\begin{block}{Idea principal}
+La información se relaciona con la reducción de la incertidumbre.
+\end{block}
+#+end_export
+
+* Medición de la información
+
+** ¿De qué depende la información?
+
+La cantidad de información depende de la probabilidad del acontecimiento.
+
+- Un acontecimiento muy probable aporta poca información.
+- Un acontecimiento poco probable aporta mucha información.
+- Un acontecimiento imposible de predecir aporta más información cuando ocurre.
+
+La expresión matemática es:
+
+\[
+I(x)=-\log_b p(x)
+\]
+
+donde:
+
+- \(I(x)\) es la información del acontecimiento;
+- \(p(x)\) es su probabilidad;
+- \(b\) es la base del logaritmo.
+
+** Unidades según la base del logaritmo
+
+|  Base | Unidad                       | Símbolo  |
+|-------+------------------------------+----------|
+|     2 | Shannon o bit de información | Sh o bit |
+| \(e\) | Nat                          | nat      |
+|    10 | Hartley                      | Hart     |
+
+En informática y comunicaciones digitales se utiliza principalmente la base 2.
+
+* El bit como unidad de información
+
+** Ejemplo con una moneda
+
+Si una moneda equilibrada puede dar cara o cruz:
+
+\[
+p(\text{cara})=\frac{1}{2}
+\]
+
+La información asociada al resultado es:
+
+\[
+I(\text{cara})
+=
+-\log_2\left(\frac{1}{2}\right)
+=
+1\ \text{bit}
+\]
+
+Por tanto, conocer el resultado de una elección entre dos posibilidades igualmente probables proporciona:
+
+\[
+\boxed{1\ \text{bit de información}}
+\]
+
+** Más posibilidades, más bits
+
+Si un acontecimiento tiene una probabilidad de \(1/8\):
+
+\[
+I(x)
+=
+-\log_2\left(\frac{1}{8}\right)
+=
+3\ \text{bits}
+\]
+
+Se necesitan tres decisiones binarias para distinguir entre ocho posibilidades:
+
+\[
+2^3=8
+\]
+
+Por ejemplo, tres bits pueden representar ocho combinaciones distintas:
+
+\[
+000,\ 001,\ 010,\ 011,\ 100,\ 101,\ 110,\ 111
+\]
+
+* Entropía
+
+** ¿Qué es la entropía?
+
+La entropía mide la incertidumbre media o la cantidad media de información producida por una fuente.
+
+Se expresa mediante:
+
+\[
+H(X)
+=
+-\sum_{i=1}^{n}p(x_i)\log_2 p(x_i)
+\]
+
+donde:
+
+- \(X\) es una fuente o variable aleatoria;
+- \(p(x_i)\) es la probabilidad de cada resultado;
+- \(H(X)\) es la entropía media.
+
+** Ejemplo de entropía
+
+En una moneda equilibrada:
+
+\[
+p(\text{cara})=p(\text{cruz})=\frac{1}{2}
+\]
+
+Por tanto:
+
+\[
+H(X)=1\ \text{bit}
+\]
+
+Si una moneda produce cara casi siempre, el resultado es más predecible y su entropía es menor.
+
+#+begin_export latex
+\begin{block}{Interpretación}
+La entropía no mide un resultado concreto, sino la información media de una fuente.
+\end{block}
+#+end_export
+
+* Información y almacenamiento
+
+** Representación informática
+
+En los sistemas informáticos, la información se representa mediante bits:
+
+\[
+1\ \text{bit}=0\quad\text{o}\quad1
+\]
+
+Ocho bits forman un byte u octeto:
+
+\[
+1\ \text{B}=8\ \text{bit}
+\]
+
+El bit representa una elección binaria; el byte es una agrupación utilizada habitualmente para almacenar datos.
+
+** Unidades de almacenamiento
+
+Las capacidades de almacenamiento pueden expresarse en:
+
+- bytes;
+- kilobytes y kibibytes;
+- megabytes y mebibytes;
+- gigabytes y gibibytes;
+- terabytes y tebibytes.
+
+Los prefijos decimales y binarios no son equivalentes.
+
+** Prefijos decimales y binarios
+
+\[
+1\ \text{kB}=1\,000\ \text{B}
+\]
+
+\[
+1\ \text{KiB}=1\,024\ \text{B}
+\]
+
+También:
+
+\[
+1\ \text{MB}=1\,000\,000\ \text{B}
+\]
+
+\[
+1\ \text{MiB}=1\,048\,576\ \text{B}
+\]
+
+#+begin_export latex
+\begin{alertblock}{Importante}
+Los prefijos decimales utilizan potencias de diez; los prefijos binarios utilizan potencias de dos.
+\end{alertblock}
+#+end_export
+
+* Comparación de unidades
+
+** Principales unidades
+
+| Magnitud                | Unidad   | Símbolo  | Base o relación   |
+|-------------------------+----------+----------+-------------------|
+| Información binaria     | bit      | bit o b  | Base 2            |
+| Información logarítmica | shannon  | Sh       | Logaritmo base 2  |
+| Información logarítmica | nat      | nat      | Logaritmo natural |
+| Información logarítmica | hartley  | Hart     | Logaritmo base 10 |
+| Almacenamiento          | byte     | B        | \(8\) bits        |
+| Incertidumbre media     | entropía | \(H(X)\) | Bits por fuente   |
+
+** Diferencia entre conceptos
+
+- **Información:** reduce la incertidumbre.
+- **Bit:** unidad de información binaria.
+- **Byte:** conjunto de ocho bits.
+- **Capacidad:** cantidad de datos que puede almacenarse.
+- **Entropía:** información media de una fuente.
+- **Probabilidad:** determina cuánta información aporta un acontecimiento.
+
+* Referencia normativa
+
+** Norma de referencia
+
+La referencia específica es:
+
+\[
+\text{IEC 80000-13:2025}
+\]
+
+#+begin_export latex
+\begin{block}{Título}
+Magnitudes y unidades. Parte 13: Ciencia y tecnología de la información.
+\end{block}
+#+end_export
+
+La norma forma parte de la familia ISO/IEC 80000 y establece:
+
+- nombres y símbolos de las magnitudes;
+- definiciones de las unidades;
+- factores de conversión;
+- prefijos decimales y binarios;
+- unidades de información, transmisión y telecomunicaciones.
+
+** ¿Qué estudia esta norma?
+
+La norma diferencia entre varias magnitudes:
+
+- cantidad de información;
+- capacidad de almacenamiento;
+- velocidad de transferencia;
+- tasa de símbolos;
+- contenido de información;
+- entropía;
+- intensidad de tráfico.
+
+La elección correcta de la unidad evita ambigüedades en informática y telecomunicaciones.
+
+* Magnitudes y unidades
+
+** Magnitud, unidad y valor
+
+Una *magnitud* es una propiedad que puede medirse.
+
+Una *unidad* es una referencia establecida para expresar una magnitud.
+
+Ejemplo:
+
+\[
+\text{capacidad de almacenamiento}=500\ \mathrm{GB}
+\]
+
+- Magnitud: capacidad de almacenamiento.
+- Valor numérico: 500.
+- Unidad: gigabyte.
+
+** El bit
+
+El *bit* (/binary digit/) es la unidad asociada a una elección entre dos posibilidades:
+
+\[
+0 \quad \text{o} \quad 1
+\]
+
+Símbolos utilizados:
+
+- bit;
+- b, especialmente en unidades compuestas.
+
+Ejemplo:
+
+\[
+100\ \mathrm{Mbit/s}
+\]
+
+indica una velocidad de 100 megabits por segundo.
+
+** Octeto y byte
+
+Un octeto es un conjunto de ocho bits:
+
+\[
+1\ \mathrm{octeto}=8\ \mathrm{bit}
+\]
+
+Símbolos:
+
+- octeto: \(\mathrm{o}\);
+- byte: \(\mathrm{B}\).
+
+Por tanto:
+
+\[
+1\ \mathrm{B}=1\ \mathrm{o}=8\ \mathrm{bit}
+\]
+
+#+begin_export latex
+\begin{alertblock}{Importante}
+No se debe confundir \(\mathrm{b}\), bit, con \(\mathrm{B}\), byte.
+\end{alertblock}
+#+end_export
+
+* Prefijos decimales y binarios
+
+** Prefijos decimales
+
+Los prefijos decimales representan potencias de diez.
+
+| Prefijo | Símbolo | Factor      |
+|---------+---------+-------------|
+| kilo    | k       | \(10^3\)    |
+| Mega    | M       | \(10^6\)    |
+| Giga    | G       | \(10^9\)    |
+| Tera    | T       | \(10^{12}\) |
+| Peta    | P       | \(10^{15}\) |
+| Exa     | E       | \(10^{18}\) |
+| Zetta   | Z       | \(10^{21}\) |
+| Yotta   | Y       | \(10^{24}\) |
+
+Ejemplo:
+
+\[
+1\ \mathrm{GB}=1\,000\,000\,000\ \mathrm{B}
+\]
+
+** Prefijos binarios
+
+Los prefijos binarios representan potencias de dos.
+
+| Prefijo | Símbolo | Factor            |
+|---------+---------+-------------------|
+| kibi    | Ki      | \(2^{10}=1\,024\) |
+| Mebi    | Mi      | \(2^{20}\)        |
+| Gibi    | Gi      | \(2^{30}\)        |
+| Tebi    | Ti      | \(2^{40}\)        |
+| Pebi    | Pi      | \(2^{50}\)        |
+| Exbi    | Ei      | \(2^{60}\)        |
+| Zebi    | Zi      | \(2^{70}\)        |
+| Yobi    | Yi      | \(2^{80}\)        |
+
+Ejemplos:
+
+\[
+1\ \mathrm{KiB}=1\,024\ \mathrm{B}
+\]
+
+\[
+1\ \mathrm{MiB}=1\,024\ \mathrm{KiB}
+\]
+
+** Decimal frente a binario
+
+| Expresión           | Equivalencia                     |
+|---------------------+----------------------------------|
+| \(1\ \mathrm{kB}\)  | \(1\,000\ \mathrm{B}\)           |
+| \(1\ \mathrm{KiB}\) | \(1\,024\ \mathrm{B}\)           |
+| \(1\ \mathrm{MB}\)  | \(1\,000\,000\ \mathrm{B}\)      |
+| \(1\ \mathrm{MiB}\) | \(1\,048\,576\ \mathrm{B}\)      |
+| \(1\ \mathrm{GB}\)  | \(1\,000\,000\,000\ \mathrm{B}\) |
+| \(1\ \mathrm{GiB}\) | \(1\,073\,741\,824\ \mathrm{B}\) |
+
+#+begin_export latex
+\begin{block}{Regla práctica}
+Usar kB, MB y GB para múltiplos decimales; usar KiB, MiB y GiB para múltiplos binarios.
+\end{block}
+#+end_export
+
+* Transmisión de información
+
+** Tasa de transferencia
+
+La tasa de transferencia indica la cantidad de información transmitida por unidad de tiempo.
+
+Para bits:
+
+\[
+\text{tasa de bits}
+=
+\frac{\text{bits transmitidos}}{\text{tiempo}}
+\]
+
+Unidad:
+
+\[
+\mathrm{bit/s}
+\]
+
+También se utilizan:
+
+- kbit/s;
+- Mbit/s;
+- Gbit/s;
+- Tbit/s.
+
+** Bits por segundo y bytes por segundo
+
+Como:
+
+\[
+1\ \mathrm{B}=8\ \mathrm{bit}
+\]
+
+entonces:
+
+\[
+80\ \mathrm{Mbit/s}
+=
+\frac{80}{8}\ \mathrm{MB/s}
+=
+10\ \mathrm{MB/s}
+\]
+
+Las unidades indican magnitudes diferentes:
+
+- Mbit/s: megabits por segundo;
+- MB/s: megabytes por segundo.
+
+** El baudio
+
+El baudio, símbolo \(\mathrm{Bd}\), mide la tasa de símbolos transmitidos:
+
+\[
+1\ \mathrm{Bd}
+=
+1\ \text{símbolo por segundo}
+\]
+
+No debe confundirse con bit/s.
+
+Un símbolo puede transportar uno o varios bits. Por ejemplo, si cada símbolo representa dos bits:
+
+\[
+1\ \mathrm{Bd}=2\ \mathrm{bit/s}
+\]
+
+* Contenido de información
+
+** Shannon
+
+El shannon, símbolo \(\mathrm{Sh}\), utiliza logaritmos en base 2:
+
+\[
+I(x)=-\log_2 p(x)
+\]
+
+Si un acontecimiento tiene probabilidad \(p(x)=1/2\):
+
+\[
+I(x)
+=
+-\log_2(1/2)
+=
+1\ \mathrm{Sh}
+\]
+
+El shannon está relacionado numéricamente con el bit en determinadas situaciones de información binaria.
+
+** Nat y hartley
+
+El nat utiliza el logaritmo natural:
+
+\[
+I(x)=-\ln p(x)
+\]
+
+El hartley utiliza logaritmos en base 10:
+
+\[
+I(x)=-\log_{10}p(x)
+\]
+
+| Unidad  | Base del logaritmo |
+|---------+--------------------|
+| Shannon |                  2 |
+| Nat     |              \(e\) |
+| Hartley |                 10 |
+
+Relación aproximada:
+
+\[
+1\ \mathrm{nat}\approx1{,}443\ \mathrm{Sh}
+\]
+
+* Intensidad de tráfico
+
+** El erlang
+
+El erlang, símbolo \(\mathrm{E}\), mide la intensidad de tráfico en telecomunicaciones.
+
+\[
+1\ \mathrm{E}
+=
+\text{un recurso ocupado continuamente durante el intervalo considerado}
+\]
+
+Ejemplos:
+
+- 1 E: un canal ocupado durante todo el intervalo;
+- 0,5 E: un canal ocupado, en promedio, la mitad del tiempo;
+- 10 E: ocupación equivalente a diez canales utilizados continuamente.
+
+El erlang no mide almacenamiento ni velocidad de transmisión.
+
+* Conclusiones
+
+** Principales unidades
+
+| Magnitud                 | Unidad             | Símbolo | Uso                  |
+|--------------------------+--------------------+---------+----------------------|
+| Dígito binario           | bit                | bit o b | Estados 0 y 1        |
+| Grupo de ocho bits       | octeto             | o       | Datos informáticos   |
+| Grupo de ocho bits       | byte               | B       | Almacenamiento       |
+| Tasa de bits             | bit por segundo    | bit/s   | Redes                |
+| Tasa de octetos          | octeto por segundo | o/s     | Transferencia        |
+| Tasa de símbolos         | baudio             | Bd      | Modulación           |
+| Contenido de información | shannon            | Sh      | Logaritmo en base 2  |
+| Contenido de información | nat                | nat     | Logaritmo natural    |
+| Contenido de información | hartley            | Hart    | Logaritmo en base 10 |
+| Intensidad de tráfico    | erlang             | E       | Telecomunicaciones   |
+
+** Errores frecuentes
+
+- Confundir bit y byte:
+  \[
+  1\ \mathrm{B}=8\ \mathrm{bit}
+  \]
+
+- Confundir MB y MiB:
+  \[
+  1\ \mathrm{MB}=10^6\ \mathrm{B}
+  \]
+  \[
+  1\ \mathrm{MiB}=2^{20}\ \mathrm{B}
+  \]
+
+- Confundir capacidad y velocidad:
+  - 500 GB: capacidad.
+  - 500 GB/s: velocidad.
+
+- Confundir bits por segundo y baudios.
+
+- Escribir KB para referirse indistintamente a 1.000 o 1.024 bytes.
+
+** Ideas fundamentales (I)
+
+\[
+\boxed{1\ \mathrm{B}=8\ \mathrm{bit}}
+\]
+
+\[
+\boxed{1\ \mathrm{kB}=1\,000\ \mathrm{B}}
+\]
+
+\[
+\boxed{1\ \mathrm{KiB}=1\,024\ \mathrm{B}}
+\]
+
+La notación correcta permite distinguir entre:
+
+- información;
+- almacenamiento;
+- transmisión;
+- modulación;
+- contenido informativo;
+- tráfico de telecomunicaciones.
+
+** Ideas fundamentales (II)
+
+La información puede entenderse como una reducción de la incertidumbre.
+
+Su medida depende de la probabilidad:
+
+\[
+\boxed{I(x)=-\log_2 p(x)}
+\]
+
+En informática:
+
+\[
+\boxed{1\ \text{B}=8\ \text{bit}}
+\]
+
+Para el almacenamiento:
+
+\[
+\boxed{1\ \text{kB}=1\,000\ \text{B}}
+\]
+
+\[
+\boxed{1\ \text{KiB}=1\,024\ \text{B}}
+\]
+
+** Resumen final
+
+- Los acontecimientos improbables aportan más información.
+- El bit es la unidad básica de información binaria.
+- La entropía mide la información media de una fuente.
+- El byte equivale a ocho bits.
+- Los prefijos decimales y binarios deben diferenciarse.
+- La información puede medirse mediante logaritmos y probabilidades.
+
