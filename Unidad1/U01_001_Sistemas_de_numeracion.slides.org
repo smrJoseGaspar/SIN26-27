@@ -232,7 +232,7 @@ El sistema hexadecimal:
 ** Hexadecimal a decimal
 
 #+begin_example
-(2F3)₁₆
+(2F3)_{HEX}
 
 = 2 × 16² + 15 × 16¹ + 3 × 16⁰
 = 512 + 240 + 3
