@@ -273,7 +273,7 @@ También es posible convertir directamente cuando las bases están relacionadas:
 
 Usamos el **Teorema Fundamental de la Numeración**. Se multiplica cada dígito por la potencia correspondiente:
 \[
-132_4 =1 \cdot 4²+ 3 \cdot 4^1 + 2 \cdot 4^0 =
+132_4 =1 \cdot 4^2 + 3 \cdot 4^1 + 2 \cdot 4^0 =
 1 \cdot 16+3 \cdot 4+2 \cdot 1=
 16 + 12 + 2=30_{10}
 \]
@@ -387,9 +387,9 @@ Dividir entre 2 equivale a desplazar un bit a la derecha:
 
 Los métodos más utilizados son:
 
-- Signo y magnitud.
-- Complemento a uno.
-- Complemento a dos.
+- Signo y magnitud. (SM)
+- Complemento a uno. (C_1)
+- Complemento a dos. (C_2)
 
 ** Signo y magnitud
 
