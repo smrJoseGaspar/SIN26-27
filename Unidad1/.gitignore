@@ -1,3 +1,6 @@
 # No icluir pdf y fichero LaTeX
 *.pdf
 *.tex
+
+# No seguir ficheros de copia seguridad Org-mode
+*.org~

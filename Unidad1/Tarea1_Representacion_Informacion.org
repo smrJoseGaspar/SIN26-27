@@ -1,0 +1,300 @@
+#+title: Unidad 1. Introducción a los sistemas de numeración
+#+subtitle: Sistemas informáticos (1ºDAM).
+#+author: José Gaspar Sánchez Garía
+
+* Unidad 1. Introducción a los sistemas informáticos.
+:PROPERTIES:
+:CUSTOM_ID: unidad-1.-introducción-a-los-sistemas-informáticos.
+:END:
+** Descripción de la actividad
+:PROPERTIES:
+:CUSTOM_ID: actividad-configurando-un-sistema-informático
+:END:
+
+*** Temporalización
+:PROPERTIES:
+:CUSTOM_ID: temporalización
+:END:
+- *Duración:* 2 sesiones de 55 minutos.
+- *Agrupamiento:* parejas.
+- *Materiales:* calculadora, ordenador o dispositivo móvil, hoja de
+  actividades y tabla de equivalencias.
+
+*** Objetivos
+:PROPERTIES:
+:CUSTOM_ID: objetivos
+:END:
+Al finalizar la actividad deberás ser capaz de:
+
+- Convertir números entre los sistemas decimal, binario y hexadecimal.
+- Interpretar números binarios y hexadecimales en contextos
+  informáticos.
+- Diferenciar bit, byte y sus múltiplos.
+- Realizar conversiones entre unidades de información.
+- Resolver problemas relacionados con almacenamiento, memoria y
+  velocidad de transmisión.
+- Justificar los procedimientos utilizados.
+
+** Desarrollo de la actividad
+:PROPERTIES:
+:CUSTOM_ID: desarrollo-de-la-actividad
+:END:
+*** Sistemas de numeración
+:PROPERTIES:
+:CUSTOM_ID: sistemas-de-numeración
+:END:
+Resuelva las siguientes cuestiones:
+
+1. Convierte los números decimales a binario y hexadecimal:
+
+   - 25
+   - 64
+   - 127
+   - 200
+   - 1024
+
+2. Convierte los siguientes números binarios a decimal:
+
+   - 1010_{2}
+   - 11001_{2}
+   - 11111111_{2}
+   - 1000000000_{2}
+
+3. Convierte los siguientes números hexadecimales a decimal:
+
+   - BAD0_{16}
+   - 1F_{16}
+   - 80__{16}
+   - FF_{16}
+   - 400_{16}
+
+4. Explica por qué el sistema hexadecimal resulta útil para representar información binaria de forma más compacta.
+
+5. Un color se representa en formato RGB mediante tres valores de 8 bits. Expresa en hexadecimal el color formado por:
+
+   - Rojo: 255
+   - Verde: 128
+   - Azul: 64
+
+   El resultado debe escribirse con el formato habitual =#RRGGBB=.
+
+*** Conversiones encadenadas
+:PROPERTIES:
+:CUSTOM_ID: conversiones-encadenadas
+:END:
+Convierte las siguientes cantidades al resto de sistemas indicados:
+
+| Número inicial | Conversiones que debes realizar |
+|----------------+---------------------------------|
+| 173_{10}       | Binario, octal y hexadecimal    |
+| 110101101_{2}  | Decimal, octal y hexadecimal    |
+| 4725_{8}       | Decimal, binario y hexadecimal  |
+| 3F2A__{16}     | Decimal, binario y octal        |
+| 4095_{10}      | Binario, octal y hexadecimal    |
+
+Debes mostrar el procedimiento utilizado, no solamente el resultado.
+
+--------------
+
+*** Detección y corrección de errores
+:PROPERTIES:
+:CUSTOM_ID: detección-y-corrección-de-errores
+:END:
+Un estudiante ha realizado las siguientes conversiones. Indica cuáles son incorrectas, corrígelas y explica el error cometido.
+
+1. 10110110_{2} = 176_{10}
+2. 2F_{16} = 45_{10}
+3. 347_{8} = 231_{10}
+4. 11110000_{2} = E0_{16}
+5. 100000000_{16} = 256_{10}
+6. 7B_{16} = 123_{10}
+
+--------------
+
+*** Representación con un número fijo de bits
+:PROPERTIES:
+:CUSTOM_ID: representación-con-un-número-fijo-de-bits
+:END:
+Representa los siguientes números utilizando exactamente *8 bits*,
+completando con ceros a la izquierda cuando sea necesario:
+
+- 13
+- 58
+- 127
+- 128
+- 200
+- 255
+
+Después:
+
+1. Indica cuál es el mayor número natural que puede representarse con 8
+   bits.
+2. Explica por qué el número 256 no puede representarse con 8 bits sin
+   aumentar el número de posiciones.
+3. ¿Cuántos valores distintos pueden representarse con 12 bits?
+
+--------------
+
+*** Operaciones binarias y hexadecimales
+:PROPERTIES:
+:CUSTOM_ID: operaciones-binarias-y-hexadecimales
+:END:
+Realiza las siguientes operaciones. Comprueba el resultado
+convirtiéndolo a decimal:
+
+1. 101101_{2} + 11011_{2}
+2. 11001010_{2} - 101101_{2}
+3. 3A_{16} + 2F_{16}
+4. B4_{16} - 3D__{16}
+5. 1011_{2} * 110_{2}
+
+--------------
+
+*** Direcciones y posiciones de memoria
+:PROPERTIES:
+:CUSTOM_ID: direcciones-y-posiciones-de-memoria
+:END:
+Un microcontrolador utiliza direcciones de memoria de *16 bits*.
+
+1. ¿Cuántas direcciones diferentes puede representar?
+
+2. ¿Cuál es la primera dirección y cuál es la última expresadas en hexadecimal?
+
+3. Convierte a decimal las direcciones:
+
+   - =0x00FF=
+   - =0x1000=
+   - =0x7FFF=
+   - =0xA000=
+   - =0xFFFF=
+
+4. Si cada dirección identifica un byte, ¿cuál es la capacidad máxima de  memoria direccionable?
+
+5. Expresa dicha capacidad en bytes, KiB y MiB.
+
+--------------
+
+*** Máscaras de bits
+:PROPERTIES:
+:CUSTOM_ID: máscaras-de-bits
+:END:
+En una aplicación, un byte almacena el estado de ocho dispositivos. Cada bit puede tener el valor:
+
+- =1=: dispositivo activado.
+- =0=: dispositivo desactivado.
+
+El estado actual es:
+
+#+begin_src text
+10110110
+#+end_src
+
+1. ¿Qué dispositivos están activados si el bit menos significativo
+   corresponde al dispositivo 0?
+2. Expresa el estado en hexadecimal.
+3. Se desea activar el dispositivo 0 sin modificar el estado de los
+   demás. ¿Qué operación lógica debe realizarse?
+4. Se desea desactivar el dispositivo 4. ¿Qué máscara utilizarías?
+5. Calcula el resultado final de cada operación.
+
+Puedes utilizar las operaciones lógicas AND, OR, XOR y NOT.
+
+--------------
+
+*** Interpretación de un color RGB
+:PROPERTIES:
+:CUSTOM_ID: interpretación-de-un-color-rgb
+:END:
+Una aplicación almacena los colores utilizando tres componentes de 8 bits: rojo, verde y azul.
+
+Para cada uno de los siguientes colores:
+
+#+begin_src text
+#3A7FD2
+#FF8800
+#12C040
+#8040FF
+#+end_src
+
+1. Separa el código en sus componentes rojo, verde y azul.
+2. Convierte cada componente hexadecimal a decimal.
+3. Representa cada componente en binario utilizando 8 bits.
+4. Indica cuál de los colores tiene mayor intensidad de azul.
+5. Calcula el valor decimal total de los 24 bits correspondientes al color =#3A7FD2=, considerando el código hexadecimal completo como un único número.
+
+--------------
+
+*** Análisis de una cabecera hexadecimal
+:PROPERTIES:
+:CUSTOM_ID: análisis-de-una-cabecera-hexadecimal
+:END:
+Los primeros bytes de un archivo aparecen representados de la siguiente manera:
+
+#+begin_src text
+89 50 4E 47 0D 0A 1A 0A
+#+end_src
+
+1. Convierte cada byte hexadecimal a decimal.
+2. Convierte cada byte a binario utilizando 8 bits.
+3. Calcula cuántos bits ocupa toda la secuencia.
+4. Interpreta la secuencia hexadecimal como un único número y
+   conviértela a decimal.
+5. Investiga qué tipo de archivo utiliza habitualmente esta firma hexadecimal y explica para qué sirve una firma de archivo.
+
+--------------
+
+*** Reto integrador
+:PROPERTIES:
+:CUSTOM_ID: reto-integrador
+:END:
+Un sistema registra la siguiente información en un campo de 16 bits:
+
+#+begin_src text
+1010110011010110
+#+end_src
+
+Resuelve las siguientes cuestiones:
+
+1. Divide el número en dos grupos de 8 bits.
+2. Convierte el valor completo a hexadecimal.
+3. Convierte el valor completo a decimal.
+4. Calcula qué porcentaje de los bits son iguales a =1=.
+5. Indica qué dispositivos estarían activos si cada bit representara un
+   indicador independiente.
+6. Si los 4 bits más significativos representan un código de prioridad, ¿qué prioridad tiene el sistema?
+7. Si los 4 bits menos significativos representan el número de errores
+   detectados, ¿cuántos errores se han registrado?
+8. Propón una interpretación razonable para los 8 bits centrales.
+
+** Producto final
+:PROPERTIES:
+:CUSTOM_ID: producto-final
+:END:
+Cada pareja entregará:
+
+1. La hoja de ejercicios resuelta.
+2. Un informe técnico de una o dos páginas.
+3. Una explicación oral de tres minutos sobre uno de los problemas planteados.
+
+
+** Instrumentos de evaluación
+:PROPERTIES:
+:CUSTOM_ID: instrumentos-de-evaluación
+:END:
+- Hoja de ejercicios.
+- Rúbrica del informe técnico.
+- Lista de control para la exposición.
+- Observación del trabajo en parejas.
+- Autoevaluación individual.
+
+*** Autoevaluación final
+:PROPERTIES:
+:CUSTOM_ID: autoevaluación-final
+:END:
+Cada estudiante responderá individualmente:
+
+1. ¿Qué conversión me ha resultado más sencilla?
+2. ¿Qué diferencia hay entre un bit y un byte?
+3. ¿En qué situaciones se utiliza el sistema hexadecimal?
+4. ¿Qué error he cometido y cómo lo he corregido?
+5. ¿Qué aspecto necesito seguir practicando?
