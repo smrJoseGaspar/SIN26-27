@@ -1,3 +1,9 @@
+---
+title: Tarea. Sistemas informáticos.
+author: José Gaspar Sánchez García
+lang: es
+---
+
 # Unidad 1. Introducción a los sistemas informáticos.
 
 ## Actividad: Configurando un sistema informático
