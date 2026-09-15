@@ -1,5 +1,5 @@
 ---
-title: Tarea. Sistemas informáticos.
+title: TAREA. REPRESENTACIÓN DE LA INFORMACIÓN
 author: José Gaspar Sánchez García
 lang: es
 ---
@@ -20,20 +20,20 @@ Una empresa de desarrollo de aplicaciones necesita preparar los equipos y servid
 
 ### Objetivos
 
-Al finalizar la actividad, el alumnado será capaz de:
+Al finalizar la actividad deberás ser capaz de:
 
 - Convertir números entre los sistemas decimal, binario y hexadecimal.
 - Interpretar números binarios y hexadecimales en contextos informáticos.
-- Diferenciar bit, byte y sus múltiplos.
+- Diferenciar <i>bit, byte</i> y sus múltiplos.
 - Realizar conversiones entre unidades de información.
 - Resolver problemas relacionados con almacenamiento, memoria y velocidad de transmisión.
 - Justificar los procedimientos utilizados.
 
 ## Desarrollo de la actividad
 
-### Parte 1. Sistemas de numeración
+### Sistemas de numeración
 
-El alumnado debe resolver las siguientes cuestiones:
+Resuelva las siguientes cuestiones:
 
 1. Convierte los números decimales a binario y hexadecimal:
 
@@ -54,9 +54,9 @@ El alumnado debe resolver las siguientes cuestiones:
 
    - A~16~
    - 1F~16~
-   - \(80_{16}\)
-   - \(FF_{16}\)
-   - \(400_{16}\)
+   - 80_~16~
+   - FF~{16~
+   - (400~16~
 
 4. Explica por qué el sistema hexadecimal resulta útil para representar información binaria de forma más compacta.
 
@@ -68,36 +68,36 @@ El alumnado debe resolver las siguientes cuestiones:
 
    El resultado debe escribirse con el formato habitual `#RRGGBB`.
 
-### Ejercicio 1. Conversiones encadenadas
+### Conversiones encadenadas
 
 Convierte las siguientes cantidades al resto de sistemas indicados:
 
 | Número inicial | Conversiones que debes realizar |
 |---|---|
-| \(173_{10}\) | Binario, octal y hexadecimal |
-| \(110101101_2\) | Decimal, octal y hexadecimal |
-| \(725_8\) | Decimal, binario y hexadecimal |
-| \(3F2A_{16}\) | Decimal, binario y octal |
-| \(4095_{10}\) | Binario, octal y hexadecimal |
+| 173~10~ | Binario, octal y hexadecimal |
+| 110101101~2~ | Decimal, octal y hexadecimal |
+| 4725~8~ | Decimal, binario y hexadecimal |
+| 3F2A_~16~ | Decimal, binario y octal |
+| 4095~10~ | Binario, octal y hexadecimal |
 
 Debes mostrar el procedimiento utilizado, no solamente el resultado.
 
 ---
 
-### Ejercicio 2. Detección y corrección de errores
+### Detección y corrección de errores
 
 Un estudiante ha realizado las siguientes conversiones. Indica cuáles son incorrectas, corrígelas y explica el error cometido.
 
-1. \(10110110_2 = 176_{10}\)
-2. \(2F_{16} = 45_{10}\)
-3. \(347_8 = 231_{10}\)
-4. \(11110000_2 = E0_{16}\)
-5. \(100000000_2 = 256_{10}\)
-6. \(7B_{16} = 123_{10}\)
+1. 10110110~2~ = 176~10~
+2. ~2F~16~ = 45~10~
+3. 347~8~ = 231~10~
+4. 11110000~2~ = E0~16~
+5. ~100000000~2~ = 256~10~
+6. 7B~16~ = 123~10~
 
 ---
 
-### Ejercicio 3. Representación con un número fijo de bits
+### Representación con un número fijo de bits
 
 Representa los siguientes números utilizando exactamente **8 bits**, completando con ceros a la izquierda cuando sea necesario:
 
@@ -116,38 +116,19 @@ Después:
 
 ---
 
-### Ejercicio 4. Operaciones binarias y hexadecimales
+### Operaciones binarias y hexadecimales
 
 Realiza las siguientes operaciones. Comprueba el resultado convirtiéndolo a decimal:
 
-1.  
-   \[
-   101101_2 + 11011_2
-   \]
-
-2.  
-   \[
-   11001010_2 - 101101_2
-   \]
-
-3.  
-   \[
-   3A_{16} + 2F_{16}
-   \]
-
-4.  
-   \[
-   B4_{16} - 3D_{16}
-   \]
-
-5.  
-   \[
-   1011_2 \times 110_2
-   \]
+1. 101101~2~ + 11011~2~
+2. 11001010~2~ - 101101~2~
+3. 3A~16~ + 2F~16~
+4. B4~16~ - 3D_~16~
+5. 1011~2~ \* 110~2~
 
 ---
 
-### Ejercicio 5. Direcciones y posiciones de memoria
+### Direcciones y posiciones de memoria
 
 Un microcontrolador utiliza direcciones de memoria de **16 bits**.
 
@@ -210,7 +191,7 @@ Para cada uno de los siguientes colores:
 
 ---
 
-### Ejercicio 8. Análisis de una cabecera hexadecimal
+### Análisis de una cabecera hexadecimal
 
 Los primeros bytes de un archivo aparecen representados de la siguiente manera:
 
@@ -228,7 +209,7 @@ Este ejercicio permite relacionar los sistemas de numeración con la identificac
 
 ---
 
-### Ejercicio 9. Problema de codificación
+### Problema de codificación
 
 Una aplicación utiliza códigos de caracteres de 8 bits.
 
@@ -253,7 +234,7 @@ Una aplicación utiliza códigos de caracteres de 8 bits.
 
 ---
 
-### Ejercicio 10. Reto integrador
+### Reto integrador
 
 Un sistema registra la siguiente información en un campo de 16 bits:
 
@@ -293,7 +274,7 @@ Se puede exigir que, además del resultado, el alumnado indique siempre:
 
 
 
-### Parte 2. Unidades de medida de la información
+### Unidades de medida de la información
 
 Para esta actividad se utilizarán las siguientes equivalencias:
 
@@ -327,7 +308,7 @@ El alumnado debe resolver:
 
 6. Una conexión transmite datos a 100 Mb/s. ¿Cuánto tiempo tardará, aproximadamente, en transmitir un archivo de 500 MB? Para simplificar, se despreciarán las pérdidas y la sobrecarga de la red.
 
-### Parte 3. Reto final: informe técnico
+###  Reto final: informe técnico
 
 Cada pareja debe elaborar un breve informe para la empresa que contenga:
 
