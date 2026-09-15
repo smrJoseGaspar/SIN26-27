@@ -45,15 +45,15 @@ El alumnado debe resolver las siguientes cuestiones:
 
 2. Convierte los siguientes números binarios a decimal:
 
-   - \(1010_2\)
-   - \(11001_2\)
-   - \(11111111_2\)
-   - \(1000000000_2\)
+   - 1010~2~
+   - 11001~2~
+   - 11111111~2~
+   - 1000000000~2~
 
 3. Convierte los siguientes números hexadecimales a decimal:
 
-   - \(A_{16}\)
-   - \(1F_{16}\)
+   - A~16~
+   - 1F~16~
    - \(80_{16}\)
    - \(FF_{16}\)
    - \(400_{16}\)
