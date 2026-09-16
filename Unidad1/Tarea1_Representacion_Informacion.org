@@ -1,8 +1,27 @@
-#+title: Unidad 1. Introducción a los sistemas de numeración
+#+title: Tarea 1. Sistemas de numeración y las unidades de medida de la información
 #+subtitle: Sistemas informáticos (1ºDAM).
 #+author: José Gaspar Sánchez Garía
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil expand-links:t f:t
+#+options: inline:t num:t p:nil pri:nil prop:nil stat:t tags:t
+#+options: tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+email: jg.sanchezgarcia@edu.gva.es
+#+language: es
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
 
-* Unidad 1. Introducción a los sistemas informáticos.
+#+odt_styles_file: "./estilos.odt"
+#+description: Tarea para practicar con los sistemas de numeración y las unidades de medida de la información
+#+keywords: decimal, binario, octal, hexdeciemal, bit, byte
+
+#+latex_header:
+
+
+
+* Sistemas de numeración.
 :PROPERTIES:
 :CUSTOM_ID: unidad-1.-introducción-a-los-sistemas-informáticos.
 :END:
@@ -11,14 +30,13 @@
 :CUSTOM_ID: actividad-configurando-un-sistema-informático
 :END:
 
-*** Temporalización
+*** Temporalización                                                :noexport:
 :PROPERTIES:
 :CUSTOM_ID: temporalización
 :END:
 - *Duración:* 2 sesiones de 55 minutos.
 - *Agrupamiento:* parejas.
-- *Materiales:* calculadora, ordenador o dispositivo móvil, hoja de
-  actividades y tabla de equivalencias.
+- *Materiales:* calculadora, ordenador, hoja de actividades y tabla de equivalencias.
 
 *** Objetivos
 :PROPERTIES:
@@ -27,22 +45,17 @@
 Al finalizar la actividad deberás ser capaz de:
 
 - Convertir números entre los sistemas decimal, binario y hexadecimal.
-- Interpretar números binarios y hexadecimales en contextos
-  informáticos.
+- Interpretar números binarios y hexadecimales en contextos informáticos.
 - Diferenciar bit, byte y sus múltiplos.
 - Realizar conversiones entre unidades de información.
-- Resolver problemas relacionados con almacenamiento, memoria y
-  velocidad de transmisión.
+- Resolver problemas relacionados con almacenamiento, memoria y   velocidad de transmisión.
 - Justificar los procedimientos utilizados.
 
 ** Desarrollo de la actividad
 :PROPERTIES:
 :CUSTOM_ID: desarrollo-de-la-actividad
 :END:
-*** Sistemas de numeración
-:PROPERTIES:
-:CUSTOM_ID: sistemas-de-numeración
-:END:
+
 Resuelva las siguientes cuestiones:
 
 1. Convierte los números decimales a binario y hexadecimal:
@@ -64,7 +77,7 @@ Resuelva las siguientes cuestiones:
 
    - BAD0_{16}
    - 1F_{16}
-   - 80__{16}
+   - 80_{16}
    - FF_{16}
    - 400_{16}
 
@@ -78,7 +91,7 @@ Resuelva las siguientes cuestiones:
 
    El resultado debe escribirse con el formato habitual =#RRGGBB=.
 
-*** Conversiones encadenadas
+** Conversiones encadenadas
 :PROPERTIES:
 :CUSTOM_ID: conversiones-encadenadas
 :END:
@@ -96,7 +109,7 @@ Debes mostrar el procedimiento utilizado, no solamente el resultado.
 
 --------------
 
-*** Detección y corrección de errores
+** Detección y corrección de errores
 :PROPERTIES:
 :CUSTOM_ID: detección-y-corrección-de-errores
 :END:
@@ -111,12 +124,11 @@ Un estudiante ha realizado las siguientes conversiones. Indica cuáles son incor
 
 --------------
 
-*** Representación con un número fijo de bits
+** Representación con un número fijo de bits
 :PROPERTIES:
 :CUSTOM_ID: representación-con-un-número-fijo-de-bits
 :END:
-Representa los siguientes números utilizando exactamente *8 bits*,
-completando con ceros a la izquierda cuando sea necesario:
+Representa los siguientes números utilizando exactamente *8 bits*, completando con ceros a la izquierda cuando sea necesario:
 
 - 13
 - 58
@@ -135,7 +147,7 @@ Después:
 
 --------------
 
-*** Operaciones binarias y hexadecimales
+** Operaciones binarias y hexadecimales
 :PROPERTIES:
 :CUSTOM_ID: operaciones-binarias-y-hexadecimales
 :END:
@@ -145,12 +157,12 @@ convirtiéndolo a decimal:
 1. 101101_{2} + 11011_{2}
 2. 11001010_{2} - 101101_{2}
 3. 3A_{16} + 2F_{16}
-4. B4_{16} - 3D__{16}
+4. B4_{16} - 3D_{16}
 5. 1011_{2} * 110_{2}
 
 --------------
 
-*** Direcciones y posiciones de memoria
+** Direcciones y posiciones de memoria
 :PROPERTIES:
 :CUSTOM_ID: direcciones-y-posiciones-de-memoria
 :END:
@@ -174,7 +186,7 @@ Un microcontrolador utiliza direcciones de memoria de *16 bits*.
 
 --------------
 
-*** Máscaras de bits
+** Máscaras de bits
 :PROPERTIES:
 :CUSTOM_ID: máscaras-de-bits
 :END:
@@ -189,8 +201,7 @@ El estado actual es:
 10110110
 #+end_src
 
-1. ¿Qué dispositivos están activados si el bit menos significativo
-   corresponde al dispositivo 0?
+1. ¿Qué dispositivos están activados si el bit menos significativo corresponde al dispositivo 0?
 2. Expresa el estado en hexadecimal.
 3. Se desea activar el dispositivo 0 sin modificar el estado de los
    demás. ¿Qué operación lógica debe realizarse?
@@ -201,7 +212,7 @@ Puedes utilizar las operaciones lógicas AND, OR, XOR y NOT.
 
 --------------
 
-*** Interpretación de un color RGB
+** Interpretación de un color RGB
 :PROPERTIES:
 :CUSTOM_ID: interpretación-de-un-color-rgb
 :END:
@@ -224,7 +235,7 @@ Para cada uno de los siguientes colores:
 
 --------------
 
-*** Análisis de una cabecera hexadecimal
+** Análisis de una cabecera hexadecimal
 :PROPERTIES:
 :CUSTOM_ID: análisis-de-una-cabecera-hexadecimal
 :END:
@@ -243,7 +254,7 @@ Los primeros bytes de un archivo aparecen representados de la siguiente manera:
 
 --------------
 
-*** Reto integrador
+** Reto integrador
 :PROPERTIES:
 :CUSTOM_ID: reto-integrador
 :END:
@@ -266,15 +277,323 @@ Resuelve las siguientes cuestiones:
    detectados, ¿cuántos errores se han registrado?
 8. Propón una interpretación razonable para los 8 bits centrales.
 
-** Producto final
+
+* Unidades de medida de la información
+
+La norma ISO/IEC 80000-13 establece nombres, símbolos y definiciones para las magnitudes utilizadas en tecnologías de la información.
+
+Debe distinguirse entre:
+
+- Múltiplos decimales: basados en potencias de 10.
+- Múltiplos binarios: basados en potencias de 2.
+- Bits y bytes: =b= representa bit y =B= representa byte.
+
+La equivalencia fundamental es:
+
+#+begin_example
+1 B = 8 bit
+#+end_example
+
+** Tabla de referencia
+
+| Unidad | Equivalencia        |
+|--------+---------------------|
+| 1 bit  | Unidad básica       |
+| 1 B    | 8 bit               |
+| 1 kB   | 1 000 B             |
+| 1 KiB  | 1 024 B             |
+| 1 MB   | 1 000 000 B         |
+| 1 MiB  | 1 048 576 B         |
+| 1 GB   | 1 000 000 000 B     |
+| 1 GiB  | 1 073 741 824 B     |
+| 1 TB   | 1 000 000 000 000 B |
+| 1 TiB  | 1 099 511 627 776 B |
+
+** Identificación de unidades
+
+**Objetivo:** distinguir bits, bytes, múltiplos decimales y múltiplos binarios.
+
+Clasifica las siguientes unidades:
+
+1. =b=
+2. =B=
+3. =kbit=
+4. =kB=
+5. =Kibit=
+6. =KiB=
+7. =GB=
+8. =GiB=
+9. =Mbit/s=
+10. =MiB/s=
+
+Para cada unidad:
+
+- Indica qué representa el símbolo.
+- Escribe su nombre completo.
+- Indica si utiliza potencias de 10 o de 2.
+- Señala si representa una cantidad de información o una velocidad.
+
+Corrige las siguientes expresiones:
+
+- =1 KB = 1024 bytes=
+- =100 Mb = 100 megabytes=
+- =500 MB/s = 500 megabits por segundo=
+- =2 GiB = 2 000 000 000 bytes=
+
+** Conversiones de unidades decimales
+
+**Objetivo:** realizar conversiones utilizando potencias de 10.
+
+Convierte:
+
+1. =7,5 kB= a bytes.
+2. =4,2 MB= a bytes.
+3. =3,6 GB= a bytes.
+4. =850 000 B= a kB.
+5. =2 500 000 000 B= a GB.
+6. =48 000 kbit= a bit y a kbit.
+
+**Ejemplo:**
+
+#+begin_example
+4,2 MB = 4,2 × 10^6 B
+       = 4 200 000 B
+#+end_example
+
+**Ampliación:**
+
+Explica por qué un fabricante puede anunciar un disco como de =512 GB=, mientras que un sistema operativo puede mostrar una capacidad aproximada de =476,84 GiB=.
+
+** Conversiones de unidades binarias
+
+**Objetivo:** trabajar con los prefijos binarios.
+
+Convierte:
+
+1. =8 KiB= a bytes.
+2. =64 MiB= a bytes.
+3. =2 GiB= a bytes.
+4. =1,5 TiB= a bytes.
+5. =2 097 152 B= a MiB.
+6. =4 294 967 296 B= a GiB.
+
+
+** Comparación entre GB y GiB
+
+**Objetivo:** comprender la diferencia entre almacenamiento decimal y binario.
+
+Una unidad SSD tiene una capacidad anunciada de =1 TB=.
+
+1. ¿Cuántos bytes representa según el fabricante?
+2. ¿Cuántos GiB son aproximadamente?
+3. ¿Por qué el sistema operativo puede mostrar una cifra cercana a =931,32 GiB=?
+4. ¿Qué capacidad decimal corresponde aproximadamente a =1 TiB=?
+5. Redacta una explicación breve para un usuario que cree que el fabricante le ha quitado espacio.
+
+***** Solución                                                     :noexport:
+**Datos:**
+
+#+begin_example
+1 TB = 10^12 B
+1 TiB = 2^40 B
+#+end_example
+
+Para convertir de bytes a GiB:
+
+#+begin_example
+GiB = bytes / 2^30
+#+end_example
+
+**Resultado orientativo:**
+
+#+begin_example
+1 000 000 000 000 / 1 073 741 824 ≈ 931,32 GiB
+#+end_example
+
+** Tamaño de una aplicación multiplataforma
+
+**Objetivo:** calcular el espacio ocupado por una aplicación y sus recursos.
+
+Una aplicación contiene:
+
+| Recurso             | Tamaño  |
+|---------------------+---------|
+| Código compilado    | 18 MiB  |
+| Imágenes            | 425 MiB |
+| Vídeos              | 1,8 GiB |
+| Base de datos local | 750 MiB |
+| Archivos temporales | 320 MiB |
+
+Calcula:
+
+1. El tamaño total en MiB.
+2. El tamaño total en GiB.
+3. El espacio necesario reservando un 15 % adicional para actualizaciones.
+4. La capacidad mínima de una tarjeta, expresada en GB decimales, que permita almacenar la aplicación.
+
+***** Solución                                                     :noexport:
+**Solución orientativa:**
+
+#+begin_example
+1,8 GiB = 1,8 × 1024 = 1843,2 MiB
+
+Tamaño total:
+18 + 425 + 1843,2 + 750 + 320 = 3356,2 MiB
+
+Con un 15 % adicional:
+3356,2 × 1,15 = 3859,63 MiB
+#+end_example
+
+** Velocidad de descarga
+
+**Objetivo:** diferenciar velocidad en bit/s y tamaño de archivo en bytes.
+
+Una conexión ofrece una velocidad de =600 Mbit/s=. Se desea descargar un archivo de =8 GB=.
+
+Calcula:
+
+1. El tamaño del archivo en bits.
+2. El tiempo teórico de descarga en segundos.
+3. El tiempo aproximado en minutos.
+4. El tiempo real si el rendimiento efectivo es del 82 %.
+5. Explica la diferencia entre =600 Mbit/s= y =600 MB/s=.
+
+***** Solución                                                     :noexport:
+**Resolución orientativa:**
+
+#+begin_example
+8 GB = 8 × 10^9 B
+
+8 × 10^9 × 8 = 64 × 10^9 bit
+
+t = 64 000 000 000 / 600 000 000
+  ≈ 106,67 s
+
+t_real = 106,67 / 0,82
+       ≈ 130,08 s
+#+end_example
+
+
+** Almacenamiento de una base de datos
+
+**Objetivo:** aplicar las unidades de información a un caso de programación.
+
+Una aplicación registra 250 000 usuarios. Cada registro ocupa:
+
+| Campo              | Tamaño |
+|--------------------+--------|
+| Identificador      | 8 B    |
+| Nombre             | 64 B   |
+| Correo electrónico | 128 B  |
+| Fecha de registro  | 8 B    |
+| Preferencias       | 512 B  |
+
+Los índices y metadatos ocupan un 20 % adicional.
+
+Calcula:
+
+1. El tamaño de un registro.
+2. El tamaño total sin índices.
+3. El tamaño total con índices.
+4. El resultado en MB.
+5. El resultado en MiB.
+6. Qué unidad debe emplearse si el programa informa de la capacidad decimal.
+7. Qué unidad debe emplearse si el programa informa de la capacidad binaria.
+
+**Recordatorio:**
+
+#+begin_example
+1 MB  = 1 000 000 B
+1 MiB = 1 048 576 B
+#+end_example
+
+** Auditoría de una interfaz de usuario
+
+**Objetivo:** detectar errores de representación de unidades.
+
+Una aplicación muestra:
+
+#+begin_example
+Almacenamiento utilizado: 2.4 GB
+Velocidad de descarga: 80 MB/s
+Memoria libre: 512 MB
+#+end_example
+
+El equipo de desarrollo afirma que:
+
+- =GB= significa 2^30 bytes.
+- =MB/s= significa megabits por segundo.
+- =512 MB= representa 512 × 1024^2 bytes.
+
+Realiza las siguientes tareas:
+
+1. Identifica los errores de notación.
+2. Propón una versión corregida utilizando unidades decimales.
+3. Propón una versión corregida utilizando unidades binarias.
+4. Redacta una recomendación para el equipo de desarrollo.
+5. Diseña una función que convierta automáticamente un número de bytes a =B=, =kB=, =MB=, =GB=, =KiB=, =MiB= o =GiB=.
+
+** Análisis de una salida del sistema
+
+**Objetivo:** interpretar información proporcionada por un sistema operativo o una herramienta informática.
+
+Analiza la siguiente información:
+
+#+begin_example
+Memoria RAM: 16 GB
+Disco: 476.94 GiB
+Archivo ISO: 4.37 GB
+Velocidad de copia: 125 MiB/s
+#+end_example
+
+Elabora una tabla con:
+
+- Valor original.
+- Unidad.
+- Número de bytes.
+- Equivalencia en MB.
+- Equivalencia en MiB.
+- Indicación de si la unidad es decimal o binaria.
+- Posible interpretación del sistema o programa.
+
+**Producto final:**
+
+Redacta un informe de una página con el título:
+
+#+begin_quote
+¿Por qué las unidades de almacenamiento no siempre coinciden en distintos sistemas?
+#+end_quote
+
+---------------
+
+
+* Evaluación
+
+** Reglas de entrega
+
+*** Entrega: Producto final
 :PROPERTIES:
 :CUSTOM_ID: producto-final
 :END:
-Cada pareja entregará:
 
-1. La hoja de ejercicios resuelta.
-2. Un informe técnico de una o dos páginas.
-3. Una explicación oral de tres minutos sobre uno de los problemas planteados.
+Cada alumno entregará:
+
+1. La hoja de ejercicios resuelta de forma manuscrita.
+2. Una explicación oral de tres minutos sobre uno de los problemas planteados.
+
+
+*** Corección
+- Por cada día de retraso injustificado en la entrega, se restará 1 punto de la nota.
+- Las preguntas de los ejercicios deben aparecer claramente junto a las respuestas.
+- Es muy importante cuidar la presentación y la limpieza de las respuestas entregadas al profesor. La letra debe ser clara y legible.
+- Elabora un informe de las acciones realizadas para resolver las actividades propuestas.
+- En caso de que se detecte copia o plagio de los ejercicios de otros compañeros, se anulará la nota del ejercicio.
+
+*** Forma de entrega:
+- A través de la plataforma Moodle GVA AULES: https://aules.edu.gva.es/.
+- Documentos que hay que entregar:
+  + Elabora un documento escrito a mano que contenga la resolución de los ejercicios propuestos.
+  + Formato de documento PDF. Cambia el nombre del documento y añade tu apellido y nombre al final.
 
 
 ** Instrumentos de evaluación
@@ -282,12 +601,10 @@ Cada pareja entregará:
 :CUSTOM_ID: instrumentos-de-evaluación
 :END:
 - Hoja de ejercicios.
-- Rúbrica del informe técnico.
-- Lista de control para la exposición.
-- Observación del trabajo en parejas.
+- Observación del trabajo individual.
 - Autoevaluación individual.
 
-*** Autoevaluación final
+** Autoevaluación final
 :PROPERTIES:
 :CUSTOM_ID: autoevaluación-final
 :END:
