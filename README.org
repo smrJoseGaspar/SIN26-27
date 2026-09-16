@@ -1,0 +1,267 @@
+#+TITLE: Sistemas informáticos. Curso 26/27
+#+subtitle: Sistemas informáticos  (1º DAM).
+#+author: José Gaspar Sánchez García.
+#+email: jg.sanchezgarcia@edu.gva.es
+#+lang: es
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 31.1 (Org mode 9.8.7)
+#+cite_export:
+
+#+date: \today
+
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil expand-links:t f:t
+#+options: inline:t num:t p:nil pri:nil prop:nil stat:t tags:t
+#+options: tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+
+#+OPTIONS: toc:4
+#+options: latex-use-sans:nil
+#+latex_class: article
+#+latex_class_options:
+#+latex_header:
+#+latex_header_extra:
+#+latex_class_pre:
+#+description: Sistemas informáticos - 1º Desarrollo de Aplicaciones Multiplataforma
+#+keywords: Resultados de Aprendizaje, Criterios de Evaluación
+
+
+#+latex_footnote_command: \footnote{%s%s}
+#+latex_engraved_theme:
+#+latex_compiler: pdflatex
+#+options: tex:t
+#+odt_styles_file:
+
+#+latex_header:
+
+* Reglas de entrega
+** Corección
+- 👎 Por cada día de retraso injustificado en la entrega, se restará 1 punto de la nota.
+- Las preguntas de los ejercicios deben aparecer claramente junto a las respuestas.
+- Las respuestas a las preguntas deben estar claramente delimitadas (utiliza la fuente Verdana, tamaño 12, en azul y /cursiva/ – Estilo de respuesta): [Respuesta]. Las respuestas deben ir entre corchetes [ ].
+- Es muy importante cuidar la presentación y la limpieza de las respuestas entregadas al profesor. La letra debe ser clara y legible.
+- Elabora un informe de las acciones realizadas para resolver las actividades propuestas.
+- En caso de que se detecte copia o plagio de los ejercicios de otros compañeros, se anulará la nota del ejercicio.
+
+** Forma de entrega:
+- A través de la plataforma Moodle GVA AULES: https://aules.edu.gva.es/.
+- Documentos que hay que entregar:
+  + Elabora un documento escrito a mano que contenga la resolución de los ejercicios propuestos.
+  + Formato de documento PDF. Cambia el nombre del documento y añade tu apellido y nombre al final.
+
+* PRESENTACIÓN DEL MÓDULO Y PERFIL PROFESIONAL
+El módulo *Sistemas informáticos (SIN)* es un módulo de segundo curso del ciclo formativo de Grado Superior en *Desarrollo de Aplicaciones Multiplataforma (DAM)*, con una carga lectiva de *166 horas* (5 horas semanales).
+Su objetivo principal es dotar al alumno de las competencias necesarias para ...
+
+* RESULTADOS DE APRENDIZAJE (RA)
+Listado de los Resultados de Aprendizaje normativos (lo que el alumno sabrá hacer al terminar):
+** Resultados de Aprendizaje
+
+1. Evalúa sistemas informáticos, identificando sus componentes y características.
+2. Instala sistemas operativos planificando el proceso e interpretando documentación técnica.
+3. Gestiona la información del sistema identificando las estructuras de almacenamiento y aplicando medidas para asegurar la integridad de los datos.
+4. Gestiona sistemas operativos utilizando comandos y herramientas gráficas y evaluando las necesidades del sistema.
+5. Interconecta sistemas en red configurando dispositivos y protocolos.
+6. Opera sistemas en red gestionando sus recursos e identificando las restricciones de seguridad existentes.
+7. Elabora documentación valorando y utilizando aplicaciones informáticas de propósito general.
+
+
+** Resultados de Aprendizaje (tabla RA - %)
+
+#+caption: Resultados de Aprendizaje
+#+label: tbl:resultados-aprendizaje
+| *RESULTADOS DE APRENDIZAJE*                                                                                                                          |       *%* |
+|------------------------------------------------------------------------------------------------------------------------------------------------------+-----------|
+| 1. Evalúa sistemas informáticos, identificando sus componentes y características.                                                                    | 14.285714 |
+| 2. Instala sistemas operativos planificando el proceso e interpretando documentación técnica.                                                        | 14.285714 |
+| 3. Gestiona la información del sistema identificando las estructuras de almacenamiento y aplicando medidas para asegurar la integridad de los datos. | 14.285714 |
+| 4. Gestiona sistemas operativos utilizando comandos y herramientas gráficas y evaluando las necesidades del sistema.                                 | 14.285714 |
+| 5. Interconecta sistemas en red configurando dispositivos y protocolos.                                                                              | 14.285714 |
+| 6. Opera sistemas en red gestionando sus recursos e identificando las restricciones de seguridad existentes.                                         | 14.285714 |
+| 7. Elabora documentación valorando y utilizando aplicaciones informáticas de propósito general.                                                      | 14.285714 |
+|------------------------------------------------------------------------------------------------------------------------------------------------------+-----------|
+| *RESULTADOS DE APRENDIZAJE*                                                                                                                          |     *100* |
+#+TBLFM: $2=100/7::@9$2=round(vsum(@2..@8))
+
+
+   
+* RESULTADOS DE APRENDIZAJE (RA) Y CRITERIOS DE EVALUACIÓN (CE)
+
+** Resultados de Aprendizaje y Criterios de Evaluación
+
+1. Evalúa sistemas informáticos, identificando sus componentes y características.
+   - [ ] a) Se han reconocido los componentes físicos de un sistema informático y sus mecanismos de interconexión.
+   - [ ] b) Se han clasificado los tipos de memorias, señalando sus características e identifcando sus prestaciones y la función que desarrollan en el conjunto del sistema.
+   - [ ] c) Se ha verificado el proceso de puesta en marcha de un equipo.
+   - [ ] d) Se han clasificado, instalado y configurado diferentes tipos de dispositivos periféricos.
+   - [ ] e) Se han identificado los tipos de redes y sistemas de comunicación.
+   - [ ] f) Se han identificado los componentes de una red informática.
+   - [ ] g) Se han interpretado mapas físicos y lógicos de una red informática.
+   - [ ] h) Se han reconocido las normas de seguridad y prevención de riesgos laborales en el uso de los sistemas informáticos.
+2. Instala sistemas operativos planificando el proceso e interpretando documentación técnica.
+   - [ ] a) Se han identificado los elementos funcionales de un sistema informático.
+   - [ ] b) Se han analizado las características, funciones y arquitectura de un sistema operativo.
+   - [ ] c) Se han comparado sistemas operativos en base a sus requisitos, características, campos de aplicación y licencias de uso.
+   - [ ] d) Se ha planificado el proceso de la instalación de sistemas operativos.
+   - [ ] e) Se han instalado y actualizado sistemas operativos libres y propietarios.
+   - [ ] f) Se han aplicado técnicas de actualización y recuperación del sistema.
+   - [ ] g) Se han utilizado tecnologías de virtualización para instalar y probar sistemas operativos.
+   - [ ] h) Se han instalado, desinstalado y actualizado aplicaciones.
+   - [ ] i) Se han documentado los procesos realizados.
+3. Gestiona la información del sistema identificando las estructuras de almacenamiento y aplicando medidas para asegurar la integridad de los datos.
+   - [ ] a) Se han comparado sistemas de archivos.
+   - [ ] b) Se ha identificado la estructura y función de los directorios del sistema operativo.
+   - [ ] c) Se han utilizado herramientas en entorno gráfico y comandos para localizar información en el sistema de archivos.
+   - [ ] d) Se han creado diferentes tipos de particiones y unidades lógicas.
+   - [ ] e) Se han realizado y restaurado copias de seguridad.
+   - [ ] f) Se han planificado y automatizado tareas.
+   - [ ] g) Se han instalado y evaluado utilidades relacionadas con la gestión de información.
+4. Gestiona sistemas operativos utilizando comandos y herramientas gráficas y evaluando las necesidades del sistema.
+   - [ ] a) Se han configurado cuentas de usuario locales y grupos.
+   - [ ] b) Se ha asegurado el acceso al sistema mediante el uso de directivas de cuenta y directivas de contraseñas.
+   - [ ] c) Se han identificado, arrancado y detenido servicios y procesos.
+   - [ ] d) Se ha protegido el acceso a la información mediante el uso de permisos locales y listas de control de acceso.
+   - [ ] e) Se han utilizado comandos para realizar las tareas básicas de configuración y administración del sistema.
+   - [ ] f) Se ha monitorizado el sistema.
+   - [ ] g) Se han instalado y evaluado utilidades para el mantenimiento y optimización del sistema.
+   - [ ] h) Se han evaluado las necesidades del sistema informático en relación con el desarrollo de aplicaciones.
+5. Interconecta sistemas en red configurando dispositivos y protocolos.
+   - [ ] a) Se ha configurado el protocolo TCP/IP.
+   - [ ] b) Se han configurado redes de área local cableadas.
+   - [ ] c) Se han configurado redes de área local inalámbricas.
+   - [ ] d) Se han utilizado dispositivos de interconexión de redes.
+   - [ ] e) Se ha configurado el acceso a redes de área extensa.
+   - [ ] f) Se han gestionado puertos de comunicaciones.
+   - [ ] g) Se ha verificado el funcionamiento de la red mediante el uso de comandos y herramientas básicas.
+   - [ ] h) Se han aplicado protocolos seguros de comunicaciones.
+6. Opera sistemas en red gestionando sus recursos e identificando las restricciones de seguridad existentes.
+   - [ ] a) Se ha configurado el acceso a recursos locales y recursos de red.
+   - [ ] b) Se han identificado y configurado los derechos de usuario y directivas de seguridad.
+   - [ ] c) Se han explotado servidores de ficheros, servidores de impresión y servidores de aplicaciones.
+   - [ ] d) Se ha accedido a los servidores utilizando técnicas de conexión remota.
+   - [ ] e) Se ha evaluado la necesidad de proteger los recursos y el sistema.
+   - [ ] f) Se han instalado y evaluado utilidades de seguridad básica.
+   - [ ] g) Se han configurado y explotado dominios.
+   
+7. Elabora documentación valorando y utilizando aplicaciones informáticas de propósito general.
+   - [ ] a) Se ha clasificado software en función de su licencia y propósito.
+   - [ ] b) Se han analizado las necesidades específicas de software asociadas al uso de sistemas informáticos en diferentes entornos productivos.
+   - [ ] c) Se han realizado tareas de documentación mediante el uso de herramientas ofimáticas y de trabajo colaborativo.
+   - [ ] d) Se han utilizado sistemas de correo y mensajería electrónica.
+   - [ ] e) Se han utilizado los servicios de transferencia de ficheros.
+   - [ ] f) Se han utilizado métodos de búsqueda de documentación técnica mediante el uso de servicios de Internet.
+   - [ ] g) Se han utilizado herramientas de propósito general.
+
+** Resultados de Aprendizaje y Criterios de Evaluación (tabla RA/CE - %)
+
+#+caption: Criterios de Evaluación del RA 1
+#+label: tbl:ce-ra1
+| *RESULTADOS DE APRENDIZAJE (RA) Y CRITERIOS DE EVALUACIÓN (CE)*                                                                                                          |  *%* |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------|
+| *RA 1.Evalúa sistemas informáticos, identificando sus componentes y características.*                                                                                    |  100 |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------|
+| CE 1.a) Se han reconocido los componentes físicos de un sistema informático y sus mecanismos de interconexión.                                                           | 12.5 |
+| CE 1.b) Se han clasificado los tipos de memorias, señalando sus características e identifcando sus prestaciones y la función que desarrollan en el conjunto del sistema. | 12.5 |
+| CE 1.c) Se ha verificado el proceso de puesta en marcha de un equipo.                                                                                                    | 12.5 |
+| CE 1.d) Se han clasificado, instalado y configurado diferentes tipos de dispositivos periféricos.                                                                        | 12.5 |
+| CE 1.e) Se han identificado los tipos de redes y sistemas de comunicación.                                                                                               | 12.5 |
+| CE 1.f) Se han identificado los componentes de una red informática.                                                                                                      | 12.5 |
+| CE 1.g) Se han interpretado mapas físicos y lógicos de una red informática.                                                                                              | 12.5 |
+| CE 1.h) Se han reconocido las normas de seguridad y prevención de riesgos laborales en el uso de los sistemas informáticos.                                              | 12.5 |
+#+TBLFM: $2=round(100/8,2)::@2$2=round(vsum(@3$2..@10$2))
+
+#+caption: Criterios de Evaluación del RA 2
+#+label: tbl:ce-ra2
+| *RESULTADOS DE APRENDIZAJE (RA) Y CRITERIOS DE EVALUACIÓN (CE)*                                                                  |   *%* |
+|----------------------------------------------------------------------------------------------------------------------------------+-------|
+| *RA 2. Instala sistemas operativos planificando el proceso e interpretando documentación técnica.*                               |   100 |
+|----------------------------------------------------------------------------------------------------------------------------------+-------|
+| CE 2.a) Se han identificado los elementos funcionales de un sistema informático.                                                 | 11.11 |
+| CE 2.b) Se han analizado las características, funciones y arquitectura de un sistema operativo.                                  | 11.11 |
+| CE 2.c) Se han comparado sistemas operativos en base a sus requisitos, características, campos de aplicación y licencias de uso. | 11.11 |
+| CE 2.d) Se ha planificado el proceso de la instalación de sistemas operativos.                                                   | 11.11 |
+| CE 2.e) Se han instalado y actualizado sistemas operativos libres y propietarios.                                                | 11.11 |
+| CE 2.f) Se han aplicado técnicas de actualización y recuperación del sistema.                                                    | 11.11 |
+| CE 2.g) Se han utilizado tecnologías de virtualización para instalar y probar sistemas operativos.                               | 11.11 |
+| CE 2.h) Se han instalado, desinstalado y actualizado aplicaciones.                                                               | 11.11 |
+| CE 2.i) Se han documentado los procesos realizados.                                                                              | 11.11 |
+#+TBLFM: $2=round(100/9,2)::@2$2=round(vsum(@3$2..@11$2))
+
+#+caption: Criterios de Evaluación del RA 3
+#+label: tbl:ce-ra3
+| *RESULTADOS DE APRENDIZAJE (RA) Y CRITERIOS DE EVALUACIÓN (CE)*                                                            |   *%* |
+|----------------------------------------------------------------------------------------------------------------------------+-------|
+| *RA 3. Gestiona sistemas operativos utilizando comandos y herramientas gráficas y evaluando las necesidades del sistema..* |   100 |
+|----------------------------------------------------------------------------------------------------------------------------+-------|
+| CE 3.a) Se han comparado sistemas de archivos.                                                                             | 14.29 |
+| CE 3.b) Se ha identificado la estructura y función de los directorios del sistema operativo.                               | 14.29 |
+| CE 3.c) Se han utilizado herramientas en entorno gráfico y comandos para localizar información en el sistema de archivos.  | 14.29 |
+| CE 3.d) Se han creado diferentes tipos de particiones y unidades lógicas.                                                  | 14.29 |
+| CE 3.e) Se han realizado y restaurado copias de seguridad.                                                                 | 14.29 |
+| CE 3.f) Se han planificado y automatizado tareas.                                                                          | 14.29 |
+| CE 3.g) Se han instalado y evaluado utilidades relacionadas con la gestión de información.                                 | 14.29 |
+#+TBLFM: $2=round(100/7,2)::@2$2=round(vsum(@3$2..@9$2))
+
+#+caption: Criterios de Evaluación del RA 4
+#+label: tbl:ce-ra3
+| *RESULTADOS DE APRENDIZAJE (RA) Y CRITERIOS DE EVALUACIÓN (CE)*                                                           |  *%* |
+|---------------------------------------------------------------------------------------------------------------------------+------|
+| *RA 4. Gestiona sistemas operativos utilizando comandos y herramientas gráficas y evaluando las necesidades del sistema.* |  100 |
+|---------------------------------------------------------------------------------------------------------------------------+------|
+| CE 4.a) Se han configurado cuentas de usuario locales y grupos.                                                           | 12.5 |
+| CE 4.b) Se ha asegurado el acceso al sistema mediante el uso de directivas de cuenta y directivas de contraseñas.         | 12.5 |
+| CE 4.c) Se han identificado, arrancado y detenido servicios y procesos.                                                   | 12.5 |
+| CE 4.d) Se ha protegido el acceso a la información mediante el uso de permisos locales y listas de control de acceso.     | 12.5 |
+| CE 4.e) Se han utilizado comandos para realizar las tareas básicas de configuración y administración del sistema.         | 12.5 |
+| CE 4.f) Se ha monitorizado el sistema.                                                                                    | 12.5 |
+| CE 4.g) Se han instalado y evaluado utilidades para el mantenimiento y optimización del sistema.                          | 12.5 |
+| CE 4.h) Se han evaluado las necesidades del sistema informático en relación con el desarrollo de aplicaciones.            | 12.5 |
+#+TBLFM: $2=round(100/8,2)::@2$2=round(vsum(@3$2..@10$2))
+
+#+caption: Criterios de Evaluación del RA 5
+#+label: tbl:ce-ra5
+| *RESULTADOS DE APRENDIZAJE (RA) Y CRITERIOS DE EVALUACIÓN (CE)*                                          |  *%* |
+|----------------------------------------------------------------------------------------------------------+------|
+| *RA 5. Interconecta sistemas en red configurando dispositivos y protocolos..*                            |  100 |
+|----------------------------------------------------------------------------------------------------------+------|
+| CE 5.a) Se ha configurado el protocolo TCP/IP.                                                           | 12.5 |
+| CE 5.b) Se han configurado redes de área local cableadas.                                                | 12.5 |
+| CE 5.c) Se han configurado redes de área local inalámbricas.                                             | 12.5 |
+| CE 5.d) Se han utilizado dispositivos de interconexión de redes.                                         | 12.5 |
+| CE 5.e) Se ha configurado el acceso a redes de área extensa.                                             | 12.5 |
+| CE 5.f) Se han gestionado puertos de comunicaciones.                                                     | 12.5 |
+| CE 5.g) Se ha verificado el funcionamiento de la red mediante el uso de comandos y herramientas básicas. | 12.5 |
+| CE 5.h) Se han aplicado protocolos seguros de comunicaciones.                                            | 12.5 |
+#+TBLFM: $2=round(100/8,2)::@2$2=round(vsum(@3$2..@10$2))
+
+#+caption: Criterios de Evaluación del RA 6
+#+label: tbl:ce-ra6
+| *RESULTADOS DE APRENDIZAJE (RA) Y CRITERIOS DE EVALUACIÓN (CE)*                                                    |   *%* |
+|--------------------------------------------------------------------------------------------------------------------+-------|
+| *RA 6. Opera sistemas en red gestionando sus recursos e identificando las restricciones de seguridad existentes..* |   100 |
+|--------------------------------------------------------------------------------------------------------------------+-------|
+| CE 6.a) Se ha configurado el acceso a recursos locales y recursos de red.                                          | 14.29 |
+| CE 6.b) Se han identificado y configurado los derechos de usuario y directivas de seguridad.                       | 14.29 |
+| CE 7.c) Se han explotado servidores de ficheros, servidores de impresión y servidores de aplicaciones.             | 14.29 |
+| CE 7.d) Se ha accedido a los servidores utilizando técnicas de conexión remota.                                    | 14.29 |
+| CE 7.e) Se ha evaluado la necesidad de proteger los recursos y el sistema.                                         | 14.29 |
+| CE 7.f) Se han instalado y evaluado utilidades de seguridad básica.                                                | 14.29 |
+| CE 7.g) Se han configurado y explotado dominios.                                                                   | 14.29 |
+#+TBLFM: $2=round(100/7,2)::@2$2=round(vsum(@3$2..@9$2))
+
+#+caption: Criterios de Evaluación del RA 7
+#+label: tbl:ce-ra7
+| *RESULTADOS DE APRENDIZAJE (RA) Y CRITERIOS DE EVALUACIÓN (CE)*                                                                                |   *%* |
+|------------------------------------------------------------------------------------------------------------------------------------------------+-------|
+| *RA 7. Elabora documentación valorando y utilizando aplicaciones informáticas de propósito general.*                                           |   100 |
+|------------------------------------------------------------------------------------------------------------------------------------------------+-------|
+| CE 7.a) Se ha clasificado software en función de su licencia y propósito.                                                                      | 14.29 |
+| CE 7.b) Se han analizado las necesidades específicas de software asociadas al uso de sistemas informáticos en diferentes entornos productivos. | 14.29 |
+| CE7.c) Se han realizado tareas de documentación mediante el uso de herramientas ofimáticas y de trabajo colaborativo.                          | 14.29 |
+| CE 7.d) Se han utilizado sistemas de correo y mensajería electrónica.                                                                          | 14.29 |
+| CE 7.e) Se han utilizado los servicios de transferencia de ficheros.                                                                           | 14.29 |
+| CE 7.f) Se han utilizado métodos de búsqueda de documentación técnica mediante el uso de servicios de Internet.                                | 14.29 |
+| CE 7.g) Se han utilizado herramientas de propósito general.                                                                                    | 14.29 |
+#+TBLFM: $2=round(100/7,2)::@2$2=round(vsum(@3$2..@9$2))
+
