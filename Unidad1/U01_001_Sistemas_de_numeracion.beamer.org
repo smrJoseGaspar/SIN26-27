@@ -232,7 +232,7 @@ El sistema hexadecimal:
 ** Hexadecimal a decimal
 
 #+begin_example
-(2F3)_{HEX}
+(2F3)
 
 = 2 × 16² + 15 × 16¹ + 3 × 16⁰
 = 512 + 240 + 3
@@ -409,6 +409,75 @@ Problema: existen dos representaciones del cero.
 00000000 = +0
 10000000 = -0
 #+end_example
+
+** Complemento a uno
+
+- Se obtiene invirtiendo cada bit:
+
+\[
+0 \rightarrow 1
+\]
+
+\[
+1 \rightarrow 0
+\]
+
+*** Ejemplo básico
+
+Número binario positivo:
+
+\[
+00000101_2 = 5_{10}
+\]
+
+Para obtener su complemento a uno, se invierten todos los bits:
+
+\[
++5_{10} = 00000101_2 \longrightarrow 11111010_{C1} = -5_{10}
+\]
+
+** Complemento a uno (II)
+
+*** ¿Cómo calcularlo?
+
+Para obtener el complemento a uno de un número:
+
+1. Escribir el número binario utilizando un número fijo de bits.
+2. Cambiar cada \(0\) por \(1\).
+3. Cambiar cada \(1\) por \(0\).
+
+*** Ejemplo con 8 bits
+
+Número original:
+
+\[
+00101100
+\]
+
+Invertimos cada bit:
+
+\[
+11010011
+\]
+
+** Complemento a 1 (III)
+
+*** Representación del cero
+
+El complemento a uno tiene dos representaciones del cero:
+
+\[
+00000000 = +0
+\]
+
+\[
+11111111 = -0
+\]
+
+Esta es una de sus principales desventajas.
+
+
+- Por eso, en los ordenadores modernos se utiliza principalmente el complemento a dos, que evita este problema. 
 
 ** Complemento a dos
 

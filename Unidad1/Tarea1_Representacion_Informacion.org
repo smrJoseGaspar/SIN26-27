@@ -19,6 +19,12 @@
 
 #+latex_header:
 
+#+beamer_theme: Berlin
+#+beamer_color_theme: seagull
+#+beamer_font_theme: professionalfonts
+#+beamer_header: \setbeamertemplate{navigation symbols}{}
+#+beamer_header: \setbeamertemplate{footline}[frame number]
+
 
 
 * Sistemas de numeración.
