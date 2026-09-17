@@ -108,7 +108,7 @@ Convierte las siguientes cantidades al resto de sistemas indicados:
 | 173_{10}       | Binario, octal y hexadecimal    |
 | 110101101_{2}  | Decimal, octal y hexadecimal    |
 | 4725_{8}       | Decimal, binario y hexadecimal  |
-| 3F2A__{16}     | Decimal, binario y octal        |
+| 3F2A_{16}      | Decimal, binario y octal        |
 | 4095_{10}      | Binario, octal y hexadecimal    |
 
 Debes mostrar el procedimiento utilizado, no solamente el resultado.
