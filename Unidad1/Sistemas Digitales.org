@@ -1,0 +1,235 @@
+#+TITLE: Sistemas Digitales
+#+SUBTITLE: Módulo Sistemas Informáticos — DAM
+#+AUTHOR: Tu nombre
+#+DATE: \today
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [presentation,spanish]
+#+BEAMER_THEME: Madrid
+#+BEAMER_COLOR_THEME: default
+#+OPTIONS: H:2 toc:t num:t
+#+STARTUP: beamer
+
+#+BEAMER_HEADER_EXTRA: \usepackage[spanish]{babel}
+#+BEAMER_HEADER_EXTRA: \usepackage{siunitx}
+
+* Introducción
+** Objetivos de la sesión
+- Comprender los fundamentos del álgebra de Boole y su aplicación a circuitos digitales.
+- Identificar y usar puertas lógicas básicas y compuestas.
+- Analizar y sintetizar circuitos combinacionales.
+- Manejar formas canónicas (SdP y PdS) y simplificación con mapas de Karnaugh.
+- Introducir Logisim como herramienta de diseño y simulación.
+
+** ¿Qué es un sistema digital?
+- Sistema que opera con señales discretas (normalmente 0 y 1).
+- Base de la lógica de computadoras, microcontroladores y circuitos integrados.
+- Se modela mediante funciones booleanas y se implementa con puertas lógicas.
+
+* Álgebra de Boole
+** Conceptos básicos
+- Variables booleanas: toman valores \(\{0,1\}\).
+- Operaciones básicas:
+  - Suma lógica (OR): \(a + b\)
+  - Producto lógico (AND): \(a \cdot b\) o \(ab\)
+  - Negación (NOT): \(\overline{a}\) o \(a'\)
+- Propiedades fundamentales:
+  - Conmutativa, asociativa, distributiva.
+  - Elemento neutro: \(a+0=a\), \(a\cdot1=a\).
+  - Complemento: \(a+\overline{a}=1\), \(a\cdot\overline{a}=0\).
+
+** Teoremas importantes
+- Leyes de De Morgan:
+  - \(\overline{a+b} = \overline{a}\cdot\overline{b}\)
+  - \(\overline{a\cdot b} = \overline{a} + \overline{b}\)
+- Idempotencia: \(a+a=a\), \(a\cdot a=a\).
+- Absorción: \(a + a\cdot b = a\), \(a\cdot(a+b)=a\).
+- Dualidad: intercambiar \(+\leftrightarrow\cdot\), \(0\leftrightarrow1\).
+
+* Puertas lógicas
+** Puertas básicas
+- NOT (inversor): \(\overline{a}\)
+- AND: \(a\cdot b\)
+- OR: \(a+b\)
+- Representación simbólica y tablas de verdad asociadas.
+
+** Puertas compuestas
+- NAND: \(\overline{a\cdot b}\) (universal)
+- NOR: \(\overline{a+b}\) (universal)
+- XOR: \(a\oplus b = a\overline{b} + \overline{a}b\)
+- XNOR: \(\overline{a\oplus b}\)
+- Todas pueden construirse a partir de NAND o NOR.
+
+** Tablas de verdad (ejemplo)
+| a | b | a AND b | a OR b | a XOR b |
+|---+---+---------+--------+---------|
+| 0 | 0 |    0    |   0    |    0    |
+| 0 | 1 |    0    |   1    |    1    |
+| 1 | 0 |    0    |   1    |    1    |
+| 1 | 1 |    1    |   1    |    0    |
+
+* Análisis de circuitos digitales
+** De circuito a función booleana
+- Identificar entradas y salidas.
+- Seguir el camino de señales a través de puertas.
+- Escribir la expresión booleana resultante.
+- Obtener la tabla de verdad evaluando para todas las combinaciones.
+
+** Ejemplo de análisis
+- Circuito: \(F = \overline{(A\cdot B)} + (B\cdot C)\)
+- Pasos:
+  1. Calcular \(A\cdot B\).
+  2. Negar: \(\overline{A\cdot B}\).
+  3. Calcular \(B\cdot C\).
+  4. Sumar (OR) los dos términos.
+- Construir tabla de verdad para \((A,B,C)\).
+
+* Síntesis de circuitos digitales
+** De especificación a circuito
+- Partir de:
+  - Tabla de verdad, o
+  - Descripción verbal del comportamiento.
+- Obtener función booleana (formas canónicas).
+- Simplificar (álgebra o Karnaugh).
+- Implementar con puertas disponibles.
+
+** Criterios de diseño
+- Minimizar número de puertas.
+- Minimizar niveles de lógica (retardo).
+- Considerar tecnologías (TTL, CMOS, FPGA, etc.).
+- En DAM: énfasis en comprensión conceptual y simulación.
+
+* Formas canónicas
+** Minterms y maxterms
+- Minterm: producto de todas las variables (directas o negadas) que da 1 en una fila.
+- Maxterm: suma de todas las variables que da 0 en una fila.
+- Para \(n\) variables hay \(2^n\) minterms/maxterms posibles.
+
+** Primera forma canónica: Suma de Productos (SdP)
+- Se suman los minterms correspondientes a las filas donde \(F=1\).
+- Ejemplo para 3 variables \(A,B,C\):
+  - Si \(F=1\) en las filas 1, 3, 6, 7:
+    \[
+    F(A,B,C) = \sum m(1,3,6,7)
+    \]
+  - Expresión:
+    \[
+    F = \overline{A}\,\overline{B}\,C + \overline{A}\,B\,C + A\,B\,\overline{C} + A\,B\,C
+    \]
+
+** Segunda forma canónica: Producto de Sumas (PdS)
+- Se multiplican los maxterms correspondientes a las filas donde \(F=0\).
+- Ejemplo:
+  \[
+  F(A,B,C) = \prod M(0,2,4,5)
+  \]
+  \[
+  F = (A+B+C)\cdot(A+\overline{B}+C)\cdot(\overline{A}+B+C)\cdot(\overline{A}+B+\overline{C})
+  \]
+
+* Mapas de Karnaugh
+** Idea general
+- Representación gráfica de la tabla de verdad.
+- Cada celda = una combinación de entradas.
+- Celdas adyacentes difieren en una sola variable (código Gray).
+- Agrupar 1s (para SdP) o 0s (para PdS) en potencias de 2: 1, 2, 4, 8…
+
+** Mapa de 3 variables
+- Variables: \(A\) (filas), \(BC\) (columnas en orden 00, 01, 11, 10).
+- Ejemplo de mapa:
+
+| A \ BC | 00 | 01 | 11 | 10 |
+|--------+----+----+----+----|
+|   0    |  0 |  1 |  1 |  0 |
+|   1    |  0 |  1 |  1 |  1 |
+
+- Agrupaciones posibles:
+  - Grupo de 4 (columnas 01 y 11): término \(B\).
+  - Grupo de 2 (fila 1, columnas 11 y 10): término \(A\,C\).
+  - Función simplificada: \(F = B + A\,C\).
+
+** Mapa de 4 variables
+- Variables: \(AB\) (filas), \(CD\) (columnas), ambas en código Gray.
+- Reglas:
+  - Los bordes son adyacentes (mapa “envolvente”).
+  - Buscar grupos lo más grandes posible.
+  - Evitar grupos redundantes si no aportan simplificación.
+
+** Pasos para simplificar con Karnaugh
+1. Construir tabla de verdad.
+2. Rellenar el mapa con 1s (o 0s).
+3. Formar grupos de 1s en potencias de 2.
+4. Extraer términos simplificados.
+5. Escribir la función mínima.
+
+* Logisim: diseño y simulación
+** ¿Qué es Logisim?
+- Herramienta gráfica libre para diseñar y simular circuitos digitales.
+- Ideal para prácticas de DAM:
+  - Dibujar circuitos con puertas.
+  - Probar con interruptores y LEDs.
+  - Visualizar tablas de verdad y cronogramas.
+
+** Flujo de trabajo típico
+1. Crear nuevo circuito.
+2. Añadir entradas (pines) y salidas.
+3. Colocar puertas lógicas y conectar cables.
+4. Usar “poke tool” para cambiar valores de entrada.
+5. Observar comportamiento y validar con tabla de verdad.
+
+** Práctica sugerida en Logisim
+- Diseñar un circuito que implemente:
+  \[
+  F(A,B,C) = \overline{A}\,B + A\,\overline{C}
+  \]
+- Pasos:
+  - Crear entradas A, B, C.
+  - Implementar \(\overline{A}\), \(\overline{C}\).
+  - Construir los productos y la suma.
+  - Verificar con todas las combinaciones.
+
+* Ejercicios propuestos
+** Ejercicio 1: Análisis
+- Dado el circuito (describir o mostrar imagen en clase):
+  - Obtener la función booleana.
+  - Construir la tabla de verdad.
+  - Simplificar usando álgebra de Boole.
+
+** Ejercicio 2: Síntesis con Karnaugh
+- Especificación:
+  - Función de 3 variables que vale 1 cuando:
+    - Al menos dos entradas son 1.
+- Tareas:
+  - Tabla de verdad.
+  - Mapa de Karnaugh.
+  - Función simplificada.
+  - Implementación con puertas AND, OR, NOT.
+
+** Ejercicio 3: Logisim
+- Implementar en Logisim:
+  - Un comparador de 2 bits (A1A0 vs B1B0) que indique:
+    - \(A > B\), \(A = B\), \(A < B\).
+- Entregar:
+  - Captura del circuito.
+  - Breve memoria explicando el diseño.
+
+* Recursos y referencias
+** Bibliografía básica
+- Apuntes de Electrónica Digital (nivel introductorio).
+- Manuales de Álgebra de Boole y sistemas combinacionales.
+- Tutoriales oficiales de Logisim.
+
+** Enlaces útiles
+- Documentación de Logisim: https://logisim.sourceforge.net/
+- Recursos de electrónica digital para FP/DAM (buscar “sistemas digitales FP” en repositorios educativos).
+
+* Cierre
+** Puntos clave
+- El álgebra de Boole es el lenguaje matemático de los circuitos digitales.
+- Las formas canónicas permiten pasar de tabla de verdad a expresión lógica.
+- Los mapas de Karnaugh facilitan la simplificación manual.
+- Logisim es una herramienta práctica para validar diseños antes de implementarlos.
+
+** Próximos pasos
+- Profundizar en sistemas secuenciales (biestables, contadores, máquinas de estados).
+- Introducir VHDL/Verilog como lenguajes de descripción de hardware.
+- Relacionar con arquitectura de computadores y organización del procesador.
