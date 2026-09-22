@@ -1,7 +1,9 @@
 #+TITLE: Sistemas Digitales
 #+SUBTITLE: Módulo Sistemas Informáticos — DAM
-#+AUTHOR: Tu nombre
+#+AUTHOR: José Gaspar Sánchez García
 #+DATE: \today
+#+email: jg.sanchezgarcia@edu.gva.es
+
 #+LATEX_CLASS: beamer
 #+LATEX_CLASS_OPTIONS: [presentation,spanish]
 #+BEAMER_THEME: Madrid
@@ -11,6 +13,17 @@
 
 #+BEAMER_HEADER_EXTRA: \usepackage[spanish]{babel}
 #+BEAMER_HEADER_EXTRA: \usepackage{siunitx}
+
+# SPDX-License-Identifier: CC BY-NC-SA 4.0
+# Copyright (c) 2026 José Gaspar Sánchez García
+
+* Licencia
+** Licencia
+Este documento se distribuye bajo la licencia
+[[https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es][Creative Commons 
+Atribución 4.0 Internacional (CC BY-NC-SA 4.0)]].
+
+
 
 * Introducción
 ** Objetivos de la sesión
