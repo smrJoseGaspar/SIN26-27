@@ -1,0 +1,131 @@
+// ============================================
+// Cuestionario: Álgebra de Boole y circuitos digitales
+// Módulo: Sistemas Informáticos - DAM
+// ============================================
+
+// question: 1 name: P1_TablaVerdad
+::P1_TablaVerdad:: ¿Cuántas filas tiene la tabla de verdad de una función booleana con 3 variables? {
+=A. 8
+~B. 6
+~C. 4
+~D. 16
+#Feedback: Con n variables, la tabla tiene 2^n filas. Para n=3, 2^3 = 8.
+}
+
+// question: 2 name: P2_FND
+::P2_FND:: La forma normal disyuntiva (FND) de una función se expresa como: {
+=A. Suma de productos (OR de términos AND)
+~B. Producto de sumas (AND de términos OR)
+~C. Negación de una suma
+~D. Negación de un producto
+#Feedback: La FND es una OR (suma) de varios términos AND (productos).
+}
+
+// question: 3 name: P3_PuertaAND
+::P3_PuertaAND:: ¿Cuál es la salida de una puerta AND con entradas A=1 y B=0? {
+=A. 0
+~B. 1
+~C. Depende de C
+~D. Indeterminado
+#Feedback: La puerta AND solo da 1 si todas las entradas son 1.
+}
+
+// question: 4 name: P4_VerteroFalso_Leyes
+::P4_VerteroFalso_Leyes:: Según las leyes de De Morgan, la negación de (A + B) es igual a (A' · B'). {
+=VERDADERO
+~FALSO
+#Feedback: Correcto. ¬(A + B) = ¬A · ¬B.
+}
+
+// question: 5 name: P5_Simplificacion
+::P5_Simplificacion:: Simplifica la expresión: F = A·B + A·B' {
+=A. A
+~B. B
+~C. A·B
+~D. 1
+#Feedback: F = A·(B + B') = A·1 = A.
+}
+
+// question: 6 name: P6_PuertaOR
+::P6_PuertaOR:: ¿Qué puerta lógica implementa la operación de suma booleana (OR)? {
+=A. OR
+~B. AND
+~C. NOT
+~D. XOR
+#Feedback: La puerta OR realiza la suma lógica.
+}
+
+// question: 7 name: P7_MapaKarnaugh
+::P7_MapaKarnaugh:: Un mapa de Karnaugh de 3 variables tiene: {
+=A. 8 celdas
+~B. 6 celdas
+~C. 4 celdas
+~D. 16 celdas
+#Feedback: 2^3 = 8 celdas.
+}
+
+// question: 8 name: P8_CircuitoCombinacional
+::P8_CircuitoCombinacional:: Un circuito combinacional es aquel cuya salida depende: {
+=A. Únicamente de las entradas actuales
+~B. De las entradas y de la historia previa
+~C. Solo del reloj
+~D. De la memoria interna
+#Feedback: Los circuitos combinacionales no tienen memoria; la salida depende solo de las entradas actuales.
+}
+
+// question: 9 name: P9_Logisim
+::P9_Logisim:: En Logisim, ¿qué componente se usa para representar una entrada binaria controlable por el usuario? {
+=A. Pin de entrada (Input Pin)
+~B. LED
+~C. Puerta AND
+~D. Reloj
+#Feedback: Los Input Pin permiten establecer 0 o 1 manualmente.
+}
+
+// question: 10 name: P10_Equivalencia
+::P10_Equivalencia:: Dos circuitos son equivalentes si: {
+=A. Tienen la misma tabla de verdad
+~B. Usan el mismo número de puertas
+~C. Tienen el mismo aspecto visual
+~D. Están en el mismo archivo .circ
+#Feedback: La equivalencia lógica se define por la igualdad de tablas de verdad.
+}
+
+// question: 11 name: P11_VoF_Absorcion
+::P11_VoF_Absorcion:: La ley de absorción establece que A + A·B = A. {
+=VERDADERO
+~FALSO
+#Feedback: Correcto. A + A·B = A·(1 + B) = A·1 = A.
+}
+
+// question: 12 name: P12_Emparejar
+::P12_Emparejar:: Empareja cada ley del álgebra de Boole con su expresión correcta: {
+    "Ley de idempotencia" = "A + A = A"
+    "Ley de complemento" = "A + A' = 1"
+    "Ley distributiva" = "A·(B + C) = A·B + A·C"
+    "Ley de De Morgan" = "(A + B)' = A'·B'"
+}
+
+// question: 13 name: P13_NumeroPuertas
+::P13_NumeroPuertas:: ¿Cuántas puertas AND de 2 entradas se necesitan como mínimo para implementar F = A·B·C (sin usar puertas de más de 2 entradas)? {
+=2
+#Feedback: Se necesitan dos AND: primero A·B, luego (A·B)·C.
+}
+
+// question: 14 name: P14_SalidaCircuito
+::P14_SalidaCircuito:: Si en un circuito la función es Z = A·B + C y las entradas son A=0, B=1, C=1, ¿cuál es el valor de Z? {
+=A. 1
+~B. 0
+~C. Indeterminado
+~D. Depende del reloj
+#Feedback: Z = 0·1 + 1 = 0 + 1 = 1.
+}
+
+// question: 15 name: P15_LogisimSubcircuito
+::P15_LogisimSubcircuito:: En Logisim, un subcircuito permite: {
+=A. Reutilizar un diseño como un componente único
+~B. Aumentar automáticamente la velocidad de simulación
+~C. Eliminar la necesidad de tablas de verdad
+~D. Convertir circuitos combinacionales en secuenciales
+#Feedback: Los subcircuitos facilitan la modularización y reutilización de diseños.
+}
