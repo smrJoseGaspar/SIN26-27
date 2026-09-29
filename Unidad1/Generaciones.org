@@ -1,0 +1,521 @@
+* Primera generación de ordenadores
+
+** Contexto histórico
+
+- Periodo aproximado: desde la década de 1940 hasta mediados de la década de 1950.
+- Se desarrolla en el contexto de:
+  - La Segunda Guerra Mundial.
+  - La investigación militar.
+  - La criptografía.
+  - El cálculo balístico.
+  - La investigación científica.
+- Los computadores eran recursos muy costosos y solo estaban al alcance de gobiernos, universidades y grandes organizaciones.
+
+** Tecnología: válvulas de vacío
+
+- La primera generación utilizaba válvulas de vacío como componente electrónico principal.
+- Una válvula podía actuar como interruptor:
+  - Estado encendido.
+  - Estado apagado.
+- Estos dos estados permitían representar información binaria:
+  - `1`.
+  - `0`.
+- Un computador requería miles de válvulas para implementar operaciones y control.
+
+#+BEGIN_EXPORT latex
+\begin{block}{Analogía}
+Una válvula de vacío realizaba una función parecida a la que hoy realiza un transistor, aunque era mucho más grande, caliente, frágil y costosa.
+\end{block}
+#+END_EXPORT
+
+** Características de la primera generación
+
+| Aspecto | Características |
+|---------+-----------------|
+| Tecnología | Válvulas de vacío |
+| Tamaño | Salas completas |
+| Consumo | Muy elevado |
+| Refrigeración | Necesaria por el calor generado |
+| Memoria | Líneas de retardo, tubos Williams, tambores magnéticos |
+| Programación | Lenguaje máquina, cableado y tarjetas perforadas |
+| Fiabilidad | Baja: frecuentes averías |
+| Usuarios | Personal técnico altamente especializado |
+
+** Memoria y almacenamiento
+
+- Los primeros computadores utilizaron diversas tecnologías de memoria:
+  - Líneas de retardo de mercurio.
+  - Tubos Williams.
+  - Tambores magnéticos.
+  - Tarjetas perforadas.
+  - Cintas magnéticas.
+- La capacidad era muy reducida si se compara con la actual.
+- El acceso a los datos era lento y costoso.
+- La memoria se convirtió pronto en uno de los componentes más importantes del sistema.
+
+** Programación en lenguaje máquina
+
+- Los programas se expresaban directamente como instrucciones binarias o códigos numéricos.
+- Cada instrucción dependía del procesador concreto.
+- Un error en una dirección de memoria o en una operación podía provocar resultados incorrectos.
+- Las personas programadoras debían conocer:
+  - Registros.
+  - Direcciones de memoria.
+  - Códigos de operación.
+  - Formatos de datos.
+  - Dispositivos de entrada y salida.
+
+#+BEGIN_EXPORT latex
+\begin{exampleblock}{Ejemplo conceptual}
+Una instrucción de lenguaje máquina podría indicar: “cargar el valor almacenado en esta dirección”, “sumarlo con otro valor” y “guardar el resultado en otra dirección”.
+\end{exampleblock}
+#+END_EXPORT
+
+** Ejemplos representativos
+
+| Computador | Fecha aproximada | Aportación |
+|------------|-----------------|------------|
+| Colossus | 1943–1944 | Criptoanálisis durante la Segunda Guerra Mundial |
+| Harvard Mark I | 1944 | Computador electromecánico programable |
+| ENIAC | 1945–1946 | Computador electrónico de propósito general a gran escala |
+| EDVAC | Década de 1940 | Desarrollo del concepto de programa almacenado |
+| EDSAC | 1949 | Uno de los primeros computadores operativos con programa almacenado |
+| UNIVAC I | 1951 | Uno de los primeros computadores comerciales estadounidenses |
+
+** UNIVAC I
+
+- UNIVAC significa *Universal Automatic Computer*.
+- Fue desarrollado por Eckert y Mauchly tras su trabajo con ENIAC.
+- Se entregó en 1951 a la Oficina del Censo de Estados Unidos.
+- Se hizo famoso al predecir correctamente el resultado de las elecciones presidenciales estadounidenses de 1952.
+- Representó un paso importante desde la investigación militar hacia el uso administrativo y comercial.
+
+** Limitaciones principales
+
+- Gran consumo eléctrico.
+- Necesidad de sistemas de refrigeración.
+- Elevado coste económico.
+- Tamaño enorme.
+- Mantenimiento frecuente.
+- Válvulas que fallaban con relativa facilidad.
+- Programación compleja y muy dependiente del hardware.
+- Acceso limitado a personal altamente especializado.
+
+** Aportaciones de la primera generación
+
+- Consolidó el computador electrónico.
+- Demostró la utilidad del cálculo automático.
+- Introdujo el programa almacenado.
+- Impulsó el desarrollo de memorias electrónicas y magnéticas.
+- Sentó las bases de:
+  - La arquitectura de computadores.
+  - La programación.
+  - Los sistemas de entrada y salida.
+  - La industria informática.
+
+#+BEGIN_EXPORT latex
+\begin{alertblock}{Resumen}
+La primera generación demostró que los computadores electrónicos eran viables, pero todavía eran máquinas enormes, caras y difíciles de utilizar.
+\end{alertblock}
+#+END_EXPORT
+* Segunda generación de ordenadores
+
+** El transistor transforma la informática
+
+- Periodo aproximado: desde mediados de la década de 1950 hasta mediados de la década de 1960.
+- El cambio tecnológico fundamental fue la sustitución de las válvulas de vacío por transistores.
+- El transistor fue inventado en Bell Labs en 1947.
+- Su adopción en computadores permitió crear sistemas:
+  - Más pequeños.
+  - Más rápidos.
+  - Más fiables.
+  - Más eficientes.
+  - Más económicos de mantener.
+
+** Válvula frente a transistor
+
+| Característica | Válvula de vacío | Transistor |
+|----------------+------------------+------------|
+| Tamaño | Grande | Muy pequeño |
+| Consumo eléctrico | Muy elevado | Reducido |
+| Calor generado | Muy alto | Mucho menor |
+| Fiabilidad | Baja | Alta |
+| Tiempo de calentamiento | Necesario | No necesario |
+| Coste de mantenimiento | Elevado | Menor |
+| Integración | Muy limitada | Base de los circuitos integrados |
+
+** ¿Por qué fue tan importante el transistor?
+
+- Un transistor puede actuar como interruptor electrónico.
+- Realiza funciones lógicas y de amplificación.
+- Su pequeño tamaño permitió aumentar el número de componentes de un sistema.
+- Al reducirse el calor y los fallos, los computadores pudieron trabajar durante más tiempo.
+- El transistor hizo viable la expansión comercial de la informática.
+
+#+BEGIN_EXPORT latex
+\begin{block}{Evolución tecnológica}
+La válvula permitió crear los primeros computadores electrónicos; el transistor hizo posible convertirlos en sistemas más fiables y utilizables.
+\end{block}
+#+END_EXPORT
+
+** Características de la segunda generación
+
+| Aspecto | Características |
+|---------+-----------------|
+| Tecnología principal | Transistores |
+| Memoria | Núcleos magnéticos |
+| Almacenamiento | Cintas y discos magnéticos |
+| Programación | Ensamblador y lenguajes de alto nivel |
+| Tamaño | Menor que en la primera generación |
+| Fiabilidad | Mucho mayor |
+| Uso | Científico, empresarial y administrativo |
+| Procesamiento | Principalmente por lotes |
+
+** Memoria de núcleos magnéticos
+
+- Fue una tecnología habitual de memoria principal.
+- Utilizaba pequeños anillos magnéticos llamados núcleos.
+- El sentido de magnetización representaba un bit:
+  - Un estado para `0`.
+  - Otro estado para `1`.
+- Permitía conservar la información incluso sin alimentación eléctrica.
+- Fue sustituida progresivamente por memorias basadas en semiconductores.
+
+** Aparición de lenguajes de alto nivel
+
+- Durante la segunda generación surgen lenguajes más cercanos al lenguaje humano y matemático.
+- Ejemplos:
+  - FORTRAN: orientado a cálculo científico.
+  - COBOL: orientado a gestión empresarial.
+  - ALGOL: influyente en el diseño de lenguajes posteriores.
+  - LISP: relacionado con investigación en inteligencia artificial.
+- Los lenguajes de alto nivel reducían la dependencia directa del hardware.
+
+#+BEGIN_EXPORT latex
+\begin{exampleblock}{Ventaja}
+Un mismo programa escrito en FORTRAN o COBOL podía adaptarse a diferentes máquinas mediante un compilador adecuado.
+\end{exampleblock}
+#+END_EXPORT
+
+** FORTRAN
+
+- FORTRAN significa *FORmula TRANslation*.
+- Fue creado para facilitar la programación científica y matemática.
+- Permitió expresar fórmulas y bucles de forma más legible.
+- Fue muy utilizado en:
+  - Física.
+  - Ingeniería.
+  - Estadística.
+  - Simulación.
+  - Cálculo numérico.
+- Su influencia se mantiene en entornos científicos de alto rendimiento.
+
+** COBOL
+
+- COBOL significa *COmmon Business-Oriented Language*.
+- Fue diseñado para aplicaciones de gestión.
+- Priorizaba la legibilidad y el procesamiento de registros.
+- Se utilizó ampliamente en:
+  - Bancos.
+  - Seguros.
+  - Administraciones públicas.
+  - Nóminas.
+  - Facturación.
+  - Inventarios.
+- Todavía existen sistemas heredados escritos en COBOL.
+
+** Procesamiento por lotes
+
+- Muchos trabajos se ejecutaban mediante procesamiento por lotes o *batch processing*.
+- El usuario entregaba:
+  - Tarjetas perforadas.
+  - Datos.
+  - Instrucciones.
+- El operador cargaba los trabajos en el computador.
+- El resultado se recibía posteriormente, sin interacción inmediata.
+- No existía todavía la experiencia interactiva actual de terminales, ventanas y aplicaciones gráficas.
+
+#+BEGIN_EXPORT latex
+\begin{alertblock}{Comparación con la actualidad}
+Hoy podemos compilar y ejecutar un programa en segundos desde un IDE. En el procesamiento por lotes, un error podía obligar a preparar de nuevo las tarjetas y esperar el siguiente turno de ejecución.
+\end{alertblock}
+#+END_EXPORT
+
+** Ejemplos de la segunda generación
+
+| Sistema | Empresa u organización | Relevancia |
+|---------+------------------------+------------|
+| IBM 1401 | IBM | Muy utilizado en aplicaciones empresariales |
+| IBM 7090 | IBM | Computación científica de alto rendimiento |
+| CDC 1604 | Control Data Corporation | Uno de los primeros computadores transistorizados relevantes |
+| UNIVAC II | Remington Rand | Evolución de los sistemas UNIVAC |
+| PDP-1 | Digital Equipment Corporation | Influyente en investigación y cultura informática |
+
+** Cambios organizativos
+
+- La informática dejó de ser exclusivamente militar o experimental.
+- Las empresas comenzaron a informatizar:
+  - Contabilidad.
+  - Nóminas.
+  - Inventarios.
+  - Facturación.
+  - Gestión de clientes.
+- Se consolidaron nuevos perfiles profesionales:
+  - Analista.
+  - Programador.
+  - Operador.
+  - Técnico de mantenimiento.
+  - Responsable de sistemas.
+
+** Aportaciones de la segunda generación
+
+- Generalización del transistor.
+- Mejoras importantes de fiabilidad.
+- Reducción del coste operativo.
+- Aparición de lenguajes de alto nivel.
+- Expansión de los sistemas de información empresariales.
+- Desarrollo de memorias magnéticas y almacenamiento en discos.
+- Profesionalización de la programación.
+
+#+BEGIN_EXPORT latex
+\begin{alertblock}{Resumen}
+La segunda generación convirtió el computador en una herramienta práctica para empresas, universidades y administraciones, aunque todavía era un recurso centralizado y costoso.
+\end{alertblock}
+#+END_EXPORT
+* Los años setenta: microprocesadores y software
+
+** La década que acercó el ordenador al usuario
+
+- La década de 1970 transformó la informática.
+- El microprocesador concentró en un chip funciones que antes requerían numerosos circuitos.
+- Aparecieron:
+  - Microordenadores.
+  - Kits para aficionados.
+  - Terminales.
+  - Calculadoras programables.
+  - Primeros ordenadores personales.
+- La programación comenzó a salir de los grandes centros de cálculo.
+
+** El lenguaje C
+
+- C fue creado por Dennis Ritchie en Bell Labs durante la década de 1970.
+- Se desarrolló en el contexto de Unix.
+- Combina:
+  - Eficiencia cercana al hardware.
+  - Estructuras de alto nivel.
+  - Portabilidad.
+- Se convirtió en un lenguaje fundamental para:
+  - Sistemas operativos.
+  - Compiladores.
+  - Utilidades de sistema.
+  - Software científico.
+  - Sistemas embebidos.
+  - Desarrollo de aplicaciones.
+
+#+BEGIN_EXPORT latex
+\begin{block}{Importancia histórica}
+C ayudó a demostrar que era posible desarrollar software de sistemas eficiente sin escribirlo completamente en ensamblador.
+\end{block}
+#+END_EXPORT
+
+** Ejemplo en C: Hola mundo
+
+#+BEGIN_SRC C
+#include <stdio.h>
+
+int main(void) {
+    printf("Hola, mundo\n");
+    return 0;
+}
+#+END_SRC
+
+- `#include <stdio.h>` incorpora las declaraciones necesarias para entrada y salida.
+- `main` es el punto de inicio del programa.
+- `printf` escribe texto en la salida estándar.
+- `return 0` indica que el programa terminó correctamente.
+
+** Ejemplo en C: suma de dos números
+
+#+BEGIN_SRC C
+#include <stdio.h>
+
+int main(void) {
+    int a = 5;
+    int b = 3;
+    int resultado = a + b;
+
+    printf("%d + %d = %d\n", a, b, resultado);
+
+    return 0;
+}
+#+END_SRC
+
+- Las variables `a`, `b` y `resultado` se almacenan en memoria.
+- La CPU ejecuta una instrucción de suma.
+- `printf` muestra el valor calculado.
+- Este ejemplo conecta directamente con la arquitectura de von Neumann:
+  - Datos en memoria.
+  - Instrucciones almacenadas.
+  - Ejecución por la CPU.
+  - Resultado por salida estándar.
+
+** Ejemplo en C: estructura condicional
+
+#+BEGIN_SRC C
+#include <stdio.h>
+
+int main(void) {
+    int edad = 18;
+
+    if (edad >= 18) {
+        printf("Puede acceder.\n");
+    } else {
+        printf("No puede acceder.\n");
+    }
+
+    return 0;
+}
+#+END_SRC
+
+- La instrucción `if` permite tomar decisiones.
+- La CPU compara el valor de `edad` con `18`.
+- Según el resultado, se ejecuta un bloque de instrucciones u otro.
+- Esta estructura representa la evolución de las decisiones condicionales que Babbage ya había previsto conceptualmente.
+
+** Ejemplo en C: repetición con un bucle
+
+#+BEGIN_SRC C
+#include <stdio.h>
+
+int main(void) {
+    int suma = 0;
+
+    for (int i = 1; i <= 10; i++) {
+        suma = suma + i;
+    }
+
+    printf("La suma es: %d\n", suma);
+
+    return 0;
+}
+#+END_SRC
+
+- El bucle `for` repite una secuencia de instrucciones.
+- El programa calcula:
+
+\[
+1 + 2 + 3 + \dots + 10 = 55
+\]
+
+- En cada iteración:
+  - Se consulta el valor de `i`.
+  - Se actualiza la variable `suma`.
+  - Se incrementa `i`.
+  - Se comprueba la condición del bucle.
+
+** Ejemplo en C: función
+
+#+BEGIN_SRC C
+#include <stdio.h>
+
+int cuadrado(int numero) {
+    return numero * numero;
+}
+
+int main(void) {
+    int valor = 7;
+    int resultado = cuadrado(valor);
+
+    printf("El cuadrado de %d es %d\n", valor, resultado);
+
+    return 0;
+}
+#+END_SRC
+
+- Una función permite agrupar instrucciones reutilizables.
+- `cuadrado` recibe un parámetro y devuelve un resultado.
+- Esta técnica favorece:
+  - Organización.
+  - Reutilización.
+  - Legibilidad.
+  - Mantenimiento.
+- El diseño modular es esencial en el desarrollo de software actual.
+
+** Ejemplo en C: arrays
+
+#+BEGIN_SRC C
+#include <stdio.h>
+
+int main(void) {
+    int notas[] = {7, 8, 6, 9, 10};
+    int suma = 0;
+    int total = 5;
+
+    for (int i = 0; i < total; i++) {
+        suma = suma + notas[i];
+    }
+
+    float media = (float)suma / total;
+
+    printf("Media: %.2f\n", media);
+
+    return 0;
+}
+#+END_SRC
+
+- Un array almacena varios valores del mismo tipo.
+- Cada elemento se localiza mediante un índice.
+- En memoria, los elementos suelen almacenarse consecutivamente.
+- Esta idea permite relacionar programación con:
+  - Direcciones de memoria.
+  - Tipos de datos.
+  - Estructuras de datos.
+  - Rendimiento.
+
+** De C a los lenguajes actuales
+
+| Aspecto | C | Java | Relación histórica |
+|---------+---+------+-------------------|
+| Nivel de abstracción | Bajo o medio | Alto | C está más próximo al hardware |
+| Gestión de memoria | Manual | Automática mediante recolector | Java reduce ciertos errores comunes |
+| Compilación | Código máquina nativo | Bytecode para JVM | Ambos requieren traducción para ejecutarse |
+| Uso habitual | Sistemas, embebidos, rendimiento | Aplicaciones empresariales y multiplataforma | Ambos siguen siendo relevantes |
+| Influencia | Fundacional | Hereda sintaxis y estructuras de C | Condiciones, bucles y funciones/métodos |
+
+** Actividad: interpretar un programa histórico
+
+- Analiza el siguiente código:
+
+#+BEGIN_SRC C
+#include <stdio.h>
+
+int main(void) {
+    int resultado = 1;
+
+    for (int i = 1; i <= 5; i++) {
+        resultado = resultado * i;
+    }
+
+    printf("%d\n", resultado);
+
+    return 0;
+}
+#+END_SRC
+
+- Responde:
+  1. ¿Qué valor muestra el programa?
+  2. ¿Qué estructura de control se utiliza?
+  3. ¿Qué operación realiza dentro del bucle?
+  4. ¿Qué representa la variable `resultado`?
+  5. ¿Cómo modificarías el programa para calcular el factorial de 10?
+
+** Relación con la evolución informática
+
+- Los años setenta unieron dos procesos:
+  - Hardware más pequeño gracias al microprocesador.
+  - Software más estructurado gracias a lenguajes como C.
+- Esta combinación hizo posible que los ordenadores dejaran de ser exclusivamente grandes máquinas institucionales.
+- El camino hacia el PC no fue solo una reducción de tamaño:
+  - También fue una mejora en la forma de programar.
+  - Una mejora en el acceso de los usuarios.
+  - Una expansión de las aplicaciones disponibles.

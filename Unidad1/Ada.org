@@ -1,0 +1,168 @@
+* Charles Babbage y Ada Lovelace
+
+** Charles Babbage: una idea revolucionaria
+
+- Charles Babbage (1791–1871) fue un matemático e inventor británico.
+- Detectó que muchas tablas matemáticas, astronómicas y de navegación contenían errores humanos.
+- Propuso construir máquinas capaces de realizar cálculos automáticamente.
+- Sus diseños anticiparon conceptos esenciales de los ordenadores modernos:
+  - Procesador.
+  - Memoria.
+  - Programa.
+  - Entrada y salida de datos.
+  - Control condicional.
+  - Repetición de instrucciones.
+
+#+BEGIN_EXPORT latex
+\begin{alertblock}{Idea clave}
+Babbage no construyó un ordenador electrónico, pero diseñó conceptualmente una máquina de propósito general más de un siglo antes de los computadores modernos.
+\end{alertblock}
+#+END_EXPORT
+
+** La máquina diferencial
+
+- Babbage empezó diseñando la *máquina diferencial* en 1822.
+- Su objetivo era generar tablas numéricas automáticamente.
+- Se basaba en el método matemático de las diferencias finitas.
+- Este método permite calcular valores de ciertos polinomios mediante sumas sucesivas.
+- La máquina pretendía eliminar errores en:
+  - Tablas de navegación.
+  - Tablas astronómicas.
+  - Tablas de ingeniería.
+  - Tablas de seguros.
+
+#+BEGIN_EXPORT latex
+\begin{block}{Limitación}
+La máquina diferencial estaba diseñada para una tarea concreta: calcular tablas. No era una máquina programable de propósito general.
+\end{block}
+#+END_EXPORT
+
+** La máquina analítica
+
+- En 1837, Babbage propuso un diseño mucho más ambicioso: la *máquina analítica*.
+- A diferencia de la máquina diferencial, podía ejecutar diferentes algoritmos.
+- Se programaría mediante tarjetas perforadas inspiradas en el telar de Jacquard.
+- Aunque nunca se terminó de construir en su época, el diseño anticipó la arquitectura de los ordenadores modernos.
+
+#+BEGIN_EXPORT latex
+\begin{center}
+\begin{tikzpicture}[node distance=1.6cm, every node/.style={draw, rounded corners, align=center, minimum width=2.5cm, minimum height=0.8cm}]
+\node[fill=blue!15] (input) {Entrada\\Tarjetas perforadas};
+\node[fill=green!15, right=of input] (store) {Store\\Memoria};
+\node[fill=orange!20, right=of store] (mill) {Mill\\Unidad de cálculo};
+\node[fill=red!15, right=of mill] (output) {Salida\\Impresión o perforación};
+
+\draw[->, thick] (input) -- (store);
+\draw[->, thick] (store) -- (mill);
+\draw[->, thick] (mill) -- (store);
+\draw[->, thick] (mill) -- (output);
+\end{tikzpicture}
+\end{center}
+#+END_EXPORT
+
+** Componentes de la máquina analítica
+
+| Componente de Babbage | Función original | Equivalente aproximado actual |
+|-----------------------+------------------+-------------------------------|
+| *Store* | Almacenar números e instrucciones | Memoria principal |
+| *Mill* | Realizar operaciones aritméticas | CPU o ALU |
+| Tarjetas perforadas | Introducir operaciones y datos | Programa y dispositivos de entrada |
+| Mecanismo de control | Decidir la secuencia de operaciones | Unidad de control |
+| Impresora | Mostrar los resultados | Dispositivos de salida |
+| Perforadora | Registrar resultados en tarjetas | Almacenamiento externo |
+
+** El *store*: la memoria
+
+- El *store* era la zona destinada a guardar valores numéricos.
+- Podía almacenar números intermedios y resultados.
+- Esta idea es equivalente al uso de variables en programación.
+- Un algoritmo complejo necesita conservar datos mientras ejecuta operaciones posteriores.
+
+#+BEGIN_EXPORT latex
+\begin{exampleblock}{Ejemplo conceptual}
+Para calcular una media, una máquina debe conservar los valores introducidos, acumular su suma y guardar el número de datos antes de efectuar la división final.
+\end{exampleblock}
+#+END_EXPORT
+
+** El *mill*: la unidad de cálculo
+
+- El *mill* era la parte de la máquina encargada de operar con los valores.
+- Ejecutaría operaciones como:
+  - Suma.
+  - Resta.
+  - Multiplicación.
+  - División.
+  - Comparación.
+- Es el antecedente conceptual de la unidad aritmético-lógica o ALU.
+- La máquina trasladaría datos desde el *store* al *mill* y devolvería los resultados al *store*.
+
+** Programación con tarjetas perforadas
+
+- Babbage tomó como referencia el telar de Jacquard.
+- En un telar, una tarjeta perforada determina un patrón de tejido.
+- En la máquina analítica, una tarjeta indicaría una instrucción u operación.
+- Se preveían distintos tipos de tarjetas:
+  - Tarjetas de operación.
+  - Tarjetas de variables.
+  - Tarjetas numéricas.
+- El orden de las tarjetas determinaría el programa ejecutado.
+
+#+BEGIN_EXPORT latex
+\begin{block}{Separación fundamental}
+La máquina no cambiaba físicamente para resolver cada problema: podía cambiarse la secuencia de tarjetas, es decir, el programa.
+\end{block}
+#+END_EXPORT
+
+** Decisiones y bucles
+
+- La máquina analítica no solo podía ejecutar instrucciones en orden.
+- Babbage contempló mecanismos para:
+  - Repetir una secuencia de operaciones.
+  - Elegir entre distintos caminos según un resultado.
+- Estos mecanismos anticipan dos estructuras fundamentales de programación:
+  - Iteración: repetir instrucciones.
+  - Selección: tomar decisiones condicionales.
+
+#+BEGIN_EXPORT latex
+\begin{exampleblock}{Equivalencia actual}
+Las ideas de Babbage pueden relacionarse con estructuras como \texttt{for}, \texttt{while} e \texttt{if} presentes en lenguajes como C, Java o Python.
+\end{exampleblock}
+#+END_EXPORT
+
+** Ada Lovelace y el primer algoritmo
+
+- Ada Lovelace (1815–1852) colaboró intelectualmente con Babbage.
+- En sus notas sobre la máquina analítica describió un algoritmo para calcular números de Bernoulli.
+- Este algoritmo estaba pensado para ser ejecutado por una máquina, no solo leído por una persona.
+- Por ello, Ada Lovelace suele ser considerada la primera programadora de la historia.
+
+** La visión de Ada Lovelace
+
+- Lovelace comprendió que una máquina programable no tenía por qué limitarse a cálculos numéricos.
+- Si la información se codificaba adecuadamente, la máquina podría manipular:
+  - Números.
+  - Texto.
+  - Símbolos.
+  - Notas musicales.
+  - Imágenes.
+- Esta visión anticipa la informática moderna: todo tipo de información puede codificarse digitalmente.
+
+#+BEGIN_EXPORT latex
+\begin{alertblock}{Reflexión}
+Un ordenador no “entiende” música, imágenes o palabras como una persona: procesa representaciones codificadas de esa información.
+\end{alertblock}
+#+END_EXPORT
+
+** Relevancia histórica de Babbage
+
+- La máquina analítica no llegó a construirse completamente por razones técnicas, económicas y de precisión mecánica.
+- Sin embargo, su diseño contenía principios que hoy siguen vigentes:
+  - Máquina programable.
+  - Memoria.
+  - Procesador.
+  - Instrucciones.
+  - Datos.
+  - Entrada y salida.
+  - Bucles.
+  - Condiciones.
+- Babbage y Lovelace representan el paso de la calculadora mecánica al concepto de computador programable. [34]

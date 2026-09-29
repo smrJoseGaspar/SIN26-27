@@ -1,0 +1,118 @@
+#+TITLE: La Arquitectura de Von Neumann
+#+AUTHOR: José Gaspar Sánchez García
+#+email: jg.sanchezgarcia@edu.gva.es
+#+DATE: \today
+#+OPTIONS: H:2 toc:nil num:t
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [presentation]
+#+BEAMER_THEME: Madrid
+#+BEAMER_COLOR_THEME: whale
+
+* Introducción
+** El Modelo de Von Neumann
+- Propuesto en *1945* por el matemático *John von Neumann*.
+- Introdujo el concepto clave de *programa almacenado*.
+- **Hito histórico:** Datos e instrucciones se guardan juntos en la misma memoria física.
+- Rompió con el modelo anterior de reprogramación manual por cableado.
+
+** Arquitectura Completa del Sistema
+Su principal innovación fue el concepto de programa almacenado, conectando la CPU con la memoria y los periféricos mediante buses compartidos.
+
+#+ATTR_LATEX: :font \tiny
+#+BEGIN_SRC text
++--------------------------------------------------------+
+
+|                      C P U                             |
+|  +--------------------+        +--------------------+  |
+|  | Unidad de Control  | <----> | Unidad Aritmético- |  |
+|  |       (UC)         |        |   Lógica (ALU)     |  |
+|  +--------------------+        +--------------------+  |
+|         ^      |                        ^              |
+|         |      v                        v              |
+|  +--------------------------------------------------+  |
+|  |                  Registros                       |  |
+|  +--------------------------------------------------+  |
++--------------------------------------------------------+
+       ^            |                       ^
+
+       | Bus de     | Bus de                | Bus de
+       | Control    | Direcciones           | Datos
+       v            v                       v
++-----------------------+        +-----------------------+
+
+|   Memoria Principal   |        |  Sistema de Entrada/  |
+|        (RAM)          |        |     Salida (E/S)      |
++-----------------------+        +-----------------------+
+#+END_SRC
+
+* Componentes Principales
+** Bloques del Sistema
+El hardware se divide en cuatro bloques funcionales interconectados:
+1. **CPU** (Unidad Central de Procesamiento)
+2. **Memoria Principal** (RAM)
+3. **Sistema de Entrada/Salida** (E/S)
+4. **Buses** (Canales de comunicación)
+
+** La CPU: El Cerebro del Sistema
+- **Unidad de Control (UC):** Coordina los componentes y dirige el flujo de datos.
+- **Unidad Aritmético-Lógica (ALU):** Realiza operaciones matemáticas y lógicas.
+- **Registros:** Memorias internas de alta velocidad:
+  - *PC (Contador de Programa):* Dirección de la siguiente instrucción.
+  - *IR (Registro de Instrucción):* Instrucción en ejecución actual.
+  - *AC (Acumulador):* Resultados temporales de la ALU.
+
+** Memoria, E/S y Buses
+- **Memoria Principal (RAM):**
+  - Espacio de almacenamiento unificado y volátil.
+  - No distingue físicamente entre datos e instrucciones.
+- **Sistema de Entrada/Salida (E/S):**
+  - Interfaz con el mundo exterior (periféricos).
+- **Los Buses (Autopistas de datos):**
+  - *Bus de Datos:* Transporta información (bidireccional).
+  - *Bus de Direcciones:* Indica la posición de memoria (unidireccional).
+  - *Bus de Control:* Señales de sincronización y reloj.
+
+* El Ciclo de Instrucción
+** El Ciclo de Von Neumann (Fases 1 y 2)
+Para ejecutar un programa, la CPU repite continuamente un ciclo de cuatro pasos:
+
+#+ATTR_BEAMER: :environment block
+#+BEGIN_BLOCK: 1. Captura (Fetch)
+La UC lee la instrucción de la memoria principal apuntada por el Contador de Programa (PC) y la vuelca en el Registro de Instrucción (IR).
+#+END_BLOCK
+
+#+ATTR_BEAMER: :environment block
+#+BEGIN_BLOCK: 2. Decodificación
+La UC interpreta el código de operación de la instrucción almacenada en el IR para determinar qué acción realizar y qué operandos necesita.
+#+END_BLOCK
+
+** El Ciclo de Von Neumann (Fases 3 y 4)
+
+#+ATTR_BEAMER: :environment block
+#+BEGIN_BLOCK: 3. Ejecución
+La ALU realiza la operación aritmética o lógica solicitada, u ordena el movimiento de datos hacia o desde los periféricos.
+#+END_BLOCK
+
+#+ATTR_BEAMER: :environment block
+#+BEGIN_BLOCK: 4. Almacenamiento e Incremento (Writeback)
+El resultado obtenido se escribe en el registro destino (como el Acumulador) o en la memoria principal. Simultáneamente, el Contador de Programa (PC) se incrementa para apuntar a la dirección de la próxima instrucción.
+#+END_BLOCK
+
+* Limitaciones y Soluciones
+** El Cuello de Botella de Von Neumann
+- **El Problema:** Al compartir el mismo bus para datos e instrucciones, la CPU no puede leer ambos a la vez.
+- **Consecuencia:** La CPU debe esperar a la memoria, limitando la velocidad global del sistema.
+
+*** Soluciones actuales :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+- **Memoria Caché:** Memorias ultra-rápidas intermedias integradas en la CPU.
+- **Segmentación (Pipelining):** Ejecución simultánea de fases de distintas instrucciones.
+
+** Alternativa: Arquitectura Harvard
+- Utiliza **dos memorias físicas independientes**:
+  - Una memoria exclusiva para instrucciones.
+  - Una memoria exclusiva para datos.
+- Permite el acceso simultáneo a ambos elementos eliminando el cuello de botella.
+- **Uso actual:** Muy común en microcontroladores (Arduino/Sistemas empotrados) y cachés internas de CPU modernos.

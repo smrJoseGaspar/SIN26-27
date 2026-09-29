@@ -1,0 +1,220 @@
+* La arquitectura de von Neumann
+
+** El problema de programar los primeros computadores
+
+- En máquinas como ENIAC, programar implicaba modificar conexiones físicas.
+- Era necesario:
+  - Conectar cables.
+  - Ajustar interruptores.
+  - Configurar paneles.
+  - Cambiar rutas de datos.
+- El proceso podía requerir horas o incluso días.
+- Cambiar el programa significaba, en buena medida, reconfigurar físicamente la máquina.
+
+#+BEGIN_EXPORT latex
+\begin{alertblock}{Problema}
+Un computador muy rápido pierde gran parte de su utilidad si preparar cada nuevo programa exige reconstruir su cableado.
+\end{alertblock}
+#+END_EXPORT
+
+** El programa almacenado
+
+- En 1945, John von Neumann participó en la difusión de un modelo decisivo para la informática.
+- La idea principal era almacenar programas y datos en una memoria común.
+- El procesador leería las instrucciones desde memoria y las ejecutaría secuencialmente.
+- Para ejecutar otro programa bastaría con cargar nuevas instrucciones en memoria.
+
+#+BEGIN_EXPORT latex
+\begin{block}{Principio fundamental}
+Un programa es información que puede almacenarse, modificarse y procesarse igual que los datos.
+\end{block}
+#+END_EXPORT
+
+** Componentes principales
+
+La arquitectura de von Neumann se organiza en cinco elementos básicos:
+
+1. Unidad de entrada.
+2. Unidad de salida.
+3. Memoria principal.
+4. Unidad aritmético-lógica.
+5. Unidad de control.
+
+#+BEGIN_EXPORT latex
+\begin{center}
+\begin{tikzpicture}[
+  node distance=1.7cm,
+  every node/.style={draw, rounded corners, align=center, minimum width=2.6cm, minimum height=0.9cm}
+]
+\node[fill=blue!15] (input) {Unidad de\\entrada};
+\node[fill=green!15, right=of input] (memory) {Memoria\\principal};
+\node[fill=orange!20, above right=0.9cm and 1.1cm of memory] (control) {Unidad de\\control};
+\node[fill=yellow!25, below right=0.9cm and 1.1cm of memory] (alu) {ALU\\Unidad aritmético-lógica};
+\node[fill=red!15, right=4.8cm of memory] (output) {Unidad de\\salida};
+
+\draw[<->, thick] (input) -- (memory);
+\draw[<->, thick] (memory) -- (control);
+\draw[<->, thick] (memory) -- (alu);
+\draw[<->, thick] (control) -- (alu);
+\draw[<->, thick] (memory) -- (output);
+\end{tikzpicture}
+\end{center}
+#+END_EXPORT
+
+** Memoria principal
+
+- La memoria almacena temporalmente:
+  - Instrucciones del programa.
+  - Datos de entrada.
+  - Variables.
+  - Resultados intermedios.
+  - Resultados finales.
+- Cada posición de memoria tiene una dirección.
+- La CPU accede a los datos indicando la dirección de memoria correspondiente.
+- En un ordenador actual, la memoria RAM cumple principalmente esta función.
+
+** Unidad aritmético-lógica
+
+- La ALU, *Arithmetic Logic Unit*, realiza operaciones con datos.
+- Operaciones aritméticas:
+  - Suma.
+  - Resta.
+  - Multiplicación.
+  - División.
+- Operaciones lógicas:
+  - AND.
+  - OR.
+  - NOT.
+  - XOR.
+- Operaciones de comparación:
+  - Igualdad.
+  - Mayor que.
+  - Menor que.
+
+** Unidad de control
+
+- La unidad de control coordina el funcionamiento del procesador.
+- Sus funciones principales son:
+  - Leer la siguiente instrucción.
+  - Interpretar qué operación representa.
+  - Activar los componentes necesarios.
+  - Controlar el orden de ejecución.
+  - Actualizar el contador de programa.
+- No realiza directamente los cálculos: organiza su ejecución.
+
+** Entrada y salida
+
+- La unidad de entrada permite introducir datos e instrucciones.
+- Ejemplos de entrada:
+  - Teclado.
+  - Ratón.
+  - Micrófono.
+  - Cámara.
+  - Sensor.
+  - Archivo.
+  - Red.
+- La unidad de salida permite comunicar resultados.
+- Ejemplos de salida:
+  - Pantalla.
+  - Impresora.
+  - Altavoz.
+  - Archivo.
+  - Red.
+  - Actuador industrial.
+
+** El ciclo de instrucción
+
+La CPU ejecuta continuamente un ciclo conocido como *fetch-decode-execute*:
+
+1. *Fetch*: obtiene de memoria la siguiente instrucción.
+2. *Decode*: interpreta la instrucción.
+3. *Execute*: ejecuta la operación solicitada.
+4. *Store*: almacena el resultado si es necesario.
+5. Actualiza el contador de programa y repite el ciclo.
+
+#+BEGIN_EXPORT latex
+\begin{center}
+\begin{tikzpicture}[node distance=1.4cm, every node/.style={draw, rounded corners, align=center, minimum width=2.4cm, minimum height=0.7cm}]
+\node[fill=blue!15] (fetch) {1. Fetch\\Leer instrucción};
+\node[fill=green!15, right=of fetch] (decode) {2. Decode\\Interpretar};
+\node[fill=orange!20, right=of decode] (execute) {3. Execute\\Ejecutar};
+\node[fill=red!15, right=of execute] (store) {4. Store\\Guardar resultado};
+
+\draw[->, thick] (fetch) -- (decode);
+\draw[->, thick] (decode) -- (execute);
+\draw[->, thick] (execute) -- (store);
+\draw[->, thick, bend left=45] (store.north) to node[above, font=\scriptsize] {Siguiente instrucción} (fetch.north);
+\end{tikzpicture}
+\end{center}
+#+END_EXPORT
+
+** Ejemplo simplificado
+
+Supongamos el siguiente programa en pseudocódigo:
+
+#+BEGIN_SRC text
+a = 5
+b = 3
+resultado = a + b
+mostrar resultado
+#+END_SRC
+
+La memoria podría contener:
+
+| Dirección | Contenido |
+|-----------+-----------|
+| 100 | Cargar valor 5 en `a` |
+| 101 | Cargar valor 3 en `b` |
+| 102 | Sumar `a` y `b` |
+| 103 | Guardar resultado |
+| 104 | Mostrar resultado |
+
+- La unidad de control lee cada instrucción.
+- La ALU realiza la suma.
+- La memoria conserva los valores.
+- La salida muestra el resultado: `8`.
+
+** El cuello de botella de von Neumann
+
+- Los datos y las instrucciones comparten normalmente el acceso a memoria.
+- La CPU puede quedar esperando a que lleguen datos o instrucciones.
+- Este límite se conoce como *cuello de botella de von Neumann*.
+- Los ordenadores modernos reducen este problema mediante:
+  - Memorias caché.
+  - Segmentación de instrucciones.
+  - Ejecución fuera de orden.
+  - Prefetch.
+  - Varios núcleos.
+  - Arquitecturas con memorias especializadas.
+
+** Arquitectura de von Neumann y Harvard
+
+| Característica | Von Neumann | Harvard |
+|----------------+-------------+---------|
+| Memoria de datos | Compartida con instrucciones | Separada |
+| Memoria de programa | Compartida con datos | Separada |
+| Buses | Normalmente compartidos | Pueden ser independientes |
+| Ventaja principal | Diseño más sencillo y flexible | Mayor paralelismo en acceso |
+| Uso habitual | Ordenadores de propósito general | Microcontroladores y sistemas embebidos |
+
+** Vigencia del modelo
+
+- La mayoría de ordenadores personales utilizan una arquitectura inspirada en von Neumann.
+- Los procesadores modernos añaden optimizaciones complejas.
+- Aun así, se mantiene la idea esencial:
+  - Un procesador ejecuta instrucciones.
+  - Las instrucciones y los datos se almacenan.
+  - La ejecución se controla mediante una secuencia de operaciones.
+- Comprender este modelo ayuda a entender:
+  - Variables.
+  - Memoria.
+  - Ejecución de programas.
+  - Rendimiento.
+  - Sistemas operativos.
+  - Lenguajes de programación.
+
+#+BEGIN_EXPORT latex
+\begin{alertblock}{Conexión con DAM}
+Cuando un programa Java, C o Kotlin se ejecuta, sus instrucciones y sus datos se cargan en memoria y son procesados por una CPU siguiendo, en esencia, el modelo de programa almacenado.
+\end{alertblock}
+#+END_EXPORT
