@@ -2,7 +2,7 @@
 #+SUBTITLE: Sistemas informáticos
 #+AUTHOR: José Gaspar Sánchez García.
 #+email: jg.sanchezgarcia@edu.gva.es
-#+DATE: {{{time(%d/%m/%Y)}}}
+#+DATE: \today
 
 #+license: CC BY-NC-SA 4.0
 #+KEYWORDS: Arquitectura Von Neumann, abaco, Ada, Babage
@@ -13,7 +13,7 @@
 #+LANGUAGE: es
 #+OPTIONS: H:2 toc:nil num:t
 #+BEAMER_THEME: Madrid
-#+BEAMER_COLOR_THEME: whale
+#+BEAMER_COLOR_THEME: default
 #+BEAMER_FONT_THEME: professionalfonts
 #+BEAMER_HEADER: \usepackage[spanish]{babel}
 #+BEAMER_HEADER: \usepackage{booktabs}
@@ -115,13 +115,13 @@ El quipu demuestra que almacenar información no exige necesariamente utilizar e
 
 ** De los instrumentos manuales a las máquinas
 
-| Época | Instrumento | Aportación |
-|-------+-------------+------------|
-| Antigüedad | Ábaco | Representación física de cantidades |
-| Andes prehispánicos | Quipu | Registro estructurado de información |
-| Siglo XVII | Pascalina | Cálculo mecánico |
-| Siglo XIX | Tarjetas perforadas | Automatización mediante instrucciones |
-| Siglo XX | Computador electrónico | Cálculo programable de alta velocidad |
+| Época               | Instrumento            | Aportación                            |
+|---------------------+------------------------+---------------------------------------|
+| Antigüedad          | Ábaco                  | Representación física de cantidades   |
+| Andes prehispánicos | Quipu                  | Registro estructurado de información  |
+| Siglo XVII          | Pascalina              | Cálculo mecánico                      |
+| Siglo XIX           | Tarjetas perforadas    | Automatización mediante instrucciones |
+| Siglo XX            | Computador electrónico | Cálculo programable de alta velocidad |
 
 * Las calculadoras mecánicas
 
@@ -382,6 +382,36 @@ Su principal innovación fue el concepto de programa almacenado, conectando la C
 +-----------------------+        +-----------------------+
 #+END_SRC
 
+** El problema de programar los primeros computadores
+
+- En máquinas como ENIAC, programar implicaba modificar conexiones físicas.
+- Era necesario:
+  - Conectar cables.
+  - Ajustar interruptores.
+  - Configurar paneles.
+  - Cambiar rutas de datos.
+- El proceso podía requerir horas o incluso días.
+- Cambiar el programa significaba, en buena medida, reconfigurar físicamente la máquina.
+
+#+BEGIN_EXPORT latex
+\begin{alertblock}{Problema}
+Un computador muy rápido pierde gran parte de su utilidad si preparar cada nuevo programa exige reconstruir su cableado.
+\end{alertblock}
+#+END_EXPORT
+
+** El programa almacenado
+
+- En 1945, John von Neumann participó en la difusión de un modelo decisivo para la informática.
+- La idea principal era almacenar programas y datos en una memoria común.
+- El procesador leería las instrucciones desde memoria y las ejecutaría secuencialmente.
+- Para ejecutar otro programa bastaría con cargar nuevas instrucciones en memoria.
+
+#+BEGIN_EXPORT latex
+\begin{block}{Principio fundamental}
+Un programa es información que puede almacenarse, modificarse y procesarse igual que los datos.
+\end{block}
+#+END_EXPORT
+
 * Componentes Principales
 ** Bloques del Sistema
 El hardware se divide en cuatro bloques funcionales interconectados:
@@ -410,30 +440,31 @@ El hardware se divide en cuatro bloques funcionales interconectados:
   - *Bus de Control:* Señales de sincronización y reloj.
 
 * El Ciclo de Instrucción
-** El Ciclo de Von Neumann (Fases 1 y 2)
-Para ejecutar un programa, la CPU repite continuamente un ciclo de cuatro pasos:
+** El ciclo de instrucción
 
-#+ATTR_BEAMER: :environment block
-#+BEGIN_BLOCK: 1. Captura (Fetch)
-La UC lee la instrucción de la memoria principal apuntada por el Contador de Programa (PC) y la vuelca en el Registro de Instrucción (IR).
-#+END_BLOCK
+La CPU ejecuta continuamente un ciclo conocido como *fetch-decode-execute*:
 
-#+ATTR_BEAMER: :environment block
-#+BEGIN_BLOCK: 2. Decodificación
-La UC interpreta el código de operación de la instrucción almacenada en el IR para determinar qué acción realizar y qué operandos necesita.
-#+END_BLOCK
+1. *Fetch*: obtiene de memoria la siguiente instrucción.
+2. *Decode*: interpreta la instrucción.
+3. *Execute*: ejecuta la operación solicitada.
+4. *Store*: almacena el resultado si es necesario.
+5. Actualiza el contador de programa y repite el ciclo.
 
-** El Ciclo de Von Neumann (Fases 3 y 4)
+#+BEGIN_EXPORT latex
+\begin{center}
+\begin{tikzpicture}[node distance=1.4cm, every node/.style={draw, rounded corners, align=center, minimum width=2.4cm, minimum height=0.7cm}]
+\node[fill=blue!15] (fetch) {1. Fetch\\Leer instrucción};
+\node[fill=green!15, right=of fetch] (decode) {2. Decode\\Interpretar};
+\node[fill=orange!20, right=of decode] (execute) {3. Execute\\Ejecutar};
+\node[fill=red!15, right=of execute] (store) {4. Store\\Guardar resultado};
 
-#+ATTR_BEAMER: :environment block
-#+BEGIN_BLOCK: 3. Ejecución
-La ALU realiza la operación aritmética o lógica solicitada, u ordena el movimiento de datos hacia o desde los periféricos.
-#+END_BLOCK
-
-#+ATTR_BEAMER: :environment block
-#+BEGIN_BLOCK: 4. Almacenamiento e Incremento (Writeback)
-El resultado obtenido se escribe en el registro destino (como el Acumulador) o en la memoria principal. Simultáneamente, el Contador de Programa (PC) se incrementa para apuntar a la dirección de la próxima instrucción.
-#+END_BLOCK
+\draw[->, thick] (fetch) -- (decode);
+\draw[->, thick] (decode) -- (execute);
+\draw[->, thick] (execute) -- (store);
+\draw[->, thick, bend left=45] (store.north) to node[above, font=\scriptsize] {Siguiente instrucción} (fetch.north);
+\end{tikzpicture}
+\end{center}
+#+END_EXPORT
 
 * Limitaciones y Soluciones
 ** El Cuello de Botella de Von Neumann
