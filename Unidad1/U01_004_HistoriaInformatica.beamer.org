@@ -20,7 +20,11 @@
 #+BEAMER_HEADER: \usepackage{tabularx}
 #+BEAMER_HEADER: \usepackage{multicol}
 #+BEAMER_HEADER: \usepackage{tikz}
-#+BEAMER_HEADER: \usepackage{fontawesome5}
+
+#+BEAMER_HEADER: \usepackage{graphicx}
+#+BEAMER_HEADER: \usepackage{caption}
+#+BEAMER_HEADER: \graphicspath{{imagenes/}}
+#+BEAMER_HEADER: \setbeamertemplate{caption}[numbered]
 
 # SPDX-License-Identifier: CC BY-NC-SA 4.0
 # Copyright (c) 2026 José Gaspar Sánchez García
@@ -74,6 +78,17 @@ Atribución 4.0 Internacional (CC BY-NC-SA 4.0)]].
 - Cada generación resuelve limitaciones de la anterior.
 
 * Los primeros sistemas de cálculo
+
+** El ábaco y el quipu andino
+
+
+#+DOWNLOADED: https://i.ibb.co/BzHGMdt/schoty.jpg @ 2026-09-29 21:22:51
+[[file:images/20260929-212251_schoty.jpg]]
+
+
+#+DOWNLOADED: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNAq0Tdh6sRSoKJC45-6-0sMQg3e6aO8RQ548kfP8pUw&s=10 @ 2026-09-29 21:23:58
+[[file:images/20260929-212358_images.jpeg]]
+
 
 ** El ábaco
 
@@ -159,6 +174,16 @@ Una tarjeta perforada puede considerarse una secuencia de instrucciones codifica
 #+END_EXPORT
 
 * Charles Babbage y Ada Lovelace
+
+** Charles Babbage y Ada Lovelace
+
+
+#+DOWNLOADED: https://www.computinghistory.org.uk/userdata/images/large/51/87/product-135187.png @ 2026-09-29 20:50:11
+#+CAPTION: Charles Babbage y Ada Lovelace
+#+NAME: fig-babbage-lovelace
+#+LABEL: fig-babbage-lovelace
+[[file:images/20260929-205011_product-135187.png]]
+
 
 ** La máquina diferencial
 
