@@ -76,6 +76,14 @@ Atribución 4.0 Internacional (CC BY-NC-SA 4.0)]].
 - No existe un único “primer ordenador”.
 - La informática surge de muchas contribuciones sucesivas.
 - Cada generación resuelve limitaciones de la anterior.
+  
+* La historia de la informática
+** La historia de la informática
+*** Timeline: De contar con piedras ha aprender con IA
+
+#+DOWNLOADED: ~/images/20260930_Timeline.png @ 2026-09-30 14:59:52
+[[file:images/20260930-145952_20260930_Timeline.png]]
+
 
 * Los primeros sistemas de cálculo
 
@@ -147,6 +155,16 @@ El quipu demuestra que almacenar información no exige necesariamente utilizar e
 - Utilizaba ruedas dentadas.
 - Realizaba principalmente sumas y restas.
 - Fue una de las primeras calculadoras mecánicas producidas de forma significativa.
+** La Pascalina
+*** La Pascalina
+
+#+DOWNLOADED: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjn8T-1orNZQZiSLOzBU8NUMN9YSiNOI0ACCWwLkZRVwUgOubFxIAlNZYLg4ae1zzdh8c9nUTYoulwjA0N9wfOXUpkGkG2PAL0Gp6XytB-YbkmzfNZWxKFAdxY77FOZDmH1d_JCMknIXVYVKtXN_JndCftVZe_bS3oebz20z4vVrpNMBhs8OfTwCa6Ar6w/s16000/126-pascalinaprimeracalculadoramecanica.jpg @ 2026-09-30 13:58:54
+[[file:images/20260930-135854_126-pascalinaprimeracalculadoramecanica.jpg]]
+** La Pascalina
+*** Blaise Pascal
+
+#+DOWNLOADED: https://s3.amazonaws.com/s3.timetoast.com/public/uploads/photos/12654278/Pascal-Blaise.jpg?1537655571 @ 2026-09-30 14:01:41
+[[file:images/20260930-140140_Pascal-Blaise.jpeg]]
 
 ** Leibniz y el cálculo mecánico
 
@@ -157,6 +175,20 @@ El quipu demuestra que almacenar información no exige necesariamente utilizar e
   - Multiplicaciones.
   - Divisiones.
 - Su diseño influyó en calculadoras posteriores.
+
+** Leibniz y el cálculo mecánico
+*** Gottfried Wilhelm Leibniz
+
+#+DOWNLOADED: ~/images/biografia-de-Leibniz.jpeg @ 2026-09-30 15:08:43
+[[file:images/20260930-150843_biografia-de-Leibniz.jpeg]]
+P
+
+
+*** Calculadora de Leibniz
+
+#+DOWNLOADED: https://i.pinimg.com/originals/1d/b0/26/1db026480ef454e43626729cc45c7a25.jpg @ 2026-09-30 14:15:33
+[[file:images/20260930-141533_1db026480ef454e43626729cc45c7a25.jpg]]
+
 
 ** El telar de Jacquard
 
@@ -172,6 +204,13 @@ El quipu demuestra que almacenar información no exige necesariamente utilizar e
 Una tarjeta perforada puede considerarse una secuencia de instrucciones codificadas físicamente.
 \end{alertblock}
 #+END_EXPORT
+
+** El telar de Jacquard
+*** El telar de Jacquard
+
+#+DOWNLOADED: https://s3.amazonaws.com/s3.timetoast.com/public/uploads/photos/8658585/Jacquard1.jpg @ 2026-09-30 14:18:57
+[[file:images/20260930-141857_Jacquard1.jpg]]
+
 
 * Charles Babbage y Ada Lovelace
 
@@ -203,6 +242,12 @@ Una tarjeta perforada puede considerarse una secuencia de instrucciones codifica
   - Salida.
   - Control.
 - Podía programarse mediante tarjetas perforadas.
+** La máquina analítica
+*** La máquina analítica
+
+#+DOWNLOADED: https://3.bp.blogspot.com/-bd_41dlIdKY/V4u-3G84vOI/AAAAAAAAADc/pIl30hoqqUQRxgZ-XJEz0bOXoAX6KvxggCLcB/s1600/4847227935_50eab91baa_o.jpg @ 2026-09-30 14:22:35
+[[file:images/20260930-142235_4847227935_50eab91baa_o.jpg]]
+
 
 ** Ada Lovelace
 
@@ -229,6 +274,18 @@ Lovelace intuyó que una máquina programable podría trabajar con música, text
   - Clasificarlas.
   - Contabilizar resultados.
 
+** Herman Hollerith
+*** Herman Hollerith
+#+DOWNLOADED: https://s3.amazonaws.com/s3.timetoast.com/public/uploads/photo/8516771/image/365ee1cd9e74eb9b5696d14a3aee2fd9 @ 2026-09-30 14:26:34
+[[file:images/20260930-142634_365ee1cd9e74eb9b5696d14a3aee2fd9.jpeg]]
+
+** Herman Hollerith
+*** Tarjetas perforadas
+
+#+DOWNLOADED: https://i.pinimg.com/1200x/d2/bb/a1/d2bba1997eb07242f0a7de51a8a1eb51.jpg @ 2026-09-30 14:29:44
+[[file:images/20260930-142944_d2bba1997eb07242f0a7de51a8a1eb51.jpg]]
+
+
 ** De Hollerith a IBM
 
 - La empresa de Hollerith evolucionó hasta formar parte de IBM.
@@ -238,7 +295,7 @@ Lovelace intuyó que una máquina programable podría trabajar con música, text
   - Procesar información administrativa.
 - Durante décadas fueron una interfaz fundamental de los computadores.
 
-** Primera gran transición**
+** Primera gran transición
 
 #+BEGIN_EXPORT latex
 \begin{center}
@@ -358,6 +415,11 @@ ENIAC demostró que un computador electrónico podía realizar cálculos a una v
   - Marlyn Wescoff.
   - Ruth Teitelbaum.
   - Frances Bilas.
+** Programar el ENIAC
+*** ENIAC: Primera computadora programable
+
+#+DOWNLOADED: https://media.ambito.com/p/6e09a249260f751580d042ce80bb66aa/adjuntos/239/imagenes/043/173/0043173303/655x368/657x439:677x459/eniac-primera-computadora-programable.jpg @ 2026-09-30 15:16:42
+[[file:images/20260930-151642_eniac-primera-computadora-programable.jpg]]
 
 ** El concepto de programa almacenado
 
@@ -371,11 +433,16 @@ ENIAC demostró que un computador electrónico podía realizar cálculos a una v
 
 * La Arquitectura de Von Neumann
 
-** El Modelo de Von Neumann
+** Arquitectura de Von Neumann
 - Propuesto en *1945* por el matemático *John von Neumann*.
 - Introdujo el concepto clave de *programa almacenado*.
 - **Hito histórico:** Datos e instrucciones se guardan juntos en la misma memoria física.
 - Rompió con el modelo anterior de reprogramación manual por cableado.
+** Arquitectura de Von Neumann
+*** John von Neumann
+
+#+DOWNLOADED: https://miro.medium.com/v2/resize:fit:1984/1*CO2S_0vQFDBtkqSQxg9BFw.jpeg @ 2026-09-30 15:20:19
+[[file:images/20260930-152019_1*CO2S_0vQFDBtkqSQxg9BFw.jpeg]]
 
 ** Arquitectura Completa del Sistema
 Su principal innovación fue el concepto de programa almacenado, conectando la CPU con la memoria y los periféricos mediante buses compartidos.
