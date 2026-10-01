@@ -196,12 +196,14 @@ Este documento se distribuye bajo la licencia [[https://creativecommons.org/lice
 | A \ BC | 00 | 01 | 11 | 10 |
 |--------+----+----+----+----|
 |   0    |  0 |  1 |  1 |  0 |
-|   1    |  0 |  1 |  1 |  1 |
+|   1    |  0 |  0 |  1 |  1 |
 
 - Agrupaciones posibles:
-  - Grupo de 4 (columnas 01 y 11): término \(B\).
-  - Grupo de 2 (fila 1, columnas 11 y 10): término \(A\,C\).
-  - Función simplificada: \(F = B + A\,C\).
+  - Grupos de 2. Agrupación 1: 001 y 011. Agrupación 2: 111 y 110.
+  - Función simplificada:
+    \[
+    F = \overline{A}\,C + A\,B
+    \]
 
 ** Mapa de 4 variables
 - Variables: \(AB\) (filas), \(CD\) (columnas), ambas en código Gray.
