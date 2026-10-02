@@ -122,7 +122,22 @@ Debes obtener:
 ** Ejercicio 4. Implementación de expresiones lógicas
 A partir de la siguiente expresión lógica:
 \[
-    F = \prod m(0,1,7,6,14,15) 
+    F = \sum (1,5,6,7,9,13,15) 
+\]
+
+Debes obtener:
+1. Funciones lógicas de salida expresadas como suma de productos.
+2. Funciones lógicas de salida  expresadas como producto de sumas.
+4. Expresiones mínimas de las funciones lógicas.
+5. Simplificaciones a través de los mapas de Karnaugh.
+6. Implementación del circuito con puertas básicas: AND, OR, NOT.
+7. Implementación del ciruito sólo con pueras NAND.
+8. Implementación del circuito sólo con puertas NOR.
+
+** Ejercicio 5. Implementación de expresiones lógicas
+A partir de la siguiente expresión lógica:
+\[
+    G = \prod (0,1,6,7,14,15) 
 \]
 
 Debes obtener:
@@ -427,14 +442,34 @@ Si has terminado la actividad, realiza una de las siguientes ampliaciones:
 | *Total:*              |                                                                  |         10 |
 #+TBLFM: @10$3=vsum(@2..@9)
 
+
 * Entrega
+
+** Corección
+- Por cada día de retraso injustificado en la entrega, se restará 1 punto de la nota.
+- Las preguntas de los ejercicios deben aparecer claramente junto a las respuestas.
+- Es muy importante cuidar la presentación y la limpieza de las respuestas entregadas al profesor. La letra debe ser clara y legible.
+- Elabora un informe de las acciones realizadas para resolver las actividades propuestas.
+- En caso de que se detecte copia o plagio de los ejercicios de otros compañeros, se anulará la nota del ejercicio.
+
+** Forma de entrega:
+- A través de la plataforma Moodle GVA AULES: https://aules.edu.gva.es/.
+- Documentos que hay que entregar:
+  + Elabora un documento escrito a mano que contenga la resolución de los ejercicios propuestos.
+  + Formato de documento PDF. Cambia el nombre del documento y añade tu apellido y nombre al final.
+
 
 Debes entregar los siguientes archivos en la actividad habilitada en Moodle:
 
-| Archivo             | Nombre requerido                             |
-|---------------------+----------------------------------------------|
-| Circuito de Logisim | =control_acceso_apellido_nombre.circ=        |
-| Informe técnico     | =informe_control_acceso_apellido_nombre.pdf= |
+| Archivo         | Nombre requerido                             |
+|-----------------+----------------------------------------------|
+| Ejercicio 1     | =ej1_apellido_nombre.circ=                   |
+| Ejercicio 2     | =ej2_apellido_nombre.circ=                   |
+| Ejercicio 3     | =ej3_apellido_nombre.circ=                   |
+| Ejercicio 4     | =ej4_apellido_nombre.circ=                   |
+| Ejercicio 5     | =ej5_apellido_nombre.circ=                   |
+| Problema 1      | =control_acceso_apellido_nombre.circ=        |
+| Informe técnico | =informe_logisim_apellido_nombre.pdf=        |
 
 Antes de entregar, verifica que:
 
