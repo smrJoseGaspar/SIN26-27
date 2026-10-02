@@ -1,11 +1,37 @@
-#+TITLE: Tarea práctica: Álgebra de Boole, puertas lógicas y diseño de circuitos con Logisim
-#+SUBTITLE: Módulo de Sistemas Informáticos — CFGS Desarrollo de Aplicaciones Multiplataforma
-#+AUTHOR: Departamento de Informática
-#+OPTIONS: toc:3 num:t
+#+TITLE: Tarea 1.2: Álgebra de Boole, puertas lógicas y diseño de circuitos con Logisim
+#+SUBTITLE: Sistemas Informáticos (1ºDAM)
+#+AUTHOR: José Gaspar Sánchez García
+#+email: jg.sanchezgarcia@edu.gva.es
+#+date: \today
+
+#+options: tasks:t tex:t timestamp:t title:t toc:t todo:t num:t |:t
 #+LANGUAGE: es
 #+STARTUP: overview
 
-* Datos de la actividad
+#+latex_class: article
+#+latex_class_options:
+#+latex_header:
+#+latex_header_extra:
+#+latex_class_pre:
+
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{geometry}
+#+LATEX_HEADER: \geometry{margin=2.5cm}
+
+#+description: Álgebra de Boole, puertas lógicas, Logisim.
+#+keywords: Álgebra de Boole, puertas lógicas, Logisim.
+#+latex_footnote_command: \footnote{%s%s}
+#+latex_engraved_theme:
+#+latex_compiler: pdflatex
+
+#+odt_styles_file: "./estilos.odt"
+
+# SPDX-License-Identifier: CC BY-NC-SA 4.0
+# Copyright (c) 2026 José Gaspar Sánchez García
+
+* Datos de la actividad                                            :noexport:
 
 | Campo                 | Descripción                                                               |
 |-----------------------+---------------------------------------------------------------------------|
@@ -93,6 +119,20 @@ Debes obtener:
 7. Implementación del ciruito sólo con pueras NAND.
 8. Implementación del circuito sólo con puertas NOR.
 
+** Ejercicio 4. Implementación de expresiones lógicas
+A partir de la siguiente expresión lógica:
+\[
+    F = \prod m(0,1,7,6,14,15) 
+\]
+
+Debes obtener:
+1. Funciones lógicas de salida expresadas como suma de productos.
+2. Funciones lógicas de salida  expresadas como producto de sumas.
+4. Expresiones mínimas de las funciones lógicas.
+5. Simplificaciones a través de los mapas de Karnaugh.
+6. Implementación del circuito con puertas básicas: AND, OR, NOT.
+7. Implementación del ciruito sólo con pueras NAND.
+8. Implementación del circuito sólo con puertas NOR.
 
 * Problema 1: Sistema de control de acceso
 
@@ -176,7 +216,7 @@ Expresión inicial:
 Z =
 \]
 
-*** Actividad 1.4: formas Canónicas
+*** Actividad 1.4: Formas Canónicas
 
 Obtén las siguientes expresiones a partir de la tabla de verdad:
 
@@ -185,13 +225,13 @@ Obtén las siguientes expresiones a partir de la tabla de verdad:
 
 Escribe las expresiones utilizando las variables =A=, =B= y =C=.
 
-**** Suma de Productos (SdP)
+**** Suma de Productos (SdP)                                       :noexport:
 
 \[
 Z =
 \]
 
-**** Producto de Sumas (PdS)
+**** Producto de Sumas (PdS)                                       :noexport:
 
 \[
 Z =
@@ -217,7 +257,7 @@ Debes mostrar los pasos intermedios y justificar las leyes empleadas. Puedes uti
 | De Morgan     | =(A·B)' = A' + B'=    |
 
 Presenta el proceso:
-
+**** Proceso simplificación                                        :noexport:
 \[
 \begin{aligned}
 Z &= \\
@@ -371,7 +411,7 @@ Si has terminado la actividad, realiza una de las siguientes ampliaciones:
 
 
 
-** Criterios de evaluación
+** Criterios de evaluación                                         :noexport:
 
 | Criterio              | Descripción                                                      | Puntuación |
 |-----------------------+------------------------------------------------------------------+------------|

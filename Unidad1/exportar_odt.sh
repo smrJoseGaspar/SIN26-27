@@ -1,0 +1,24 @@
+#!/bin/bash
+
+clear
+
+# Comprobamos argumentos de ejecución
+
+if [ $# -lt 1 ]
+then
+    echo "Uso: $0 fichero_entrada.org [fichero_salida.odt]"
+    exit 1
+fi
+
+if [ $# -ge 2 ]
+then
+    SALIDA=$2
+else
+    SALIDA="$1.odt" 
+fi
+
+# Ejecutamos comando de exportación
+
+$(pandoc -f org -t odt --toc --toc-depth=3 --reference-doc=estilos.odt -o $SALIDA $1)
+
+echo "Exportado fichero $SALIDA"
