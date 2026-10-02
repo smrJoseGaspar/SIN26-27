@@ -68,7 +68,7 @@ Al finalizar la actividad, deberás ser capaz de:
 * Ejercicios
 ** Ejercicio 1. Análisis de un circuito lógico
 
-Analisis del siguiente circuito lógico para obtener:
+Analiza la imagen del siguiente circuito lógico para obtener:
 
 #+DOWNLOADED: ~/images/20261002_Analisis.png @ 2026-10-02 05:12:28
 #+caption: Análisis de un circuito lógico
