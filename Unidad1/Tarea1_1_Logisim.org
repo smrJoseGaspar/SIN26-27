@@ -33,17 +33,17 @@
 
 * Datos de la actividad                                            :noexport:
 
-| Campo                 | Descripción                                                               |
-|-----------------------+---------------------------------------------------------------------------|
-| Módulo                | Sistemas Informáticos                                                     |
-| Ciclo formativo       | Desarrollo de Aplicaciones Multiplataforma (DAM)                          |
-| Unidad de trabajo     | Representación de la información y fundamentos de lógica digital          |
-| Título                | Álgebra de Boole, puertas lógicas y diseño de circuitos con Logisim       |
-| Duración estimada     | 3–4 horas de trabajo práctico                                             |
-| Modalidad             | Individual o por parejas, según indicación del profesorado                |
-| Herramienta principal | Logisim o Logisim-evolution                                               |
-| Entregables           | Archivo =.circ= de Logisim e informe técnico en PDF                       |
-| Calificación          | 5 puntos / 10 puntos, según la ponderación establecida por el profesorado |
+| Campo                 | Descripción                                                         |
+|-----------------------+---------------------------------------------------------------------|
+| Módulo                | Sistemas Informáticos                                               |
+| Ciclo formativo       | Desarrollo de Aplicaciones Multiplataforma (DAM)                    |
+| Unidad de trabajo     | 1. Introducción a los Sistemas Informáticos.                        |
+| Título                | Álgebra de Boole, puertas lógicas y diseño de circuitos con Logisim |
+| Duración estimada     | 3–4 horas de trabajo práctico                                       |
+| Modalidad             | Individual o por parejas, según indicación del profesorado          |
+| Herramienta principal | Logisim o Logisim-evolution                                         |
+| Entregables           | Archivo =.circ= de Logisim e informe técnico en PDF                 |
+| Calificación          | Deacuerdo con los Criterios de Evaluación                           |
 
 * Contexto y finalidad
 
@@ -149,7 +149,7 @@ Debes obtener:
 7. Implementación del ciruito sólo con pueras NAND.
 8. Implementación del circuito sólo con puertas NOR.
 
-* Problema 1: Sistema de control de acceso
+* Problema: Sistema de Control de Acceso
 
 Un laboratorio de informática dispone de una cerradura eléctrica controlada por un circuito digital. El circuito debe decidir si permite la apertura de la puerta.
 
@@ -228,7 +228,7 @@ Usa la siguiente notación:
 Expresión inicial:
 
 \[
-Z =
+Z(A,B,C) =
 \]
 
 *** Actividad 1.4: Formas Canónicas
@@ -468,7 +468,7 @@ Debes entregar los siguientes archivos en la actividad habilitada en Moodle:
 | Ejercicio 3     | =ej3_apellido_nombre.circ=                   |
 | Ejercicio 4     | =ej4_apellido_nombre.circ=                   |
 | Ejercicio 5     | =ej5_apellido_nombre.circ=                   |
-| Problema 1      | =control_acceso_apellido_nombre.circ=        |
+| Problema        | =control_acceso_apellido_nombre.circ=        |
 | Informe técnico | =informe_logisim_apellido_nombre.pdf=        |
 
 Antes de entregar, verifica que:
