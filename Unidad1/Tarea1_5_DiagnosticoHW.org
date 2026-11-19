@@ -1,0 +1,289 @@
+#+TITLE: PRÁCTICA GUIADA: DIAGNÓSTICO E INVENTARIO DE HARDWARE (CLI Y GUI)
+#+SUBTITLE: Módulo Profesional: Sistemas Informáticos (1.º DAM) — Resultado de Aprendizaje 1
+#+AUTHOR: [Escribe aquí tu nombre y apellidos]
+#+DATE: [DD/MM/2026]
+#+LANGUAGE: es
+#+OPTIONS: toc:t num:nil ^:nil
+
+# --- CONFIGURACIÓN DE EXPORTACIÓN LATEX ---
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[spanish,es-tabla]{babel}
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
+#+LATEX_HEADER: \usepackage[margin=1.7cm, top=2cm, bottom=2cm]{geometry}
+#+LATEX_HEADER: \usepackage{helvet}
+#+LATEX_HEADER: \renewcommand{\familydefault}{\sfdefault}
+#+LATEX_HEADER: \usepackage[table,xcdraw]{xcolor}
+#+LATEX_HEADER: \usepackage{tabularx}
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage{listings}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{float}
+#+LATEX_HEADER: \usepackage[most]{tcolorbox}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+
+# --- ESTILOS DE COLORES, CÓDIGO Y CABECERAS ---
+#+LATEX_HEADER: \definecolor{primaryblue}{HTML}{1E3A8A}
+#+LATEX_HEADER: \definecolor{codebg}{HTML}{F8FAFC}
+#+LATEX_HEADER: \definecolor{lightgraybg}{HTML}{F3F4F6}
+#+LATEX_HEADER: \definecolor{capturebg}{HTML}{F8FAFC}
+#+LATEX_HEADER: \definecolor{captureborder}{HTML}{64748B}
+
+#+LATEX_HEADER: \lstset{backgroundcolor=\color{codebg},basicstyle=\ttfamily\small,frame=single,rulecolor=\color{gray!40},breaklines=true}
+
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \lhead{\small\color{gray} Sistemas Informáticos (1.º DAM) — RA 1}
+#+LATEX_HEADER: \rhead{\small\color{gray} Práctica Guiada: Diagnóstico de Hardware (CLI y GUI)}
+#+LATEX_HEADER: \cfoot{\small\thepage}
+
+# --- ESTILO PARA BLOQUES DE RESPUESTA (QUOTE) Y MARCOS DE CAPTURA ---
+#+LATEX_HEADER: \renewenvironment{quote}{\begin{tcolorbox}[colback=lightgraybg,colframe=primaryblue,boxrule=0.5pt,arc=2pt,left=6pt,right=6pt,top=6pt,bottom=6pt]}{\end{tcolorbox}}
+#+LATEX_HEADER: \newtcolorbox{capturabox}[1]{colback=capturebg,colframe=captureborder,boxrule=0.8pt,arc=3pt,title={\small\bfseries\faCamera\ Evidencia Gráfica: #1},fonttitle=\color{white},coltitle=white,colbacktitle=captureborder,left=6pt,right=6pt,top=6pt,bottom=6pt}
+
+# --- ESTILO DE SECCIONES ---
+#+LATEX_HEADER: \usepackage{titlesec}
+#+LATEX_HEADER: \titleformat{\section}{\large\bfseries\color{primaryblue}}{}{0em}{}[\titlerule]
+#+LATEX_HEADER: \titleformat{\subsection}{\normalsize\bfseries\color{darkgray}}{}{0em}{}
+
+* 1. Objetivos, Entorno e Instrucciones de Entrega
+El objetivo de esta práctica es aprender a **auditar los componentes físicos, buses de interconexión, jerarquía de memorias y periféricos** de un sistema informático sin necesidad de abrir el chasis, combinando herramientas nativas de línea de comandos (CLI) con utilidades gráficas especializadas (GUI) tanto en **GNU/Linux (Ubuntu)** como en **Windows**.
+
+- *Criterios evaluados:* =CE 1.a= (Componentes y buses), =CE 1.b= (Memorias y prestaciones), =CE 1.c= (Firmware y puesta en marcha) y =CE 1.d= (Periféricos y controladores).
+- *Instrucciones para las evidencias:* Guarda todas tus capturas de pantalla en la carpeta =./capturas/= respetando los nombres indicados en cada recuadro (o actualiza las rutas =[[file:...]]=) y exporta este documento a **PDF** (=C-c C-e l p=) para su entrega.
+
+* 2. Bloque A: Auditoría de Hardware en GNU/Linux (CLI)
+
+** 2.1. Procesador y Cachés Internas (=lscpu=) — [CE 1.a y 1.b]
+Ejecuta el siguiente comando en la terminal para inspeccionar la arquitectura del procesador y su jerarquía de memorias caché:
+
+#+BEGIN_SRC bash
+lscpu
+#+END_SRC
+
+/Analiza la salida obtenida y completa los siguientes datos:/
+- *Arquitectura y modelo exacto de CPU:* [Escribe aquí]
+- *Núcleos físicos vs. Hilos (Threads):* [Escribe aquí]
+- *Tamaño de Caché L1d (datos) y L1i (instrucciones):* [Escribe aquí]
+- *Tamaño de Caché L2 y L3:* [Escribe aquí]
+- *¿Soporta virtualización por hardware (VT-x / AMD-V)? Indica el flag que lo confirma:* [Escribe aquí]
+
+#+BEGIN_EXPORT latex
+\begin{capturabox}{Ejecución del comando \texttt{lscpu} en terminal Linux}
+#+END_EXPORT
+#+CAPTION: Salida de lscpu mostrando arquitectura y cachés
+#+ATTR_LATEX: :width 0.78\textwidth :placement [H]
+[[file:./capturas/linux_lscpu.png]]
+#+BEGIN_EXPORT latex
+\end{capturabox}
+#+END_EXPORT
+
+** 2.2. Placa Base, Firmware UEFI/BIOS y Módulos RAM (=dmidecode=) — [CE 1.a, 1.b y 1.c]
+La herramienta =dmidecode= lee directamente las tablas SMBIOS/DMI del firmware de la placa base. Ejecuta:
+
+#+BEGIN_SRC bash
+sudo dmidecode -t baseboard
+sudo dmidecode -t bios
+sudo dmidecode -t memory
+#+END_SRC
+
+/Completa la ficha técnica con los valores reales extraídos:/
+- *Fabricante y modelo de la Placa Base:* [Escribe aquí]
+- *Fabricante, versión y fecha del Firmware BIOS/UEFI:* [Escribe aquí]
+- *Capacidad máxima de RAM soportada por la placa (=Maximum Capacity=):* [Escribe aquí]
+- *Número de ranuras totales y ranuras ocupadas:* [Escribe aquí]
+- *Tipo de RAM (DDR4/DDR5), velocidad configurada (MT/s) y factor de forma (DIMM/SODIMM):* [Escribe aquí]
+
+#+BEGIN_EXPORT latex
+\begin{capturabox}{Salida de \texttt{sudo dmidecode} (placa, BIOS y memoria)}
+#+END_EXPORT
+#+CAPTION: Auditoría SMBIOS mediante dmidecode en Linux
+#+ATTR_LATEX: :width 0.78\textwidth :placement [H]
+[[file:./capturas/linux_dmidecode.png]]
+#+BEGIN_EXPORT latex
+\end{capturabox}
+#+END_EXPORT
+
+\newpage
+
+** 2.3. Buses PCIe, Almacenamiento y Periféricos (=lspci=, =lsblk=, =lsusb=) — [CE 1.a y 1.d]
+Ejecuta los siguientes comandos para listar los dispositivos conectados a los buses internos y externos:
+
+#+BEGIN_SRC bash
+lspci -nnk
+lsblk -o NAME,SIZE,TYPE,TRAN,MODEL
+lsusb
+#+END_SRC
+
+/Responde a partir de los resultados obtenidos:/
+1. *Controladora gráfica detectada (=VGA compatible controller=) y driver del kernel en uso:*
+   #+BEGIN_QUOTE
+   [Escribe aquí el modelo y el campo "Kernel driver in use"]
+   #+END_QUOTE
+2. *Unidades de almacenamiento detectadas (=lsblk=), su capacidad y bus de transporte (=TRAN=: sata, nvme, usb):*
+   #+BEGIN_QUOTE
+   [Escribe aquí las unidades detectadas]
+   #+END_QUOTE
+3. *Lista al menos 3 dispositivos conectados al bus USB (=lsusb=) indicando su ID de fabricante/producto:*
+   #+BEGIN_QUOTE
+   [Escribe aquí los dispositivos USB]
+   #+END_QUOTE
+
+#+BEGIN_EXPORT latex
+\begin{capturabox}{Listado de buses y dispositivos (\texttt{lspci}, \texttt{lsblk} y \texttt{lsusb})}
+#+END_EXPORT
+#+CAPTION: Inventario de buses PCIe, almacenamiento y USB en Linux
+#+ATTR_LATEX: :width 0.78\textwidth :placement [H]
+[[file:./capturas/linux_buses_perifericos.png]]
+#+BEGIN_EXPORT latex
+\end{capturabox}
+#+END_EXPORT
+
+** 2.4. Generación de Informe Técnico Automatizado (=lshw=)
+El comando =lshw= (/List Hardware/) permite exportar el inventario completo del sistema en formato web o JSON. Ejecuta:
+
+#+BEGIN_SRC bash
+sudo lshw -html > inventario_hardware.html
+#+END_SRC
+
+- *Tarea:* Abre el archivo =inventario_hardware.html= en tu navegador y describe brevemente cómo estructura la jerarquía de buses (=pci=, =usb=, =scsi=) desde la placa base hasta los periféricos.
+  #+BEGIN_QUOTE
+  [Escribe aquí tu observación]
+  #+END_QUOTE
+
+#+BEGIN_EXPORT latex
+\begin{capturabox}{Informe HTML generado por \texttt{lshw} abierto en el navegador}
+#+END_EXPORT
+#+CAPTION: Vista jerárquica del hardware generada con sudo lshw -html
+#+ATTR_LATEX: :width 0.78\textwidth :placement [H]
+[[file:./capturas/linux_lshw_html.png]]
+#+BEGIN_EXPORT latex
+\end{capturabox}
+#+END_EXPORT
+
+\newpage
+
+* 3. Bloque B: Auditoría de Hardware en Windows (PowerShell)
+
+** 3.1. Inventario General del Sistema (=Get-ComputerInfo=)
+Abre **PowerShell como Administrador** y ejecuta el siguiente comando para extraer la información de placa, procesador, BIOS y memoria física:
+
+#+BEGIN_SRC powershell
+Get-ComputerInfo | Select-Object CsManufacturer, CsModel, BiosFirmwareType, BiosSMBIOSBIOSVersion, CsProcessors, CsTotalPhysicalMemory
+#+END_SRC
+
+/Completa los datos obtenidos en Windows:/
+- *Tipo de Firmware activo (=BiosFirmwareType=: UEFI o Legacy):* [Escribe aquí]
+- *Versión SMBIOS/BIOS:* [Escribe aquí]
+- *Memoria física total detectada (en GB):* [Escribe aquí]
+
+#+BEGIN_EXPORT latex
+\begin{capturabox}{Salida de \texttt{Get-ComputerInfo} en PowerShell}
+#+END_EXPORT
+#+CAPTION: Información general del sistema y firmware en Windows
+#+ATTR_LATEX: :width 0.78\textwidth :placement [H]
+[[file:./capturas/win_computerinfo.png]]
+#+BEGIN_EXPORT latex
+\end{capturabox}
+#+END_EXPORT
+
+** 3.2. Inspección Detallada de Módulos RAM y Discos (=Get-CimInstance=)
+En entornos Windows modernos (donde =wmic= está en desuso), se utilizan consultas CIM/WMI desde PowerShell. Ejecuta:
+
+#+BEGIN_SRC powershell
+Get-CimInstance -ClassName Win32_PhysicalMemory | Format-Table BankLabel, Capacity, Speed, Manufacturer, PartNumber -AutoSize
+Get-PhysicalDisk | Format-Table FriendlyName, MediaType, BusType, Size, HealthStatus -AutoSize
+#+END_SRC
+
+/Responde a las siguientes cuestiones técnicas:/
+- *¿En qué bancos/ranuras (=BankLabel=) están instalados los módulos de RAM y a qué velocidad (MHz/MT/s) operan?* [Escribe aquí]
+- *¿Qué tipo de medio (=MediaType=: SSD/HDD), bus (=BusType=: NVMe/SATA/SAS) y estado de salud (=HealthStatus=) presentan tus discos?* [Escribe aquí]
+
+#+BEGIN_EXPORT latex
+\begin{capturabox}{Consulta de memoria física y discos (\texttt{Win32\_PhysicalMemory} y \texttt{Get-PhysicalDisk})}
+#+END_EXPORT
+#+CAPTION: Auditoría de módulos RAM y unidades de almacenamiento en PowerShell
+#+ATTR_LATEX: :width 0.78\textwidth :placement [H]
+[[file:./capturas/win_ram_discos.png]]
+#+BEGIN_EXPORT latex
+\end{capturabox}
+#+END_EXPORT
+
+** 3.3. Auditoría de Periféricos y Controladores (=Get-PnpDevice=) — [CE 1.d]
+Verifica el estado de todos los dispositivos Plug & Play conectados y filtra si existe algún periférico con errores de controlador:
+
+#+BEGIN_SRC powershell
+  Get-PnpDevice -PresentOnly | Group-Object -Property Class | Sort-Object Count -Descending
+  Get-PnpDevice -PresentOnly | Where-Object { $_.Status -ne 'OK' }
+#+END_SRC
+/Analiza la salida obtenida:/
+• ¿Cuáles son las 3 clases (=Class=) de dispositivos con mayor número de elementos en tu equipo? [Escribe aquí]
+• ¿Ha devuelto algún resultado el segundo comando (dispositivos cuyo estado sea distinto de =OK=)? Si es así, indica cuál y su código de error: [Escribe aquí]
+#+BEGIN_EXPORT latex
+\begin{capturabox}{Estado de dispositivos Plug & Play (\texttt{Get-PnpDevice})}
+#+END_EXPORT
+#+CAPTION: Agrupación y verificación de controladores PnP en Windows
+#+ATTR_LATEX: :width 0.78\textwidth :placement [H]
+[[file:./capturas/win_pnpdevice.png]]
+#+BEGIN_EXPORT latex
+\end{capturabox}
+#+END_EXPORT
+\newpage
+
+* 4. Bloque C: Herramientas Gráficas de Diagnóstico (=CPU-Z= y =CPU-X=) — [CE 1.a y 1.b]
+Además de las herramientas de terminal, los técnicos de sistemas emplean utilidades gráficas que leen directamente los sensores de la placa base, los registros MSR del procesador y los chips SPD de los módulos de memoria.
+** 4.1. Auditoría con =CPU-Z= (Windows)
+Descarga e instala (o ejecuta la versión portable) de CPU-Z en Windows y explora sus pestañas principales (=CPU=, =Caches=, =Mainboard=, =Memory=, =SPD=, =Graphics=):
+1. Pestaña CPU y Caches: Indica el nombre en clave (/Code Name/), la litografía (nm), el voltaje actual del núcleo (/Core Voltage/) y la asociatividad (/Way/) de las memorias caché L1, L2 y L3.
+#+BEGIN_QUOTE
+[Escribe aquí los datos extraídos de CPU-Z]
+#+END_QUOTE
+2. Pestaña Memory vs. SPD: Explica qué diferencia existe entre la información que muestra la pestaña Memory (frecuencia DRAM actual y latencias activas como =CL=, =tRCD=, =tRP=, =tRAS=) y la pestaña SPD (tablas JEDEC y perfiles XMP/EXPO grabados en cada ranura física).
+#+BEGIN_QUOTE
+[Escribe aquí tu explicación]
+#+END_QUOTE
+#+BEGIN_EXPORT latex
+\begin{capturabox}{Interfaz gráfica de \texttt{CPU-Z} en Windows (pestañas Memory / SPD / CPU)}
+#+END_EXPORT
+#+CAPTION: Diagnóstico de procesador y memoria con CPU-Z en Windows
+#+ATTR_LATEX: :width 0.55\textwidth :placement [H]
+[[file:./capturas/cpuz_windows.png]]
+#+BEGIN_EXPORT latex
+\end{capturabox}
+#+END_EXPORT
+** 4.2. Alternativa en GNU/Linux: =CPU-X= (Modo Gráfico y Modo Terminal =ncurses=)
+En Ubuntu/Debian, la alternativa libre equivalente a CPU-Z es CPU-X (además de utilidades complementarias como =hardinfo= o =inxi=). Instálalo y ejecútalo tanto en modo gráfico como en modo texto interactivo:
+#+BEGIN_SRC bash
+sudo apt update && sudo apt install -y cpu-x
+cpu-x           # Abre la interfaz gráfica GTK
+cpu-x --ncurses # Abre la interfaz interactiva en modo texto dentro de la terminal
+#+END_SRC
+1. Comparativa funcional: Comprueba si =CPU-X= muestra los mismos datos técnicos (pestañas CPU, Cachés, Placa base, Memoria, Sistema, Gráficos) que =CPU-Z= en Windows y señala qué ventaja ofrece el parámetro =--ncurses= cuando administras un servidor Linux sin entorno gráfico (vía SSH).
+#+BEGIN_QUOTE
+[Escribe aquí tu respuesta]
+#+END_QUOTE
+#+BEGIN_EXPORT latex
+\begin{capturabox}{Ejecución de \texttt{CPU-X} en GNU/Linux (interfaz gráfica GTK o modo \texttt{--ncurses})}
+#+END_EXPORT
+#+CAPTION: Auditoría de hardware mediante CPU-X en Ubuntu
+#+ATTR_LATEX: :width 0.55\textwidth :placement [H]
+[[file:./capturas/cpux_linux.png]]
+#+BEGIN_EXPORT latex
+\end{capturabox}
+#+END_EXPORT
+\newpage
+
+* 5. Tabla Comparativa de Herramientas (Síntesis Final)
+/Completa esta tabla resumen con las equivalencias entre GNU/Linux y Windows (tanto en CLI como en GUI) para futuras auditorías técnicas:/
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align |l|X|X|
+|-------------------------------+------------------------------------+----------------------------------|
+| Componente / Dato a auditar   | Herramienta / Comando en GNU/Linux | Herramienta / Comando en Windows |
+|-------------------------------+------------------------------------+----------------------------------|
+| Arquitectura CPU y Cachés     | =lscpu=                            | [Escribe el comando PowerShell]  |
+| Datos Placa Base y BIOS       | [Escribe el comando]               | =Get-ComputerInfo=               |
+| Módulos RAM físicos (slots)   | =sudo dmidecode -t memory=         | [Escribe el comando PowerShell]  |
+| Discos y buses (NVMe/SATA)    | [Escribe el comando]               | =Get-PhysicalDisk=               |
+| Periféricos y drivers activos | =lspci -k= / =lsusb=               | [Escribe el comando PowerShell]  |
+| Auditoría gráfica completa    | =CPU-X= / =HardInfo=               | [Escribe la herramienta GUI]     |
+|-------------------------------+------------------------------------+----------------------------------|

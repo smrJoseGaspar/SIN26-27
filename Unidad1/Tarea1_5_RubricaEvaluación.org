@@ -1,0 +1,79 @@
+#+TITLE: RÚBRICA DE EVALUACIÓN: DIAGNÓSTICO DE HARDWARE (CLI Y GUI)
+#+SUBTITLE: Módulo Profesional: Sistemas Informáticos (1.º DAM) — Resultado de Aprendizaje 1
+#+AUTHOR: Departamento de Informática y Comunicaciones
+#+DATE: [DD/MM/2026]
+#+LANGUAGE: es
+#+OPTIONS: toc:nil num:nil ^:nil
+
+# --- CONFIGURACIÓN DE EXPORTACIÓN LATEX (APAISADO PARA RÚBRICAS) ---
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,9pt,landscape]
+#+LATEX_HEADER: \usepackage[spanish,es-tabla]{babel}
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
+#+LATEX_HEADER: \usepackage[margin=1.2cm, top=1.6cm, bottom=1.6cm]{geometry}
+#+LATEX_HEADER: \usepackage{helvet}
+#+LATEX_HEADER: \renewcommand{\familydefault}{\sfdefault}
+#+LATEX_HEADER: \usepackage[table,xcdraw]{xcolor}
+#+LATEX_HEADER: \usepackage{tabularx}
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+
+# --- ESTILOS DE COLORES Y CABECERAS ---
+#+LATEX_HEADER: \definecolor{primaryblue}{HTML}{1E3A8A}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \lhead{\small\color{gray} Sistemas Informáticos (1.º DAM) — Instrumento de Evaluación RA 1}
+#+LATEX_HEADER: \rhead{\small\color{gray} Práctica Guiada: Diagnóstico de Hardware (CLI y GUI)}
+#+LATEX_HEADER: \cfoot{\small\thepage}
+
+# --- ESTILO DE SECCIONES ---
+#+LATEX_HEADER: \usepackage{titlesec}
+#+LATEX_HEADER: \titleformat{\section}{\large\bfseries\color{primaryblue}}{}{0em}{}[\titlerule]
+
+* Datos de Corrección
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align |l|X|l|X|
+
+|---------------------+---------------------------------------------+-----------------------+--------------------------------------|
+| *Alumno/a:*         | [Nombre y apellidos del estudiante]         | *Grupo:*              | 1.º DAM                              |
+| *Fecha corrección:* | [DD/MM/2026]                                | *Calificación Final:* | *[Calculada en tabla inferior]*      |
+
+* Matriz de Evaluación por Criterios de Evaluación (RA 1)
+
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align |p{3.2cm}|X|X|X|X|c|
+
+|------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+--------|
+| *Criterio / Dimensión*                   | *Excelente (9 - 10)*                                                                        | *Notable (7 - 8)*                                                                          | *Suficiente (5 - 6)*                                                                       | *Insuficiente (< 5)*                                                                     | *Peso* |
+|------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+--------|
+| *CE 1.a* Componentes físicos e interconexión (=lscpu=, =lspci=, =lsblk=, CIM, =CPU-Z/X=) | Extrae e interpreta con total exactitud arquitectura CPU, virtualización, placa base, controladoras PCIe y buses de almacenamiento (=NVMe=/=SATA=) tanto por CLI como en GUI. | Extrae correctamente la mayoría de datos de hardware y buses en ambos sistemas, con alguna omisión menor en parámetros técnicos o buses. | Identifica los componentes básicos (CPU y discos) pero confunde los buses de transporte (=TRAN=/=BusType=) o solo completa un entorno. | No ejecuta las herramientas correctamente o no sabe interpretar la información básica de componentes y buses. | *25%*  |
+|------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+--------|
+| *CE 1.b* Jerarquía y tipos de memorias (Cachés, RAM, SPD/JEDEC en CLI y =CPU-Z/X=) | Detalla con rigor niveles de caché (L1/L2/L3 y asociatividad), capacidad máxima, ranuras ocupadas, velocidad real y diferencia con precisión *Memory* vs. *SPD* (JEDEC/XMP). | Identifica correctamente las cachés y la capacidad/velocidad de RAM, aunque explica de forma incompleta la diferencia entre tiempos activos y perfiles SPD. | Diferencia memoria caché de RAM principal, pero presenta errores al interpretar los volúmenes, ranuras físicas o latencias. | Confunde conceptos básicos de caché, RAM y almacenamiento o deja sin responder las consultas de memoria. | *25%*  |
+|------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+--------|
+| *CE 1.c* Verificación del firmware y arranque (=dmidecode -t bios=, =Get-ComputerInfo=) | Identifica con exactitud el tipo de firmware activo (UEFI vs. Legacy), fabricante, versión SMBIOS y fecha de compilación en Linux y Windows. | Extrae la versión de BIOS/UEFI correctamente en uno o ambos sistemas, pero no distingue con claridad el modo de arranque activo. | Localiza la versión básica del firmware pero comete imprecisiones al interpretar los parámetros SMBIOS. | No logra consultar la información del firmware o confunde la BIOS/UEFI con el sistema operativo. | *15%*  |
+|------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+--------|
+| *CE 1.d* Periféricos y controladores (=lsusb=, =lspci -k=, =Get-PnpDevice=) | Audita todos los dispositivos conectados, identifica sus IDs/clases, verifica los drivers activos del kernel y detecta dispositivos con estado distinto de =OK=. | Lista los periféricos USB/PCI y consulta el estado Plug & Play en Windows, aunque omite identificar el driver en uso o el filtrado de errores. | Obtiene el listado bruto de dispositivos pero no sabe interpretar qué controlador los gestiona ni si presentan fallos. | No realiza la auditoría de periféricos o no distingue entre dispositivo hardware y controlador (=driver=). | *15%*  |
+|------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+--------|
+| *Evidencias gráficas y síntesis* (Capturas CLI/GUI, =lshw=, =--ncurses= y tabla final) | Incorpora todas las capturas nítidas en sus recuadros (CLI y =CPU-Z/CPU-X=), justifica el uso de =--ncurses= en servidores y completa sin errores la tabla comparativa. | Incorpora la mayoría de capturas y completa la tabla comparativa con alguna imprecisión leve en comandos equivalentes o en la explicación de =CPU-X=. | Faltan varias capturas de pantalla de terminal o herramientas gráficas, o la tabla comparativa está incompleta. | No adjunta evidencias gráficas de ejecución ni completa el informe =lshw= ni la tabla final de equivalencias. | *20%*  |
+|------------------------------------------+---------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+--------|
+
+* Hoja de Cálculo de Calificación (Auto-calculable en Emacs)
+/Instrucciones para el docente: Introduce la nota (0 a 10) en la columna *Nota* y pulsa =C-c C-c= sobre la línea =#+TBLFM:= para calcular automáticamente la calificación final ponderada./
+
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align |l|X|c|c|c|
+
+|-----------+--------------------------------------------------+-------+---------------+------------------|
+| *Código*  | *Criterio / Dimensión Evaluada*                  | *Peso*| *Nota (0-10)* | *Ponderación*    |
+|-----------+--------------------------------------------------+-------+---------------+------------------|
+| CE 1.a    | Componentes físicos y buses de interconexión     |  0.25 |          0.00 |             0.00 |
+| CE 1.b    | Jerarquía de memorias, cachés y perfiles SPD/XMP |  0.25 |          0.00 |             0.00 |
+| CE 1.c    | Auditoría de firmware BIOS/UEFI y arranque       |  0.15 |          0.00 |             0.00 |
+| CE 1.d    | Auditoría de periféricos y controladores         |  0.15 |          0.00 |             0.00 |
+| EVIDENCIA | Capturas CLI/GUI (=CPU-Z/X=), =lshw= y síntesis  |  0.20 |          0.00 |             0.00 |
+|-----------+--------------------------------------------------+-------+---------------+------------------|
+|           | CALIFICACIÓN FINAL DE LA PRÁCTICA              | 1.00|               |             0.00 |
+|-----------+--------------------------------------------------+-------+---------------+------------------|
+#+TBLFM: $5=$3*$4;%.2f::@7$5=vsum(@2$5..@6$5);%.2f
+
+* Observaciones y Retroalimentación para el Alumno/a
+* Aspectos destacables: [Escribe aquí]
+* Aspectos a mejorar: [Escribe aquí]

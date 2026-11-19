@@ -1,0 +1,108 @@
+#+TITLE: HOJA DE SOLUCIONES RÁPIDAS (USO DOCENTE): DIAGNÓSTICO DE HARDWARE POR CLI
+#+SUBTITLE: Módulo Profesional: Sistemas Informáticos (1.º DAM) — Resultado de Aprendizaje 1
+#+AUTHOR: Departamento de Informática y Comunicaciones
+#+DATE: [DD/MM/2026]
+#+LANGUAGE: es
+#+OPTIONS: toc:nil num:nil ^:nil
+
+# --- CONFIGURACIÓN DE EXPORTACIÓN LATEX ---
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[spanish,es-tabla]{babel}
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
+#+LATEX_HEADER: \usepackage[margin=1.6cm, top=2cm, bottom=2cm]{geometry}
+#+LATEX_HEADER: \usepackage{helvet}
+#+LATEX_HEADER: \renewcommand{\familydefault}{\sfdefault}
+#+LATEX_HEADER: \usepackage[table,xcdraw]{xcolor}
+#+LATEX_HEADER: \usepackage{tabularx}
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage[most]{tcolorbox}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+
+# --- ESTILOS DE COLORES Y CABECERAS ---
+#+LATEX_HEADER: \definecolor{primaryblue}{HTML}{1E3A8A}
+#+LATEX_HEADER: \definecolor{solbg}{HTML}{ECFDF5}
+#+LATEX_HEADER: \definecolor{solborder}{HTML}{059669}
+
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \lhead{\small\color{gray} Sistemas Informáticos (1.º DAM) — Solucionario Docente RA 1}
+#+LATEX_HEADER: \rhead{\small\color{gray} Guía de Corrección: Comandos de Diagnóstico CLI}
+#+LATEX_HEADER: \cfoot{\small\thepage}
+
+# --- ESTILO PARA BLOQUES DE CLAVE DE CORRECCIÓN (QUOTE) ---
+#+LATEX_HEADER: \renewenvironment{quote}{\begin{tcolorbox}[colback=solbg,colframe=solborder,boxrule=0.5pt,arc=2pt,left=6pt,right=6pt,top=6pt,bottom=6pt]}{\end{tcolorbox}}
+
+# --- ESTILO DE SECCIONES ---
+#+LATEX_HEADER: \usepackage{titlesec}
+#+LATEX_HEADER: \titleformat{\section}{\large\bfseries\color{primaryblue}}{}{0em}{}[\titlerule]
+#+LATEX_HEADER: \titleformat{\subsection}{\normalsize\bfseries\color{darkgray}}{}{0em}{}
+
+* 1. Criterios de Corrección Rápida por Bloques
+/Nota: Los valores concretos (modelos, capacidades y frecuencias) variarán según el hardware físico del aula o la configuración de la Máquina Virtual (VirtualBox/VMware) utilizada por cada alumno/a. Verifica que los campos extraídos correspondan con los parámetros reales descritos a continuación./
+
+** Bloque A: Auditoría en GNU/Linux (Ubuntu)
+
+*** 2.1. Procesador y Cachés (=lscpu=)
+- *Arquitectura:* Habitualmente =x86_64= (en PCs estándar) o =aarch64= (en equipos Apple Silicon / ARM).
+- *Núcleos vs. Hilos:* Deben calcular o identificar =Core(s) per socket= × =Socket(s)= frente al total de CPUs lógicas (=CPU(s):=).
+- *Cachés:* En VirtualBox/VMware suelen mostrarse tamaños heredados del host (ej. L1d 32K/48K, L1i 32K, L2 256K-1M, L3 varios MB).
+- *Flag de virtualización:* Debe indicar *=vmx=* (procesadores Intel VT-x) o *=svm=* (procesadores AMD-V) en el campo =Flags:=.
+
+*** 2.2. Placa Base, Firmware y RAM (=dmidecode=)
+- *Placa Base (=-t baseboard=):* En equipo físico mostrará el fabricante real (ASUS, Gigabyte, MSI, Dell, HP...). En máquina virtual mostrará =Oracle Corporation / VirtualBox= o =VMware, Inc.=.
+- *Firmware (=-t bios=):* Fabricante (AMI, Phoenix, Insyde, VirtualBox), versión y fecha de compilación (=Release Date=).
+- *Memoria RAM (=-t memory=):*
+  - =Maximum Capacity=: Capacidad máxima total direccionable por la placa (ej. 64 GB, 128 GB).
+  - =Number Of Devices=: Ranuras físicas totales; el alumno debe contar cuántas tienen un tamaño asignado frente a las que marcan =No Module Installed=.
+  - *Tipo y velocidad:* Ej. =DDR4= / =DDR5=, velocidad en =MT/s= (ej. =3200 MT/s=) y factor de forma (=DIMM= en sobremesa, =SODIMM= en portátil).
+
+*** 2.3. Buses, Almacenamiento y Periféricos (=lspci=, =lsblk=, =lsusb=)
+1. *Controladora gráfica (=lspci -nnk=):*
+   #+BEGIN_QUOTE
+   Debe localizar la línea =VGA compatible controller= (ej. Intel UHD, NVIDIA, AMD Radeon, o =VMware SVGA II Adapter= / =VirtualBox Graphics Adapter= en VM) y copiar exactamente el valor de *=Kernel driver in use:=* (ej. =i915=, =nvidia=, =amdgpu=, =vmwgfx= o =vboxvideo=).
+   #+END_QUOTE
+2. *Unidades de almacenamiento (=lsblk=):*
+   #+BEGIN_QUOTE
+   Debe identificar las unidades de tipo *=disk=* (ej. =sda=, =nvme0n1=), su capacidad (=SIZE=) y su bus de transporte (=TRAN=: *=nvme=*, *=sata=*, *=usb=* o *=ata=* en discos virtuales IDE/SATA).
+   #+END_QUOTE
+3. *Dispositivos USB (=lsusb=):*
+   #+BEGIN_QUOTE
+   Debe listar 3 líneas mostrando el código hexadecimal *ID Fabricante:Producto* (ej. =ID 80ee:0021 VirtualBox USB Tablet= o =ID 046d:c52b Logitech, Inc. Unifying Receiver=).
+   #+END_QUOTE
+
+*** 2.4. Informe Automatizado (=lshw -html=)
+#+BEGIN_QUOTE
+*Respuesta esperada:* El informe HTML estructura el hardware en forma de árbol jerárquico partiendo del nodo raíz (=computer= / placa base =core=), del cual cuelgan el procesador (=cpu=), la memoria (=memory=), los puentes PCI (=pci=) y, anidados dentro de estos, las controladoras de almacenamiento (=storage= / =scsi=), red (=network=), vídeo (=display=) y concentradores (=usb=).
+#+END_QUOTE
+
+\newpage
+
+** Bloque B: Auditoría en Windows (PowerShell)
+
+*** 3.1. Inventario General (=Get-ComputerInfo=)
+- *BiosFirmwareType:* Debe devolver *=Uefi=* (en sistemas modernos) o *=Legacy=* (BIOS tradicional).
+- *BiosSMBIOSBIOSVersion:* Cadena identificativa de la versión del firmware.
+- *CsTotalPhysicalMemory:* Devuelve el valor en **bytes**; el alumno debe convertirlo a GB dividiendo entre $1024^3$ (o redondeando según corresponda, ej. =17179869184= bytes $\rightarrow$ =16 GB=).
+
+*** 3.2. Módulos RAM y Discos (=Get-CimInstance= / =Get-PhysicalDisk=)
+- *Bancos de RAM:* Debe indicar las etiquetas de ranura (=BankLabel=, ej. =BANK 0=, =DIMM_A2=, =DIMM_B2=) y la velocidad efectiva en MHz / MT/s (=Speed=). *(Nota: En algunas VMs de VirtualBox/VMware, =Win32_PhysicalMemory= puede devolver valores vacíos o genéricos; es válido si el alumno lo hace constar).*
+- *Discos físicos:* Debe indicar =MediaType= (*=SSD=* o *=HDD=*), =BusType= (*=NVMe=*, *=SATA=*, *=SAS=* o *=RAID=*) y =HealthStatus= (*=Healthy=* si no hay fallos SMART).
+
+*** 3.3. Periféricos y Controladores (=Get-PnpDevice=)
+- *Clases más numerosas:* Habitualmente *=System=* (dispositivos internos de placa/ACPI), *=USB=*, *=HIDClass=* (dispositivos de interfaz humana: teclado/ratón) o *=SoftwareDevice=*.
+- *Dispositivos con estado distinto de =OK=:* Si el segundo comando no devuelve nada, el alumno debe indicar que **todos los controladores están operativos sin errores**. Si devuelve algún dispositivo (ej. estado *=Error=* o *=Unknown=*), debe indicar su nombre (=FriendlyName=) y código de problema (=Problem=).
+
+* 2. Solución Exacta de la Tabla Comparativa Final (Apartado 4)
+
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align |l|X|X|
+|-------------------------------+---------------------------------------+---------------------------------------------------------------------------|
+| *Componente / Dato a auditar* | *Comando en GNU/Linux*                | *Comando en Windows (PowerShell)*                                         |
+|-------------------------------+---------------------------------------+---------------------------------------------------------------------------|
+| Arquitectura CPU y Cachés     | =lscpu=                               | =Get-CimInstance Win32_Processor= *(o =Get-ComputerInfo=)*                |
+| Datos Placa Base y BIOS       | =sudo dmidecode -t baseboard -t bios= | =Get-ComputerInfo= *(o =Get-CimInstance Win32_BIOS= / =Win32_BaseBoard=)* |
+| Módulos RAM físicos (slots)   | =sudo dmidecode -t memory=            | =Get-CimInstance Win32_PhysicalMemory=                                    |
+| Discos y buses (NVMe/SATA)    | =lsblk -o NAME,SIZE,TYPE,TRAN,MODEL=  | =Get-PhysicalDisk=                                                        |
+| Periféricos y drivers activos | =lspci -k= / =lsusb=                  | =Get-PnpDevice -PresentOnly=                                              |
+|-------------------------------+---------------------------------------+---------------------------------------------------------------------------|

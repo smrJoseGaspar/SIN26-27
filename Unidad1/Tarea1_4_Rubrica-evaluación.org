@@ -1,0 +1,81 @@
+#+TITLE: RÚBRICA DE EVALUACIÓN: AUDITORÍA Y MONTAJE VIRTUAL DE ESTACIÓN DE TRABAJO
+#+SUBTITLE: Módulo Profesional: Sistemas Informáticos (1.º DAM) — Resultado de Aprendizaje 1
+#+AUTHOR: Departamento de Informática y Comunicaciones
+#+DATE: [DD/MM/2026]
+#+LANGUAGE: es
+#+OPTIONS: toc:nil num:nil ^:nil
+
+# --- CONFIGURACIÓN DE EXPORTACIÓN LATEX (APAIASADO PARA RÚBRICAS) ---
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,9pt,landscape]
+#+LATEX_HEADER: \usepackage[spanish,es-tabla]{babel}
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
+#+LATEX_HEADER: \usepackage[margin=1.2cm, top=1.6cm, bottom=1.6cm]{geometry}
+#+LATEX_HEADER: \usepackage{helvet}
+#+LATEX_HEADER: \renewcommand{\familydefault}{\sfdefault}
+#+LATEX_HEADER: \usepackage[table,xcdraw]{xcolor}
+#+LATEX_HEADER: \usepackage{tabularx}
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+
+# --- ESTILOS DE COLORES Y CABECERAS ---
+#+LATEX_HEADER: \definecolor{primaryblue}{HTML}{1E3A8A}
+#+LATEX_HEADER: \definecolor{headerbg}{HTML}{DBEAFE}
+#+LATEX_HEADER: \definecolor{zebragray}{HTML}{F9FAFB}
+
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \lhead{\small\color{gray} Sistemas Informáticos (1.º DAM) — Instrumento de Evaluación RA 1}
+#+LATEX_HEADER: \rhead{\small\color{gray} Práctica: Simulación de Hardware y Periféricos}
+#+LATEX_HEADER: \cfoot{\small\thepage}
+
+# --- ESTILO DE SECCIONES ---
+#+LATEX_HEADER: \usepackage{titlesec}
+#+LATEX_HEADER: \titleformat{\section}{\large\bfseries\color{primaryblue}}{}{0em}{}[\titlerule]
+
+* Datos de Corrección
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align |l|X|l|X|
+
+|---------------------+---------------------------------------------+-----------------------+--------------------------------------|
+| *Alumno/a:*         | [Nombre y apellidos del estudiante]         | *Grupo:*              | 1.º DAM                              |
+| *Fecha corrección:* | [DD/MM/2026]                                | *Calificación Final:* | *[Calculada en tabla inferior]*      |
+
+* Matriz de Evaluación por Criterios de Evaluación (RA 1)
+
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align |p{3.2cm}|X|X|X|X|c|
+
+|----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+--------|
+| *Criterio de Evaluación*                     | *Excelente (9 - 10)*                                                                                                                                 | *Notable (7 - 8)*                                                                                                                | *Suficiente (5 - 6)*                                                                                                       | *Insuficiente (< 5)*                                                                                                         | *Peso* |
+|----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+--------|
+| *CE 1.a* Componentes físicos e interconexión | El montaje virtual está completo, sin cables sueltos ni incompatibilidades. Identifica con precisión todos los buses, sockets y conectores.          | El equipo virtual arranca y funciona, pero omite algún detalle técnico al describir los buses o conectores en la ficha.          | Completa el montaje básico en el simulador pero confunde interfaces (ej. M.2 SATA vs NVMe o versiones PCIe).               | El montaje en el simulador está incompleto, presenta piezas incompatibles o no logra conectar el cableado.                   | *25%*  |
+|----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+--------|
+| *CE 1.b* Tipos de memorias y prestaciones    | Tabla completa y rigurosa usando los datos reales de los componentes elegidos en el simulador (cachés exactas de CPU, frecuencias RAM, volatilidad). | Clasifica bien todas las memorias y sus características, aunque utiliza datos genéricos en lugar de los del equipo simulado.     | Diferencia correctamente RAM, ROM y SSD, pero la explicación sobre caché y registros es superficial o incompleta.          | Confunde conceptos fundamentales como la volatilidad, capacidad o la función de cada nivel de memoria.                       | *25%*  |
+|----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+--------|
+| *CE 1.c* Verificación de puesta en marcha    | Documenta el arranque, activa XMP/EXPO en la BIOS virtual, ajusta el orden de arranque y diagnostica correctamente el fallo provocado.               | Accede a la BIOS virtual y comprueba el hardware, pero no optimiza la RAM (XMP/EXPO) o documenta parcialmente el fallo simulado. | El equipo simulado enciende hasta el SO, pero apenas aporta capturas o explicaciones de la fase POST y configuración UEFI. | El equipo virtual no arranca (pantalla negra o fallo de montaje) y el alumno no identifica la causa ni diagnostica el fallo. | *20%*  |
+|----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+--------|
+| *CE 1.d* Dispositivos periféricos            | Clasifica los 5 periféricos con rigor y demuestra mediante capturas en la VM el uso de doble monitor extendido, impresora y verificación de drivers. | Configura los periféricos en la VM correctamente, aunque la tabla de clasificación técnica presenta alguna imprecisión.          | Logra configurar solo uno de los requisitos en la VM (monitor o impresora) o no verifica el estado de los controladores.   | No realiza la simulación en la VM ni clasifica adecuadamente los periféricos según su función e interfaz.                    | *15%*  |
+|----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+--------|
+| *CE 1.h* Seguridad y PRL                     | Redacta un protocolo exhaustivo cubriendo ESD, seguridad eléctrica, ergonomía específica para programación y gestión normativa RAEE.                 | Cubre todos los apartados de seguridad, ergonomía y residuos de forma correcta, aunque con menor nivel de detalle técnico.       | Menciona normas generales de seguridad en el aula pero omite aspectos clave como la protección ESD o el reciclaje RAEE.    | El apartado de PRL es inexistente, muy pobre o contiene prácticas inseguras para los equipos o personas.                     | *15%*  |
+|----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+--------|
+
+* Hoja de Cálculo de Calificación (Auto-calculable en Emacs)
+/Instrucciones para el docente: Introduce la nota (0 a 10) en la columna *Nota* y pulsa =C-c C-c= sobre la línea =#+TBLFM:= para recalcular la nota ponderada./
+
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align |l|X|c|c|c|
+
+|----------+--------------------------------------------------+-------+------------+------------------|
+| *Código* | *Criterio de Evaluación*                         | *Peso*| *Nota (0-10)* | *Ponderación* |
+|----------+--------------------------------------------------+-------+------------+------------------|
+| CE 1.a   | Componentes físicos y mecanismos de interconexión|  0.25 |       0.00 |             0.00 |
+| CE 1.b   | Clasificación, características y función memorias|  0.25 |       0.00 |             0.00 |
+| CE 1.c   | Verificación del proceso de puesta en marcha     |  0.20 |       0.00 |             0.00 |
+| CE 1.d   | Clasificación e instalación de periféricos       |  0.15 |       0.00 |             0.00 |
+| CE 1.h   | Normas de seguridad y PRL                        |  0.15 |       0.00 |             0.00 |
+|----------+--------------------------------------------------+-------+------------+------------------|
+|          | *CALIFICACIÓN FINAL DE LA TAREA*                 | *1.00*|            |             *0.00* |
+|----------+--------------------------------------------------+-------+------------+------------------|
+#+TBLFM: $5=$3*$4;%.2f::@7$5=vsum(@2$5..@6$5);%.2f
+
+* Observaciones y Retroalimentación para el Alumno/a
+- *Aspectos destacables:* [Escribe aquí]

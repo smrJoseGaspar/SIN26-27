@@ -1,0 +1,166 @@
+#+TITLE: TEST DE REPASO: EVALUACIÓN DE SISTEMAS INFORMÁTICOS (RA 1)
+#+SUBTITLE: Módulo Profesional: Sistemas Informáticos (1.º DAM)
+#+AUTHOR: Departamento de Informática y Comunicaciones
+#+DATE: [DD/MM/2026]
+#+LANGUAGE: es
+#+OPTIONS: toc:nil num:nil ^:nil
+
+# --- CONFIGURACIÓN DE EXPORTACIÓN LATEX ---
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[spanish,es-tabla]{babel}
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
+#+LATEX_HEADER: \usepackage[margin=1.8cm, top=2cm, bottom=2cm]{geometry}
+#+LATEX_HEADER: \usepackage{helvet}
+#+LATEX_HEADER: \renewcommand{\familydefault}{\sfdefault}
+#+LATEX_HEADER: \usepackage[table,xcdraw]{xcolor}
+#+LATEX_HEADER: \usepackage{tabularx}
+#+LATEX_HEADER: \usepackage{enumitem}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+
+# --- ESTILOS DE COLORES Y CABECERAS ---
+#+LATEX_HEADER: \definecolor{primaryblue}{HTML}{1E3A8A}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \lhead{\small\color{gray} Sistemas Informáticos (1.º DAM) — RA 1}
+#+LATEX_HEADER: \rhead{\small\color{gray} Test de Repaso: Hardware, Memorias y Periféricos}
+#+LATEX_HEADER: \cfoot{\small\thepage}
+
+# --- ESTILO DE SECCIONES ---
+#+LATEX_HEADER: \usepackage{titlesec}
+#+LATEX_HEADER: \titleformat{\section}{\large\bfseries\color{primaryblue}}{}{0em}{}[\titlerule]
+
+* Datos del Alumno/a
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align |l|X|l|X|
+
+|---------------------+---------------------------------------------+-----------------------+----------------------|
+| *Nombre y apellidos:*|                                             | *Fecha:*              |                      |
+| *Grupo:*            | 1.º DAM                                     | *Calificación:*       |                      |
+
+/Instrucciones: Marca con una *X* la única respuesta correcta para cada cuestión. Cada acierto suma 1 punto; los errores no penalizan (o aplica el criterio indicado por el docente)./
+
+* Bloque 1: Componentes Físicos e Interconexión (CE 1.a)
+
+1. *¿Cuál es la función principal del chipset (PCH) en una placa base moderna?*
+   - [ ] a) Ejecutar las instrucciones aritmético-lógicas de los programas de usuario.
+   - [ ] b) Gestionar las comunicaciones entre el procesador, las ranuras de expansión y los periféricos de E/S.
+   - [ ] c) Convertir la corriente alterna de la red eléctrica en corriente continua de 12V y 5V.
+   - [ ] d) Almacenar de forma volátil los datos de las aplicaciones abiertas.
+
+2. *¿Qué interfaz física ofrece actualmente mayor ancho de banda para una unidad SSD de alto rendimiento?*
+   - [ ] a) SATA III (6 Gbps).
+   - [ ] b) USB 3.2 Gen 1.
+   - [ ] c) Ranura M.2 conectada mediante bus PCI Express x4 NVMe.
+   - [ ] d) Puerto IDE / PATA de 40 pines.
+
+3. *¿Qué conector de la fuente de alimentación suministra energía dedicada directamente al procesador en la placa base?*
+   - [ ] a) Conector ATX principal de 24 pines.
+   - [ ] b) Conector EPS / ATX12V de 4+4 (8) pines.
+   - [ ] c) Conector PCIe de 6+2 pines.
+   - [ ] d) Conector SATA de 15 pines.
+
+* Bloque 2: Jerarquía y Tipos de Memorias (CE 1.b)
+
+4. *Ordena los siguientes tipos de memoria de MAYOR a MENOR velocidad de acceso (menor latencia):*
+   - [ ] a) Caché L1 > Registros CPU > Memoria RAM > SSD NVMe.
+   - [ ] b) Registros CPU > Caché L1 > Memoria RAM > SSD NVMe.
+   - [ ] c) Memoria RAM > Registros CPU > Caché L2 > Disco Duro HDD.
+   - [ ] d) Registros CPU > Memoria RAM > Caché L1 > Memoria Flash UEFI.
+
+5. *¿Cuál de las siguientes memorias es NO volátil y almacena el firmware encargado de iniciar el hardware del equipo?*
+   - [ ] a) Memoria DRAM DDR5.
+   - [ ] b) Memoria Caché L3 (SRAM).
+   - [ ] c) Memoria Flash ROM (UEFI/BIOS).
+   - [ ] d) Registros de propósito general.
+
+6. *¿Qué ventaja principal aporta instalar dos módulos de memoria RAM idénticos en configuración Dual Channel?*
+   - [ ] a) Duplica la capacidad total de almacenamiento del disco duro.
+   - [ ] b) Duplica el ancho de banda de comunicación entre la RAM y el controlador de memoria.
+   - [ ] c) Convierte la memoria RAM en memoria no volátil ante cortes de luz.
+   - [ ] d) Reduce a cero la latencia CAS de los módulos.
+
+* Bloque 3: Proceso de Puesta en Marcha (CE 1.c)
+
+7. *¿Qué ocurre exactamente durante la fase POST (Power-On Self-Test) al encender un ordenador?*
+   - [ ] a) Se carga el escritorio del sistema operativo desde la nube.
+   - [ ] b) El firmware verifica la integridad y presencia de componentes críticos (CPU, RAM, GPU) antes de buscar un dispositivo de arranque.
+   - [ ] c) Se formatea automáticamente la partición primaria del disco duro.
+   - [ ] d) Se actualizan los controladores de la impresora y la tarjeta de red.
+
+8. *Si al pulsar el botón de encendido los ventiladores giran pero no hay señal de vídeo y la placa base emite una secuencia de pitidos largos o enciende el LED "DRAM", ¿cuál es el diagnóstico más probable?*
+   - [ ] a) El cable Ethernet no está conectado al router.
+   - [ ] b) Fallo de detección, mala colocación o incompatibilidad en los módulos de memoria RAM.
+   - [ ] c) El sistema operativo tiene un virus en el sector de arranque.
+   - [ ] d) La pasta térmica del procesador está caducada.
+
+9. *¿Para qué sirve activar un perfil XMP (Intel) o EXPO (AMD) dentro de la configuración UEFI/BIOS?*
+   - [ ] a) Para cifrar el contenido del disco duro con contraseña.
+   - [ ] b) Para permitir que los módulos RAM funcionen a su frecuencia y latencias nominales anunciadas por el fabricante en lugar de la velocidad base JEDEC.
+   - [ ] c) Para desactivar los núcleos de eficiencia del procesador.
+   - [ ] d) Para arrancar el equipo directamente desde un servidor remoto por red (PXE).
+
+* Bloque 4: Dispositivos Periféricos (CE 1.d)
+
+10. *¿Cómo se clasifica funcionalmente una pantalla táctil de un quiosco interactivo o tablet?*
+    - [ ] a) Periférico exclusivamente de salida.
+    - [ ] b) Periférico exclusivamente de entrada.
+    - [ ] c) Periférico mixto de entrada/salida (E/S).
+    - [ ] d) Unidad de almacenamiento secundario.
+
+11. *¿Qué componente software permite que el sistema operativo se comunique y controle las funciones específicas de un periférico hardware?*
+    - [ ] a) El gestor de arranque (GRUB / Windows Boot Manager).
+    - [ ] b) El controlador de dispositivo (/driver/).
+    - [ ] c) El compilador de código fuente.
+    - [ ] d) La tabla de particiones GPT.
+
+12. *En un entorno con dos monitores conectados a la misma estación de trabajo, ¿qué modo de proyección permite arrastrar ventanas de una pantalla a otra ampliando el área de trabajo?*
+    - [ ] a) Duplicar pantalla.
+    - [ ] b) Solo segunda pantalla.
+    - [ ] c) Extender escritorio.
+    - [ ] d) Modo de ahorro de energía.
+
+* Bloque 5: Seguridad y Prevención de Riesgos Laborales (CE 1.h)
+
+13. *¿Cuál es la medida preventiva más eficaz para evitar daños por descarga electrostática (ESD) al manipular una placa base o memoria RAM en el taller?*
+    - [ ] a) Trabajar sobre una alfombra de lana con el equipo enchufado.
+    - [ ] b) Desconectar el cable de alimentación, descargar energía residual y utilizar pulsera antiestática conectada a tierra.
+    - [ ] c) Tocar directamente los pines dorados de los módulos para comprobar su temperatura.
+    - [ ] d) Utilizar guantes de látex gruesos sin conexión a tierra.
+
+14. *Según las recomendaciones de ergonomía laboral en puestos con pantallas de visualización de datos (PVD), ¿cómo debe situarse el borde superior del monitor respecto al usuario?*
+    - [ ] a) A la altura de los ojos o ligeramente por debajo, a una distancia aproximada de 50-70 cm.
+    - [ ] b) Unos 30 cm por encima de la cabeza para ejercitar el cuello.
+    - [ ] c) Pegado a menos de 20 cm del rostro y con brillo al máximo.
+    - [ ] d) Orientado directamente frente a una ventana sin cortinas para recibir luz solar directa en la pantalla.
+
+15. *¿Cómo debe gestionarse una fuente de alimentación averiada o una placa base obsoleta según la normativa medioambiental vigente?*
+    - [ ] a) Depositándola en el contenedor amarillo de envases ligeros.
+    - [ ] b) Tirándola al contenedor de residuos orgánicos.
+    - [ ] c) Gestionándola como Residuo de Aparatos Eléctricos y Electrónicos (RAEE) a través de un punto limpio o gestor autorizado.
+    - [ ] d) Desmontando los condensadores y tirándolos por el desagüe.
+
+\newpage
+
+* SOLUCIONARIO Y MAPA DE CRITERIOS (USO DOCENTE)
+
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align |c|c|c|X|
+
+|------------+-------------+-----------------+---------------------------------------------------------------------|
+| *Pregunta* | *Respuesta* | *Criterio (CE)* | *Justificación técnica breve*                                       |
+|------------+-------------+-----------------+---------------------------------------------------------------------|
+|          1 | *b*         | CE 1.a          | El chipset coordina los buses de E/S entre CPU y periféricos.       |
+|          2 | *c*         | CE 1.a          | M.2 PCIe x4 NVMe supera ampliamente los 600 MB/s de SATA III.       |
+|          3 | *b*         | CE 1.a          | El conector EPS 12V (4+4 pines) alimenta los VRM de la CPU.         |
+|          4 | *b*         | CE 1.b          | Jerarquía de velocidad: Registros > L1 > L2 > L3 > RAM > SSD.       |
+|          5 | *c*         | CE 1.b          | La memoria Flash de la placa conserva el firmware sin corriente.    |
+|          6 | *b*         | CE 1.b          | Dual Channel duplica el ancho del bus de datos (de 64 a 128 bits).  |
+|          7 | *b*         | CE 1.c          | El POST diagnostica el hardware esencial antes del arranque.        |
+|          8 | *b*         | CE 1.c          | Los códigos de pitidos o LED DRAM indican fallo en memoria RAM.     |
+|          9 | *b*         | CE 1.c          | XMP/EXPO carga los perfiles de frecuencia y voltaje del fabricante. |
+|         10 | c           | CE 1.d          | Muestra imagen (salida) y captura pulsaciones táctiles (entrada).   |
+|         11 | b           | CE 1.d          | El driver traduce las llamadas del SO al hardware específico.       |
+|         12 | c           | CE 1.d          | Extender suma la resolución de ambos monitores como un área única.  |
+|         13 | b           | CE 1.h          | La pulsera ESD y desconexión eléctrica evitan picos de voltaje.     |
+|         14 | a           | CE 1.h          | Evita fatiga cervical y reflejos manteniendo postura neutra.        |
+|         15 | c           | CE 1.h          | Los componentes electrónicos contienen metales pesados (RAEE).      |

@@ -1,0 +1,122 @@
+// ============================================================================
+// TEST DE REPASO: EVALUACIÓN DE SISTEMAS INFORMÁTICOS (RA 1 - 1.º DAM)
+// Formato: GIFT para Moodle (Codificación UTF-8)
+// ============================================================================
+
+$CATEGORY: $course$/RA1_Sistemas_Informaticos/CE_1a_Componentes_Interconexion
+
+::CE1a_P01_Chipset::¿Cuál es la función principal del chipset (PCH) en una placa base moderna? {
+	~Ejecutar las instrucciones aritmético-lógicas de los programas de usuario.#Incorrecto. Esa es la función de la ALU dentro del procesador (CPU).
+	=Gestionar las comunicaciones entre el procesador, las ranuras de expansión y los periféricos de E/S.#Correcto. El chipset coordina los buses de entrada/salida entre la CPU y los distintos dispositivos conectados.
+	~Convertir la corriente alterna de la red eléctrica en corriente continua de 12V y 5V.#Incorrecto. Esa tarea corresponde a la fuente de alimentación (PSU).
+	~Almacenar de forma volátil los datos de las aplicaciones abiertas.#Incorrecto. Esa es la función de la memoria principal (RAM).
+}
+
+::CE1a_P02_Interfaz_SSD::¿Qué interfaz física ofrece actualmente mayor ancho de banda para una unidad SSD de alto rendimiento? {
+	~SATA III (6 Gbps).#Incorrecto. SATA III está limitado teóricamente a 600 MB/s.
+	~USB 3.2 Gen 1.#Incorrecto. Su ancho de banda máximo es de 5 Gbps y está pensado para periféricos externos.
+	=Ranura M.2 conectada mediante bus PCI Express x4 NVMe.#Correcto. El protocolo NVMe sobre carriles PCIe x4 supera ampliamente los 600 MB/s de SATA III.
+	~Puerto IDE / PATA de 40 pines.#Incorrecto. Es una interfaz paralela obsoleta con un máximo de 133 MB/s.
+}
+
+::CE1a_P03_Conector_CPU::¿Qué conector de la fuente de alimentación suministra energía dedicada directamente al procesador en la placa base? {
+	~Conector ATX principal de 24 pines.#Incorrecto. Alimenta la placa base y sus circuitos generales, pero no de forma exclusiva los VRM de la CPU.
+	=Conector EPS / ATX12V de 4+4 (8) pines.#Correcto. Este conector lleva líneas de 12V dedicadas directamente a los reguladores de voltaje (VRM) del procesador.
+	~Conector PCIe de 6+2 pines.#Incorrecto. Se utiliza para alimentar tarjetas gráficas dedicadas.
+	~Conector SATA de 15 pines.#Incorrecto. Alimenta unidades de almacenamiento o controladoras internas.
+}
+
+
+$CATEGORY: $course$/RA1_Sistemas_Informaticos/CE_1b_Jerarquia_Memorias
+
+::CE1b_P04_Jerarquia_Velocidad::Ordena los siguientes tipos de memoria de MAYOR a MENOR velocidad de acceso (menor latencia)\: {
+	~Caché L1 > Registros CPU > Memoria RAM > SSD NVMe.#Incorrecto. Los registros internos de la CPU son más rápidos que la caché L1.
+	=Registros CPU > Caché L1 > Memoria RAM > SSD NVMe.#Correcto. La velocidad disminuye conforme nos alejamos del núcleo del procesador.
+	~Memoria RAM > Registros CPU > Caché L2 > Disco Duro HDD.#Incorrecto. La RAM es considerablemente más lenta que los registros y las cachés internas.
+	~Registros CPU > Memoria RAM > Caché L1 > Memoria Flash UEFI.#Incorrecto. La caché L1 es mucho más rápida que la memoria RAM.
+}
+
+::CE1b_P05_Memoria_No_Volatil::¿Cuál de las siguientes memorias es NO volátil y almacena el firmware encargado de iniciar el hardware del equipo? {
+	~Memoria DRAM DDR5.#Incorrecto. La RAM pierde su contenido al cortar el suministro eléctrico.
+	~Memoria Caché L3 (SRAM).#Incorrecto. Es una memoria volátil integrada en el procesador.
+	=Memoria Flash ROM (UEFI/BIOS).#Correcto. Conserva el firmware de arranque sin necesidad de alimentación eléctrica continua.
+	~Registros de propósito general.#Incorrecto. Son celdas volátiles dentro de la CPU.
+}
+
+::CE1b_P06_Dual_Channel::¿Qué ventaja principal aporta instalar dos módulos de memoria RAM idénticos en configuración Dual Channel? {
+	~Duplica la capacidad total de almacenamiento del disco duro.#Incorrecto. No afecta al almacenamiento secundario.
+	=Duplica el ancho de banda de comunicación entre la RAM y el controlador de memoria.#Correcto. Permite acceder a ambos módulos en paralelo pasando de un bus de 64 bits a uno de 128 bits.
+	~Convierte la memoria RAM en memoria no volátil ante cortes de luz.#Incorrecto. La RAM sigue siendo volátil.
+	~Reduce a cero la latencia CAS de los módulos.#Incorrecto. Los tiempos de latencia física de los chips se mantienen.
+}
+
+
+$CATEGORY: $course$/RA1_Sistemas_Informaticos/CE_1c_Puesta_en_Marcha
+
+::CE1c_P07_Fase_POST::¿Qué ocurre exactamente durante la fase POST (Power-On Self-Test) al encender un ordenador? {
+	~Se carga el escritorio del sistema operativo desde la nube.#Incorrecto. El POST ocurre antes de cargar cualquier sistema operativo.
+	=El firmware verifica la integridad y presencia de componentes críticos (CPU, RAM, GPU) antes de buscar un dispositivo de arranque.#Correcto. Es la autocomprobación inicial de hardware ejecutada por la BIOS/UEFI.
+	~Se formatea automáticamente la partición primaria del disco duro.#Incorrecto. El POST nunca borra datos de las unidades.
+	~Se actualizan los controladores de la impresora y la tarjeta de red.#Incorrecto. Los drivers los gestiona posteriormente el sistema operativo.
+}
+
+::CE1c_P08_Diagnostico_RAM::Si al pulsar el botón de encendido los ventiladores giran pero no hay señal de vídeo y la placa base emite una secuencia de pitidos largos o enciende el LED "DRAM", ¿cuál es el diagnóstico más probable? {
+	~El cable Ethernet no está conectado al router.#Incorrecto. La ausencia de red no impide superar el POST ni dar señal de vídeo.
+	=Fallo de detección, mala colocación o incompatibilidad en los módulos de memoria RAM.#Correcto. Tanto el código acústico como el testigo EZ Debug LED DRAM señalan un problema en la memoria principal.
+	~El sistema operativo tiene un virus en el sector de arranque.#Incorrecto. El equipo ni siquiera ha llegado a la fase de búsqueda de sistema operativo.
+	~La pasta térmica del procesador está caducada.#Incorrecto. Eso provocaría sobrecalentamiento tras unos minutos, no un fallo inmediato en el testigo DRAM.
+}
+
+::CE1c_P09_Perfil_XMP_EXPO::¿Para qué sirve activar un perfil XMP (Intel) o EXPO (AMD) dentro de la configuración UEFI/BIOS? {
+	~Para cifrar el contenido del disco duro con contraseña.#Incorrecto. No guarda relación con el cifrado de almacenamiento.
+	=Para permitir que los módulos RAM funcionen a su frecuencia y latencias nominales anunciadas por el fabricante en lugar de la velocidad base JEDEC.#Correcto. Carga los parámetros preconfigurados de frecuencia, latencias y voltaje probados por el fabricante.
+	~Para desactivar los núcleos de eficiencia del procesador.#Incorrecto. Es una tecnología exclusiva de optimización de memoria RAM.
+	~Para arrancar el equipo directamente desde un servidor remoto por red (PXE).#Incorrecto. El arranque por red se configura en el orden de arranque (Boot Priority).
+}
+
+
+$CATEGORY: $course$/RA1_Sistemas_Informaticos/CE_1d_Perifericos
+
+::CE1d_P10_Pantalla_Tactil::¿Cómo se clasifica funcionalmente una pantalla táctil de un quiosco interactivo o tablet? {
+	~Periférico exclusivamente de salida.#Incorrecto. Además de mostrar información, recoge las pulsaciones del usuario.
+	~Periférico exclusivamente de entrada.#Incorrecto. También actúa como monitor mostrando imagen.
+	=Periférico mixto de entrada/salida (E/S).#Correcto. Muestra información visual (salida) y captura coordenadas táctiles (entrada).
+	~Unidad de almacenamiento secundario.#Incorrecto. No almacena datos de forma persistente.
+}
+
+::CE1d_P11_Controlador_Driver::¿Qué componente software permite que el sistema operativo se comunique y controle las funciones específicas de un periférico hardware? {
+	~El gestor de arranque (GRUB / Windows Boot Manager).#Incorrecto. Su función es cargar el núcleo del sistema operativo al iniciar el equipo.
+	=El controlador de dispositivo (driver).#Correcto. Actúa como traductor entre las llamadas genéricas del sistema operativo y las instrucciones específicas del hardware.
+	~El compilador de código fuente.#Incorrecto. Traduce código de programación a código máquina.
+	~La tabla de particiones GPT.#Incorrecto. Define la estructura lógica de volúmenes en un disco.
+}
+
+::CE1d_P12_Doble_Monitor::En un entorno con dos monitores conectados a la misma estación de trabajo, ¿qué modo de proyección permite arrastrar ventanas de una pantalla a otra ampliando el área de trabajo? {
+	~Duplicar pantalla.#Incorrecto. Muestra exactamente la misma imagen en ambos monitores.
+	~Solo segunda pantalla.#Incorrecto. Apaga el monitor principal y deja activo únicamente el secundario.
+	=Extender escritorio.#Correcto. Combina ambas pantallas en un único espacio de trabajo continuo.
+	~Modo de ahorro de energía.#Incorrecto. Apaga las pantallas por inactividad.
+}
+
+
+$CATEGORY: $course$/RA1_Sistemas_Informaticos/CE_1h_Seguridad_PRL
+
+::CE1h_P13_Proteccion_ESD::¿Cuál es la medida preventiva más eficaz para evitar daños por descarga electrostática (ESD) al manipular una placa base o memoria RAM en el taller? {
+	~Trabajar sobre una alfombra de lana con el equipo enchufado.#Incorrecto. La lana genera electricidad estática y trabajar con el equipo enchufado conlleva riesgo eléctrico.
+	=Desconectar el cable de alimentación, descargar energía residual y utilizar pulsera antiestática conectada a tierra.#Correcto. Elimina el riesgo de electrocución y equilibra el potencial eléctrico entre el técnico y los componentes.
+	~Tocar directamente los pines dorados de los módulos para comprobar su temperatura.#Incorrecto. Tocar los contactos puede transferir estática y grasa cutánea, dañando los circuitos.
+	~Utilizar guantes de látex gruesos sin conexión a tierra.#Incorrecto. El látex común puede acumular carga estática en su superficie.
+}
+
+::CE1h_P14_Ergonomia_Monitor::Según las recomendaciones de ergonomía laboral en puestos con pantallas de visualización de datos (PVD), ¿cómo debe situarse el borde superior del monitor respecto al usuario? {
+
+=A la altura de los ojos o ligeramente por debajo, a una distancia aproximada de 50-70 cm.#Correcto. Mantiene el cuello en posición neutra y reduce la fatiga visual y cervical.
+~Unos 30 cm por encima de la cabeza para ejercitar el cuello.#Incorrecto. Obligar a mirar hacia arriba provoca sobrecarga cervical.
+~Pegado a menos de 20 cm del rostro y con brillo al máximo.#Incorrecto. Provoca fatiga ocular severa y problemas de enfoque.
+~Orientado directamente frente a una ventana sin cortinas para recibir luz solar directa en la pantalla.#Incorrecto. Genera deslumbramientos y reflejos muy perjudiciales para la vista.
+}
+::CE1h_P15_Gestion_RAEE::¿Cómo debe gestionarse una fuente de alimentación averiada o una placa base obsoleta según la normativa medioambiental vigente? {
+~Depositándola en el contenedor amarillo de envases ligeros.#Incorrecto. El contenedor amarillo es exclusivamente para envases de plástico, latas y briks.
+~Tirándola al contenedor de residuos orgánicos.#Incorrecto. Los componentes electrónicos contienen sustancias contaminantes y metales pesados.
+=Gestionándola como Residuo de Aparatos Eléctricos y Electrónicos (RAEE) a través de un punto limpio o gestor autorizado.#Correcto. La normativa RAEE exige su recogida selectiva y descontaminación especializada.
+~Desmontando los condensadores y tirándolos por el desagüe.#Incorrecto. Los electrolitos de los condensadores son altamente contaminantes para el agua.

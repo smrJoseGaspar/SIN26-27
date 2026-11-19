@@ -1,0 +1,146 @@
+#+TITLE: ACTIVIDAD DE AMPLIACIÓN: LICITACIÓN Y PRESUPUESTO DE HARDWARE
+#+SUBTITLE: Módulo Profesional: Sistemas Informáticos (1.º DAM) — Resultado de Aprendizaje 1
+#+AUTHOR: [Escribe aquí tu nombre y apellidos]
+#+DATE: [DD/MM/2026]
+#+LANGUAGE: es
+#+OPTIONS: toc:t num:nil ^:nil
+
+# --- CONFIGURACIÓN DE EXPORTACIÓN LATEX ---
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,10pt]
+#+LATEX_HEADER: \usepackage[spanish,es-tabla]{babel}
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
+#+LATEX_HEADER: \usepackage[margin=1.6cm, top=2cm, bottom=2cm]{geometry}
+#+LATEX_HEADER: \usepackage{helvet}
+#+LATEX_HEADER: \renewcommand{\familydefault}{\sfdefault}
+#+LATEX_HEADER: \usepackage[table,xcdraw]{xcolor}
+#+LATEX_HEADER: \usepackage{tabularx}
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage[most]{tcolorbox}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+
+# --- ESTILOS DE COLORES Y CABECERAS ---
+#+LATEX_HEADER: \definecolor{primaryblue}{HTML}{1E3A8A}
+#+LATEX_HEADER: \definecolor{lightgraybg}{HTML}{F3F4F6}
+
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \lhead{\small\color{gray} Sistemas Informáticos (1.º DAM) — Ampliación RA 1}
+#+LATEX_HEADER: \rhead{\small\color{gray} Licitación y Presupuestos de Hardware}
+#+LATEX_HEADER: \cfoot{\small\thepage}
+
+# --- ESTILO PARA BLOQUES DE JUSTIFICACIÓN (QUOTE) ---
+#+LATEX_HEADER: \renewenvironment{quote}{\begin{tcolorbox}[colback=lightgraybg,colframe=primaryblue,boxrule=0.5pt,arc=2pt,left=6pt,right=6pt,top=6pt,bottom=6pt]}{\end{tcolorbox}}
+
+# --- ESTILO DE SECCIONES ---
+#+LATEX_HEADER: \usepackage{titlesec}
+#+LATEX_HEADER: \titleformat{\section}{\large\bfseries\color{primaryblue}}{}{0em}{}[\titlerule]
+#+LATEX_HEADER: \titleformat{\subsection}{\normalsize\bfseries\color{darkgray}}{}{0em}{}
+
+* 1. Contextualización y Objetivos de la Ampliación
+Tras validar el prototipo virtual, la dirección de *AppForge Studios* te solicita **dos propuestas de presupuesto real** con precios actuales de mercado (tiendas españolas como PcComponentes, Coolmod, Amazon o similares) para equipar distintos perfiles técnicos dentro de la empresa.
+
+Tu objetivo es **maximizar la relación rendimiento/coste**, garantizar el **100 % de compatibilidad** física y eléctrica sin superar el tope presupuestario, y justificar técnicamente cada elección según los criterios de evaluación =CE 1.a=, =CE 1.b=, =CE 1.d= y =CE 1.h=.
+
+/Nota técnica para Emacs: Rellena las columnas de Consumo (W) y Precio (€) con números decimales usando punto (ej. =145.90=) y pulsa =C-c C-c= sobre cada línea =#+TBLFM:= para calcular los totales automáticamente./
+
+* 2. Perfil A: Estación de Desarrollo Móvil y Virtualización (Máx. 1.350 €)
+
+** 2.1. Requisitos Técnicos del Perfil A
+- *Carga de trabajo:* Compilación simultánea en Android Studio, contenedores Docker y ejecución de 2 máquinas virtuales (Linux y Windows).
+- *Especificaciones obligatorias:*
+  - Procesador multinúcleo con gráfica integrada o dedicada básica (no es un equipo de videojuegos).
+  - Mínimo *32 GB de RAM* en configuración /Dual Channel/.
+  - Almacenamiento principal *SSD NVMe PCIe 4.0 de al menos 1 TB*.
+  - Caja silenciosa y con buena ventilación (sin necesidad de iluminación RGB).
+  - *Alcance:* Incluye únicamente la torre completa (sin periféricos).
+
+** 2.2. Tabla de Desglose Económico y Técnico (Perfil A)
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align |l|X|X|c|c|
+
+|---------------------+-----------------------------------+----------------------------------+-------------+--------------|
+| *Componente*        | *Modelo exacto y referencia*      | *Interfaz / Bus de conexión*     | *TDP (W)*   | *Precio (€)* |
+|---------------------+-----------------------------------+----------------------------------+-------------+--------------|
+| Procesador (CPU)    | [Modelo]                          | [Ej. Socket AM5 / LGA 1700]      |        0.00 |         0.00 |
+| Placa Base          | [Modelo]                          | [Ej. ATX / Chipset B650 / DDR5]  |        0.00 |         0.00 |
+| Disipador CPU       | [Modelo]                          | [Ej. Aire / Líquida + Socket]    |        0.00 |         0.00 |
+| Memoria RAM         | [Modelo (2x16 GB)]                | [Ej. DIMM DDR5 Dual Channel]     |        0.00 |         0.00 |
+| Almacenamiento      | [Modelo >= 1 TB]                  | [Ej. M.2 PCIe 4.0 x4 NVMe]       |        0.00 |         0.00 |
+| Tarjeta Gráfica     | [Integrada o dedicada básica]     | [Ej. iGPU o PCIe 4.0 x16]        |        0.00 |         0.00 |
+| Caja / Chasis       | [Modelo]                          | [Ej. Semitorre ATX / USB-C]      |        0.00 |         0.00 |
+| Fuente Alimentación | [Modelo y potencia]               | [Ej. ATX 24p + EPS 8p / 80+ Gold]|        0.00 |         0.00 |
+|---------------------+-----------------------------------+----------------------------------+-------------+--------------|
+| *TOTAL PERFIL A*    | *Límite máximo permitido: 1350 €* |                                  |      *0.00* |       *0.00* |
+|---------------------+-----------------------------------+----------------------------------+-------------+--------------|
+#+TBLFM: @10$4=vsum(@2$4..@9$4);%.2f::@10$5=vsum(@2$5..@9$5);%.2f
+
+** 2.3. Auditoría de Compatibilidad y Justificación Técnica (Perfil A)
+#+BEGIN_QUOTE
+- *Compatibilidad placa-CPU-RAM-caja:* [Verifica socket, frecuencias soportadas y altura máxima del disipador en la caja]
+- *Dimensionamiento de la fuente (PSU):* [Justifica la potencia elegida dejando un margen del 25-30 % respecto al consumo estimado]
+- *Justificación de memorias (CE 1.b):* [Explica por qué la capacidad/velocidad de RAM y NVMe elegida es óptima para virtualizar y compilar]
+#+END_QUOTE
+
+\newpage
+
+* 3. Perfil B: Puesto Completo de Diseño UI/UX y Testing Multiplataforma (Máx. 1.800 €)
+
+** 3.1. Requisitos Técnicos del Perfil B
+- *Carga de trabajo:* Renderizado de interfaces, pruebas gráficas 3D ligeras, edición multimedia y trabajo continuo en doble pantalla.
+- *Especificaciones obligatorias:*
+  - Procesador de alto rendimiento + *Tarjeta gráfica dedicada* con al menos 8 GB de VRAM.
+  - *32 GB o 64 GB de RAM* DDR5.
+  - Almacenamiento NVMe de *2 TB* (o 1 TB principal + 1 TB secundario).
+  - *Periféricos ergonómicos incluidos:* Dos monitores IPS de al menos 24 pulgadas (o un ultrawide equivalente), teclado ergonómico/mecánico y ratón ergonómico.
+
+** 3.2. Tabla de Desglose Económico y Técnico (Perfil B)
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align |l|X|X|c|c|
+
+|---------------------+-----------------------------------+----------------------------------+-------------+--------------|
+| *Componente*        | *Modelo exacto y referencia*      | *Interfaz / Bus de conexión*     | *TDP (W)*   | *Precio (€)* |
+|---------------------+-----------------------------------+----------------------------------+-------------+--------------|
+| Procesador (CPU)    | [Modelo]                          | [Socket]                         |        0.00 |         0.00 |
+| Placa Base          | [Modelo]                          | [Factor forma / Chipset]         |        0.00 |         0.00 |
+| Disipador CPU       | [Modelo]                          | [Tipo / Socket]                  |        0.00 |         0.00 |
+| Memoria RAM         | [Modelo 32/64 GB]                 | [DIMM DDR5 Dual Channel]         |        0.00 |         0.00 |
+| Tarjeta Gráfica     | [Modelo >= 8 GB VRAM]             | [PCIe 4.0 x16 + conector PCIe]   |        0.00 |         0.00 |
+| Almacenamiento      | [Modelo 2 TB]                     | [M.2 PCIe 4.0 x4 NVMe]           |        0.00 |         0.00 |
+| Caja / Chasis       | [Modelo]                          | [Factor forma / Longitud max GPU]|        0.00 |         0.00 |
+| Fuente Alimentación | [Modelo y potencia]               | [Certificación 80 Plus]          |        0.00 |         0.00 |
+| Monitor 1 y 2       | [2x Monitor IPS >= 24"]           | [DisplayPort / HDMI]             |        0.00 |         0.00 |
+| Teclado y Ratón     | [Modelos ergonómicos]             | [USB / Bluetooth / Receptor RF]  |        0.00 |         0.00 |
+|---------------------+-----------------------------------+----------------------------------+-------------+--------------|
+| *TOTAL PERFIL B*    | *Límite máximo permitido: 1800 €* |                                  |      *0.00* |       *0.00* |
+|---------------------+-----------------------------------+----------------------------------+-------------+--------------|
+#+TBLFM: @12$4=vsum(@2$4..@11$4);%.2f::@12$5=vsum(@2$5..@11$5);%.2f
+
+** 3.3. Auditoría Técnica, Ergonomía y Sostenibilidad (Perfil B)
+#+BEGIN_QUOTE
+- *Compatibilidad física y eléctrica (CE 1.a):* [Verifica longitud máxima de GPU en la caja, potencia de PSU y ancho de banda PCIe]
+- *Ergonomía de periféricos (CE 1.d y 1.h):* [Justifica el ajuste en altura/inclinación de monitores, tecnología Flicker-Free/Low Blue Light y ergonomía de teclado/ratón]
+- *Eficiencia energética y sostenibilidad (CE 1.h):* [Indica medidas de ahorro energético, certificación de fuente y gestión de ciclo de vida]
+#+END_QUOTE
+
+\newpage
+
+* 4. Criterios de Valoración de la Actividad
+
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align |l|X|c|
+
+|-----------------------------------+---------------------------------------------------------------------------------------------------+--------+----------+--------|
+| *Aspecto Evaluado*                | *Indicador de Logro*                                                                              | *Peso* | *Puntos* | *NOTA* |
+|-----------------------------------+---------------------------------------------------------------------------------------------------+--------+----------+--------|
+| Ajuste presupuestario             | Ninguna configuración supera el límite fijado (1.350 € / 1.800 €) y los precios son verificables. |    20% |       10 |     2. |
+| Compatibilidad física y eléctrica | Ausencia total de incompatibilidades (socket, factor de forma, altura disipador, GPU y PSU).      |    30% |       10 |     3. |
+| Adecuación al perfil técnico      | El equilibrio entre CPU, RAM, almacenamiento y GPU responde fielmente a las cargas de trabajo.    |    30% |       10 |     3. |
+| Ergonomía y periféricos           | Los periféricos del Perfil B cumplen criterios ergonómicos reales y están bien interconectados.   |    20% |       10 |     2. |
+|-----------------------------------+---------------------------------------------------------------------------------------------------+--------+----------+--------|
+|                                   |                                                                                                   |     1. |          |    10. |
+#+TBLFM: $5=$3*$4::@6$3=vsum(@2..@5)::@6$5=vsum(@2..@5)
+
+* Enlaces de las tiendas utilizadas
+- PC Componentes.
+- Coolmod.
+- Amazon
+- PC Box.  
