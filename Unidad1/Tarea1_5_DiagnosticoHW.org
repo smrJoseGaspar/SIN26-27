@@ -5,6 +5,9 @@
 #+LANGUAGE: es
 #+OPTIONS: toc:t num:nil ^:nil
 
+# Enlaces clicables sin recuadros rojos feos en el PDF
+#+LATEX_HEADER: \usepackage[colorlinks=true, linkcolor=primaryblue, urlcolor=primaryblue]{hyperref}
+
 # --- CONFIGURACIÓN DE EXPORTACIÓN LATEX ---
 #+LATEX_CLASS: article
 #+LATEX_CLASS_OPTIONS: [a4paper,10pt]
@@ -47,11 +50,39 @@
 #+LATEX_HEADER: \titleformat{\section}{\large\bfseries\color{primaryblue}}{}{0em}{}[\titlerule]
 #+LATEX_HEADER: \titleformat{\subsection}{\normalsize\bfseries\color{darkgray}}{}{0em}{}
 
-* 1. Objetivos, Entorno e Instrucciones de Entrega
-El objetivo de esta práctica es aprender a **auditar los componentes físicos, buses de interconexión, jerarquía de memorias y periféricos** de un sistema informático sin necesidad de abrir el chasis, combinando herramientas nativas de línea de comandos (CLI) con utilidades gráficas especializadas (GUI) tanto en **GNU/Linux (Ubuntu)** como en **Windows**.
+* Reglas de entrega
+** Condicuiones de Corección
+- 👎 Por cada día de retraso injustificado en la entrega, se restará *1 punto* de la nota.
+- Los enunciados de los ejercicios deben aparecer claramente junto a las respuestas.
+- Es muy importante cuidar la presentación y la limpieza de las respuestas entregadas al profesor. La letra debe ser clara y legible.
+- Elabora un informe de las acciones realizadas para resolver las actividades propuestas.
+- La identificación del autor de la tarea debe ser clara y completa.
+- En caso de que se detecte copia o plagio de los ejercicios de otros compañeros, se anulará la nota del ejercicio.
+- *Instrucciones para las evidencias:*
+  + Guarda todas tus capturas de pantalla en la carpeta =./images/= respetando los nombres indicados en cada recuadro (o actualiza las rutas =[[file:...]]=) y exporta este documento a **PDF** (=C-c C-e l p=) para su entrega.
+  + En la imagen de la captuara de la pantalla deberá adparecer claramente el nombre y apellidos del alumno o su identificador (INICIALES-/AÑOACTUAL/)
 
-- *Criterios evaluados:* =CE 1.a= (Componentes y buses), =CE 1.b= (Memorias y prestaciones), =CE 1.c= (Firmware y puesta en marcha) y =CE 1.d= (Periféricos y controladores).
-- *Instrucciones para las evidencias:* Guarda todas tus capturas de pantalla en la carpeta =./capturas/= respetando los nombres indicados en cada recuadro (o actualiza las rutas =[[file:...]]=) y exporta este documento a **PDF** (=C-c C-e l p=) para su entrega.
+** Forma de entrega:
+- A través de la plataforma Moodle GVA AULES: https://aules.edu.gva.es/.
+- Documentos que hay que entregar:
+  + Formato de documento PDF. El nombre documento debe contener el apellido y nombre del alumno. (Ejemplo: *Tarea1_5_DiagnósticoHW_APELLIDOS_NOMBRE.pdf*)
+  + Carpeta =./images/= comprimida con las capturas de pantalla realizadas.
+
+\newpage
+
+* 1. Resultado de Aprendizaje (RA) y Criterios de Evaluación (CE)
+** Objetivos didácticos
+- **Auditar los componentes físicos, buses de interconexión, jerarquía de memorias y periféricos** de un sistema informático sin necesidad de abrir el chasis, combinando herramientas nativas de línea de comandos (CLI) con utilidades gráficas especializadas (GUI) tanto en **GNU/Linux (Ubuntu)** como en **Windows**.
+** Resultaodos de Aprendizaje (RA) y Criterios de Evaluación (CE)
+- RA 1. Evalúa sistemas informáticos, identificando sus componentes y características.
+  + [X] a) Se han reconocido los componentes físicos de un sistema informático y sus mecanismos de interconexión.
+  + [X] b) Se han clasificado los tipos de memorias, señalando sus características e identifcando sus prestaciones y la función que desarrollan en el conjunto del sistema.
+  + [X] c) Se ha verificado el proceso de puesta en marcha de un equipo.
+  + [X] d) Se han clasificado, instalado y configurado diferentes tipos de dispositivos periféricos.
+  + [ ] e) Se han identificado los tipos de redes y sistemas de comunicación.
+  + [ ] f) Se han identificado los componentes de una red informática.
+  + [ ] g) Se han interpretado mapas físicos y lógicos de una red informática.
+  + [ ] h) Se han reconocido las normas de seguridad y prevención de riesgos laborales en el uso de los sistemas informáticos.
 
 * 2. Bloque A: Auditoría de Hardware en GNU/Linux (CLI)
 
@@ -74,7 +105,7 @@ lscpu
 #+END_EXPORT
 #+CAPTION: Salida de lscpu mostrando arquitectura y cachés
 #+ATTR_LATEX: :width 0.78\textwidth :placement [H]
-[[file:./capturas/linux_lscpu.png]]
+[[file:./images/linux_lscpu.png]]
 #+BEGIN_EXPORT latex
 \end{capturabox}
 #+END_EXPORT
@@ -100,7 +131,7 @@ sudo dmidecode -t memory
 #+END_EXPORT
 #+CAPTION: Auditoría SMBIOS mediante dmidecode en Linux
 #+ATTR_LATEX: :width 0.78\textwidth :placement [H]
-[[file:./capturas/linux_dmidecode.png]]
+[[file:./images/linux_dmidecode.png]]
 #+BEGIN_EXPORT latex
 \end{capturabox}
 #+END_EXPORT
@@ -135,7 +166,7 @@ lsusb
 #+END_EXPORT
 #+CAPTION: Inventario de buses PCIe, almacenamiento y USB en Linux
 #+ATTR_LATEX: :width 0.78\textwidth :placement [H]
-[[file:./capturas/linux_buses_perifericos.png]]
+[[file:./images/linux_buses_perifericos.png]]
 #+BEGIN_EXPORT latex
 \end{capturabox}
 #+END_EXPORT
@@ -157,7 +188,7 @@ sudo lshw -html > inventario_hardware.html
 #+END_EXPORT
 #+CAPTION: Vista jerárquica del hardware generada con sudo lshw -html
 #+ATTR_LATEX: :width 0.78\textwidth :placement [H]
-[[file:./capturas/linux_lshw_html.png]]
+[[file:./images/linux_lshw_html.png]]
 #+BEGIN_EXPORT latex
 \end{capturabox}
 #+END_EXPORT
@@ -183,7 +214,7 @@ Get-ComputerInfo | Select-Object CsManufacturer, CsModel, BiosFirmwareType, Bios
 #+END_EXPORT
 #+CAPTION: Información general del sistema y firmware en Windows
 #+ATTR_LATEX: :width 0.78\textwidth :placement [H]
-[[file:./capturas/win_computerinfo.png]]
+[[file:./images/win_computerinfo.png]]
 #+BEGIN_EXPORT latex
 \end{capturabox}
 #+END_EXPORT
@@ -205,7 +236,7 @@ Get-PhysicalDisk | Format-Table FriendlyName, MediaType, BusType, Size, HealthSt
 #+END_EXPORT
 #+CAPTION: Auditoría de módulos RAM y unidades de almacenamiento en PowerShell
 #+ATTR_LATEX: :width 0.78\textwidth :placement [H]
-[[file:./capturas/win_ram_discos.png]]
+[[file:./images/win_ram_discos.png]]
 #+BEGIN_EXPORT latex
 \end{capturabox}
 #+END_EXPORT
@@ -225,7 +256,7 @@ Verifica el estado de todos los dispositivos Plug & Play conectados y filtra si 
 #+END_EXPORT
 #+CAPTION: Agrupación y verificación de controladores PnP en Windows
 #+ATTR_LATEX: :width 0.78\textwidth :placement [H]
-[[file:./capturas/win_pnpdevice.png]]
+[[file:./images/win_pnpdevice.png]]
 #+BEGIN_EXPORT latex
 \end{capturabox}
 #+END_EXPORT
@@ -248,7 +279,7 @@ Descarga e instala (o ejecuta la versión portable) de CPU-Z en Windows y explor
 #+END_EXPORT
 #+CAPTION: Diagnóstico de procesador y memoria con CPU-Z en Windows
 #+ATTR_LATEX: :width 0.55\textwidth :placement [H]
-[[file:./capturas/cpuz_windows.png]]
+[[file:./images/cpuz_windows.png]]
 #+BEGIN_EXPORT latex
 \end{capturabox}
 #+END_EXPORT
@@ -268,7 +299,7 @@ cpu-x --ncurses # Abre la interfaz interactiva en modo texto dentro de la termin
 #+END_EXPORT
 #+CAPTION: Auditoría de hardware mediante CPU-X en Ubuntu
 #+ATTR_LATEX: :width 0.55\textwidth :placement [H]
-[[file:./capturas/cpux_linux.png]]
+[[file:./images/cpux_linux.png]]
 #+BEGIN_EXPORT latex
 \end{capturabox}
 #+END_EXPORT
