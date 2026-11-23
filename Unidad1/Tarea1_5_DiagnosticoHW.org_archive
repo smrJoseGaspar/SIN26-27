@@ -1,0 +1,34 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /home/jg.sanchezgarcia/GitHubProjects/smrJoseGaspar/SIN26-27/Unidad1/Tarea1_5_DiagnosticoHW.org
+
+
+* 3.2. Inspección Detallada de Módulos RAM y Discos (=Get-CimInstance=)
+:PROPERTIES:
+:ARCHIVE_TIME: 2026-11-23 dl. 17:38
+:ARCHIVE_FILE: ~/GitHubProjects/smrJoseGaspar/SIN26-27/Unidad1/Tarea1_5_DiagnosticoHW.org
+:ARCHIVE_OLPATH: 3. Bloque B: Auditoría de Hardware en Windows (PowerShell)
+:ARCHIVE_CATEGORY: Tarea1_5_DiagnosticoHW
+:END:
+En entornos Windows modernos (donde =wmic= está en desuso), se utilizan consultas CIM/WMI desde PowerShell. Ejecuta:
+
+#+BEGIN_SRC powershell
+Get-CimInstance -ClassName Win32_PhysicalMemory | Format-Table BankLabel, Capacity, Speed, Manufacturer, PartNumber -AutoSize
+Get-PhysicalDisk | Format-Table FriendlyName, MediaType, BusType, Size, HealthStatus -AutoSize
+#+END_SRC
+
+/Responde a las siguientes cuestiones técnicas:/
+- *¿En qué bancos/ranuras (=BankLabel=) están instalados los módulos de RAM y a qué velocidad (MHz/MT/s) operan?* [Escribe aquí]
+- *¿Qué tipo de medio (=MediaType=: SSD/HDD), bus (=BusType=: NVMe/SATA/SAS) y estado de salud (=HealthStatus=) presentan tus discos?* [Escribe aquí]
+
+#+BEGIN_EXPORT latex
+\begin{capturabox}{Consulta de memoria física y discos (\texttt{Win32\_PhysicalMemory} y \texttt{Get-PhysicalDisk})}
+#+END_EXPORT
+#+CAPTION: Auditoría de módulos RAM y unidades de almacenamiento en PowerShell
+#+ATTR_LATEX: :width 0.78\textwidth :placement [H]
+[[file:./images/win_ram_discos.png]]
+#+BEGIN_EXPORT latex
+\end{capturabox}
+#+END_EXPORT
+

@@ -1,7 +1,9 @@
 #+TITLE: PRÁCTICA GUIADA: DIAGNÓSTICO E INVENTARIO DE HARDWARE (CLI Y GUI)
 #+SUBTITLE: Módulo Profesional: Sistemas Informáticos (1.º DAM) — Resultado de Aprendizaje 1
-#+AUTHOR: [Escribe aquí tu nombre y apellidos]
-#+DATE: [DD/MM/2026]
+#+AUTHOR: José Gaspar Sánchez García.
+#+DATE: \today
+#+email: jg.sanchezgarcia@edu.gva.es
+
 #+LANGUAGE: es
 #+OPTIONS: toc:t num:nil ^:nil
 
@@ -215,28 +217,6 @@ Get-ComputerInfo | Select-Object CsManufacturer, CsModel, BiosFirmwareType, Bios
 #+CAPTION: Información general del sistema y firmware en Windows
 #+ATTR_LATEX: :width 0.78\textwidth :placement [H]
 [[file:./images/win_computerinfo.png]]
-#+BEGIN_EXPORT latex
-\end{capturabox}
-#+END_EXPORT
-
-** 3.2. Inspección Detallada de Módulos RAM y Discos (=Get-CimInstance=)
-En entornos Windows modernos (donde =wmic= está en desuso), se utilizan consultas CIM/WMI desde PowerShell. Ejecuta:
-
-#+BEGIN_SRC powershell
-Get-CimInstance -ClassName Win32_PhysicalMemory | Format-Table BankLabel, Capacity, Speed, Manufacturer, PartNumber -AutoSize
-Get-PhysicalDisk | Format-Table FriendlyName, MediaType, BusType, Size, HealthStatus -AutoSize
-#+END_SRC
-
-/Responde a las siguientes cuestiones técnicas:/
-- *¿En qué bancos/ranuras (=BankLabel=) están instalados los módulos de RAM y a qué velocidad (MHz/MT/s) operan?* [Escribe aquí]
-- *¿Qué tipo de medio (=MediaType=: SSD/HDD), bus (=BusType=: NVMe/SATA/SAS) y estado de salud (=HealthStatus=) presentan tus discos?* [Escribe aquí]
-
-#+BEGIN_EXPORT latex
-\begin{capturabox}{Consulta de memoria física y discos (\texttt{Win32\_PhysicalMemory} y \texttt{Get-PhysicalDisk})}
-#+END_EXPORT
-#+CAPTION: Auditoría de módulos RAM y unidades de almacenamiento en PowerShell
-#+ATTR_LATEX: :width 0.78\textwidth :placement [H]
-[[file:./images/win_ram_discos.png]]
 #+BEGIN_EXPORT latex
 \end{capturabox}
 #+END_EXPORT
