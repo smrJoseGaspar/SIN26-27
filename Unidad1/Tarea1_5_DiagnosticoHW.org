@@ -203,7 +203,8 @@ sudo lshw -html > inventario_hardware.html
 Abre **PowerShell como Administrador** y ejecuta el siguiente comando para extraer la información de placa, procesador, BIOS y memoria física:
 
 #+BEGIN_SRC powershell
-Get-ComputerInfo | Select-Object CsManufacturer, CsModel, BiosFirmwareType, BiosSMBIOSBIOSVersion, CsProcessors, CsTotalPhysicalMemory
+  Get-ComputerInfo | Select-Object CsManufacturer, CsModel, BiosFirmwareType, BiosSMBIOSBIOSVersion,
+  CsProcessors, CsTotalPhysicalMemory
 #+END_SRC
 
 /Completa los datos obtenidos en Windows:/
